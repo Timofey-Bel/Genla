@@ -1,0 +1,80 @@
+/* ── Футер (минималистичный, в один ряд) ───────────────────── */
+.site-footer {
+    border-top: 1px solid var(--c-line);
+    background: var(--c-tint);
+    padding-block: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.site-footer__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+}
+
+.site-footer .brand__logo-img {
+    height: 30px;
+}
+
+.footer-nav,
+.footer-contacts {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+    font-size: var(--fs-small);
+}
+
+.footer-nav a,
+.footer-contacts a {
+    color: var(--c-ink-soft);
+    transition: color var(--t-fast) var(--ease);
+}
+
+.footer-contacts span {
+    color: var(--c-muted);
+}
+
+.footer-nav a:hover,
+.footer-contacts a:hover {
+    color: var(--c-purple);
+}
+
+.site-footer__bottom {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--c-line);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    color: var(--c-muted);
+    font-size: var(--fs-small);
+}
+
+.site-footer__bottom a {
+    color: var(--c-muted);
+    transition: color var(--t-fast) var(--ease);
+}
+
+.site-footer__bottom a:hover {
+    color: var(--c-purple);
+}
+
+
+/* ── Мелкий «служебный» текст: сноски в кейсах, юридический дисклеймер ── */
+.fineprint {
+    color: var(--c-muted);
+    font-size: 11px;
+    line-height: 1.55;
+    opacity: 0.7;
+    margin: 0;
+}
+
+.site-footer__legal {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--c-line);
+}

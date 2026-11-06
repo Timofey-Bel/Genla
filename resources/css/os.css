@@ -1,0 +1,419 @@
+/* ── GENLA OS (главный экран) ──────────────────────────────── */
+.os {
+    position: relative;
+    min-height: 100svh;
+    padding-top: calc(var(--header-h) + clamp(1.5rem, 4vh, 3rem));
+    padding-bottom: clamp(2rem, 5vh, 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Живое текучее поле — подложка (плавный градиент) */
+.os__field {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.os__field .blob {
+    position: absolute;
+    width: 62vmax;
+    height: 62vmax;
+    border-radius: 50%;
+    filter: blur(70px);
+    will-change: transform;
+}
+
+/* Подложка-градиент СТАТИЧНА. Её медленный дрейф вынуждал стеклянную шапку
+   (backdrop-filter: blur) пересчитывать размытие КАЖДЫЙ кадр постоянно — отсюда
+   лаги на десктопе даже в простое (на других страницах фон статичен → их нет).
+   В статике кадр визуально идентичен, а нагрузка снимается. Интерактивные
+   «огоньки» (WebGL) полностью сохранены. Чтобы вернуть дрейф — раскомментируйте
+   строки animation ниже. */
+.os__field .blob--1 {
+    top: -22%;
+    left: -12%;
+    background: radial-gradient(circle, rgba(255, 93, 162, 0.42) 0%, transparent 62%);
+    /* animation: blob-1 26s var(--ease) infinite alternate; */
+}
+
+.os__field .blob--2 {
+    top: -18%;
+    right: -14%;
+    background: radial-gradient(circle, rgba(122, 92, 255, 0.40) 0%, transparent 62%);
+    /* animation: blob-2 31s var(--ease) infinite alternate; */
+}
+
+.os__field .blob--3 {
+    bottom: -26%;
+    left: 6%;
+    background: radial-gradient(circle, rgba(120, 170, 255, 0.38) 0%, transparent 62%);
+    /* animation: blob-3 24s var(--ease) infinite alternate; */
+}
+
+.os__field .blob--4 {
+    bottom: -22%;
+    right: 2%;
+    background: radial-gradient(circle, rgba(255, 168, 206, 0.40) 0%, transparent 62%);
+    /* animation: blob-4 29s var(--ease) infinite alternate; */
+}
+
+/* Интерактивная жидкость за курсором (WebGL рендерит сам) */
+.os__fluid {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes blob-1 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(26vw, 16vh) scale(1.25); }
+}
+
+@keyframes blob-2 {
+    0% { transform: translate(0, 0) scale(1.1); }
+    100% { transform: translate(-22vw, 20vh) scale(0.9); }
+}
+
+@keyframes blob-3 {
+    0% { transform: translate(0, 0) scale(0.95); }
+    100% { transform: translate(20vw, -18vh) scale(1.2); }
+}
+
+@keyframes blob-4 {
+    0% { transform: translate(0, 0) scale(1.15); }
+    100% { transform: translate(-18vw, -14vh) scale(0.95); }
+}
+
+.os::before {
+    /* мягкое свечение под ядром */
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    width: min(70vw, 720px);
+    height: min(70vw, 720px);
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(122, 92, 255, 0.10) 0%, rgba(255, 93, 162, 0.06) 35%, transparent 68%);
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+.os__intro {
+    text-align: center;
+    margin-bottom: clamp(1.9rem, 4.5vh, 3.4rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Словесный логотип Genla над сеткой (бренд компании — оставляем вверху) */
+.os__logo {
+    width: min(538px, 78vw);
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin-inline: auto;
+}
+
+.os__logo--shimmer {
+    animation: logo-shimmer-hue 4s linear infinite;
+}
+
+/* Розовая «восьмёрка»-лоадер (∞) в центральной кнопке «Начать диалог» */
+.os-core__infinity {
+    width: clamp(116px, 13.5vw, 184px);
+    display: block;
+    margin-inline: auto;
+}
+
+.os__infinity {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+}
+
+.os__infinity-track {
+    fill: none;
+    stroke: rgba(255, 93, 162, 0.16);
+    stroke-width: 7;
+    stroke-linecap: round;
+}
+
+.os__infinity-dash {
+    fill: none;
+    stroke: url(#genlaInfinity);
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-dasharray: 28 72;
+    filter: drop-shadow(0 0 7px rgba(255, 77, 158, 0.55));
+    animation: genla-infinity 1.7s linear infinite;
+}
+
+@keyframes genla-infinity {
+    to { stroke-dashoffset: -100; }
+}
+
+@keyframes logo-shimmer-hue {
+    0%   { filter: drop-shadow(0 12px 40px rgba(255, 93, 162, 0.25)) hue-rotate(0deg); }
+    33%  { filter: drop-shadow(0 12px 50px rgba(122, 92, 255, 0.30)) hue-rotate(20deg); }
+    66%  { filter: drop-shadow(0 12px 50px rgba(255, 93, 162, 0.30)) hue-rotate(-10deg); }
+    100% { filter: drop-shadow(0 12px 40px rgba(255, 93, 162, 0.25)) hue-rotate(0deg); }
+}
+
+/* Сетка 3×3 */
+.os__grid {
+    width: 100%;
+    max-width: 1000px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(0.7rem, 1.2vw, 1.1rem);
+}
+
+/* Анимированная градиентная рамка Pink→Purple на карточках.
+   Вращаем СЛОЙ с градиентом через transform (композитинг на GPU), а не угол
+   conic-gradient через @property — последнее перерисовывает каждую плитку
+   каждый кадр (дорогой paint ×8 плиток). Визуально идентично, нагрузка ≈ 0. */
+@keyframes tile-border-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Плитка лаборатории — квадратная карточка с областью под иллюстрацию */
+.os-tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 0.6rem;
+    aspect-ratio: 1 / 1;
+    padding: clamp(0.85rem, 1.4vw, 1.25rem);
+    border-radius: var(--r-lg);
+    background: var(--c-white);
+    box-shadow: var(--shadow-sm);
+    color: var(--c-ink);
+    overflow: hidden;
+    transition: transform var(--t-mid) var(--ease), box-shadow var(--t-mid) var(--ease);
+    /* NB: без will-change/transform на самой плитке — иначе изображение в .os-tile__art
+       растеризуется в GPU-слой и при object-fit:cover-уменьшении сэмплится билинейно
+       (рваные «пиксельные» края). Без слоя картинка масштабируется в высоком качестве. */
+}
+
+/* Только окантовка-кольцо (mask вырезает центр). Обёртка держит статичную
+   маску-рамку и обрезает вращающийся внутри градиент. */
+.os-tile__border {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.75;
+    overflow: hidden;
+    transition: opacity var(--t-mid) var(--ease);
+}
+
+/* Вращающийся conic-градиент. Увеличен (inset:-50% → 200%), чтобы при повороте
+   всегда полностью покрывать плитку. Анимируется только transform → без paint. */
+.os-tile__border::before {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    background: conic-gradient(
+        #ff4d9e 0%,
+        #ff9ac6 18%,
+        #ffd0e3 32%,
+        #ff6fb3 50%,
+        #ffb0d4 68%,
+        #ff4d9e 84%,
+        #ff7ab8 100%
+    );
+    animation: tile-border-spin 5s linear infinite;
+    will-change: transform;
+}
+
+.os-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.os-tile:hover .os-tile__border {
+    opacity: 1;
+}
+
+.os-tile:hover .os-tile__border::before {
+    animation-duration: 2.5s;
+}
+
+/* Область иллюстрации: цветовая «система» под направление (под изображение) */
+.os-tile__art {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    display: grid;
+    place-items: center;
+    border-radius: var(--r-md);
+    background:
+        radial-gradient(120% 120% at 28% 18%, rgba(255, 93, 162, 0.12) 0%, transparent 58%),
+        radial-gradient(120% 120% at 82% 92%, rgba(122, 92, 255, 0.14) 0%, transparent 58%),
+        var(--c-tint);
+    box-shadow: inset 0 0 0 1px rgba(18, 16, 30, 0.04);
+    overflow: hidden;
+}
+
+.os-tile__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.os-tile__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
+    flex-shrink: 0;
+}
+
+.os-tile__name {
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
+    font-weight: 660;
+    letter-spacing: -0.02em;
+}
+
+.os-tile__desc {
+    font-size: var(--fs-small);
+    color: var(--c-muted);
+    line-height: 1.3;
+    /* Резервируем ровно 2 строки, чтобы область картинки была одной высоты на всех плитках */
+    min-height: 2.6em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.os-tile__arrow {
+    display: none;
+}
+
+/* Центральное ядро — AI. Светлый фон с розовым переливом. */
+.os-tile--core {
+    background:
+        linear-gradient(125deg,
+            #ffffff 0%,
+            #fff0f7 26%,
+            #ffe1ef 44%,
+            #f4ecff 60%,
+            #fff0f7 80%,
+            #ffffff 100%);
+    background-size: 220% 220%;
+    color: var(--c-ink);
+    box-shadow: var(--shadow-accent);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.6rem;
+    isolation: isolate;
+    animation: core-shimmer 8s ease-in-out infinite;
+}
+
+/* Розовый перелив светлого фона ядра */
+@keyframes core-shimmer {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.os-tile--core::after {
+    /* мягкое розовое свечение под содержимым */
+    content: '';
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--grad-accent);
+    filter: blur(26px);
+    opacity: 0.22;
+    animation: core-glow 4.5s var(--ease) infinite;
+}
+
+@keyframes star-spin {
+    0%   { transform: rotate(0deg) scale(1); }
+    25%  { transform: rotate(90deg) scale(1.18); }
+    50%  { transform: rotate(180deg) scale(1); }
+    75%  { transform: rotate(270deg) scale(1.18); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes star-pulse {
+    0%, 100% { filter: drop-shadow(0 0 8px rgba(255,255,255,0.7)); }
+    50%       { filter: drop-shadow(0 0 22px rgba(255,255,255,1)) drop-shadow(0 0 40px rgba(214,58,255,0.6)); }
+}
+
+/* Переливающийся логотип ГЕНЛА в центральном ядре */
+.os-core__logo {
+    width: clamp(96px, 11vw, 150px);
+    height: auto;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
+.os-core__logo--shimmer {
+    filter: drop-shadow(0 10px 30px rgba(122, 92, 255, 0.28));
+    animation: logo-shimmer-hue 4s linear infinite;
+}
+
+.os-core__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: var(--r-pill);
+    background: var(--grad-accent);
+    box-shadow: 0 8px 22px rgba(255, 93, 162, 0.30);
+    color: #fff;
+    font-size: var(--fs-small);
+    font-weight: 600;
+    transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+}
+
+.os-tile--core:hover .os-core__cta {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(255, 93, 162, 0.42);
+}
+
+/* ── Мобильный «живой» фон ──────────────────────────────────
+   На телефоне WebGL-жидкость за курсором простаивает (нет наведения мыши),
+   а статичные блобы по углам оставляли центр белёсым. Включаем мягкий дрейф
+   градиентных блобов — фон снова «живой», без тяжёлого WebGL. Уважаем
+   prefers-reduced-motion (для тех, кому анимация противопоказана). */
+@media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
+    .os__field .blob {
+        width: 88vmax;
+        height: 88vmax;
+        filter: blur(58px);
+    }
+
+    .os__field .blob--1 { animation: blob-1 22s var(--ease) infinite alternate; }
+    .os__field .blob--2 { animation: blob-2 26s var(--ease) infinite alternate; }
+    .os__field .blob--3 { animation: blob-3 20s var(--ease) infinite alternate; }
+    .os__field .blob--4 { animation: blob-4 24s var(--ease) infinite alternate; }
+}

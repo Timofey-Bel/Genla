@@ -1,0 +1,98 @@
+/* ── Кнопки / CTA ──────────────────────────────────────────── */
+.btn {
+    --btn-bg: var(--c-ink);
+    --btn-fg: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    font-size: var(--fs-small);
+    font-weight: 580;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    padding: 0.8rem 1.35rem;
+    border-radius: var(--r-pill);
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    white-space: nowrap;
+    transition: transform var(--t-fast) var(--ease), box-shadow var(--t-mid) var(--ease),
+        background var(--t-fast) var(--ease), opacity var(--t-fast) var(--ease);
+    will-change: transform;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Первичная — градиент Pink→Purple */
+.btn--primary {
+    --btn-bg: var(--grad-accent);
+    color: #fff;
+    box-shadow: var(--shadow-accent);
+}
+
+.btn--primary:hover {
+    box-shadow: 0 26px 70px rgba(122, 92, 255, 0.32);
+}
+
+/* Светлая «призрачная» */
+.btn--ghost {
+    --btn-bg: var(--c-white);
+    color: var(--c-ink);
+    box-shadow: inset 0 0 0 1px var(--c-line-strong), var(--shadow-xs);
+}
+
+.btn--ghost:hover {
+    box-shadow: inset 0 0 0 1px var(--c-ink); 
+}
+
+/* Мягкая на тоне */
+.btn--soft {
+    --btn-bg: var(--c-soft);
+    color: var(--c-ink);
+}
+
+.btn--soft:hover {
+    --btn-bg: #f0f0f3;
+}
+
+/* «Обсудить сейчас» — со светящейся точкой-ядром */
+.btn--chat {
+    --btn-bg: var(--c-white);
+    color: var(--c-ink);
+    box-shadow: inset 0 0 0 1px var(--c-line-strong), var(--shadow-xs);
+}
+
+.btn--chat::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--grad-accent);
+    box-shadow: 0 0 0 0 rgba(122, 92, 255, 0.5);
+    animation: pulse-dot 2.4s var(--ease) infinite;
+}
+
+.btn--chat:hover {
+    box-shadow: inset 0 0 0 1px var(--c-purple), var(--shadow-sm);
+}
+
+.btn--lg {
+    padding: 1rem 1.7rem;
+    font-size: var(--fs-body);
+}
+
+.btn--block {
+    width: 100%;
+}
+
+/* Группа CTA */
+.cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}

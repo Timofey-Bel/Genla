@@ -1,0 +1,88 @@
+/* ── Полностраничный интерфейс Genla AI (ai.genla.tech) ────── */
+.ai-shell {
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(120% 80% at 0% 0%, rgba(255, 93, 162, 0.10) 0%, transparent 55%),
+        radial-gradient(120% 80% at 100% 100%, rgba(122, 92, 255, 0.12) 0%, transparent 55%),
+        var(--c-bg, #fff);
+    overflow: hidden;
+}
+
+.ai-topbar {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    height: var(--header-h);
+    padding-inline: clamp(1rem, 4vw, 2rem);
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: saturate(180%) blur(var(--glass-blur));
+    backdrop-filter: saturate(180%) blur(var(--glass-blur));
+    border-bottom: 1px solid var(--c-line);
+}
+
+.ai-topbar__brand {
+    display: inline-flex;
+    align-items: center;
+}
+
+.ai-topbar__logo {
+    height: clamp(26px, 3vw, 34px);
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.ai-topbar__right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Область чата заполняет всё под шапкой */
+.ai-shell__chat {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    max-width: 860px;
+    margin-inline: auto;
+    padding: clamp(0.75rem, 2vw, 1.5rem);
+    display: flex;
+}
+
+.ai-shell__chat .chat {
+    flex: 1;
+    height: 100%;
+    border-radius: var(--r-xl);
+    background: var(--c-white);
+    box-shadow: var(--shadow-md), inset 0 0 0 1px var(--c-line);
+    overflow: hidden;
+}
+
+/* На странице ИИ скрываем глобальный таббар и убираем его отступ */
+body:has(.ai-shell) .tabbar {
+    display: none !important;
+}
+
+body:has(.ai-shell) {
+    padding-bottom: 0 !important;
+}
+
+@media (max-width: 680px) {
+    .ai-topbar__site {
+        display: none;
+    }
+
+    .ai-shell__chat {
+        padding: 0;
+    }
+
+    .ai-shell__chat .chat {
+        border-radius: 0;
+        box-shadow: none;
+    }
+}

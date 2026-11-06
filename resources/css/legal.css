@@ -1,0 +1,75 @@
+/* ── Правовые страницы (соглашение о перс. данных) ─────────── */
+.container--narrow {
+    max-width: 760px;
+}
+
+.legal {
+    padding-top: calc(var(--header-h) + clamp(2rem, 5vw, 4rem));
+    padding-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+.legal__back {
+    display: inline-flex;
+    margin-bottom: 1.75rem;
+}
+
+.legal__title {
+    font-size: var(--fs-h2);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.legal__intro {
+    font-size: var(--fs-lead);
+    color: var(--c-ink-soft);
+    margin-bottom: 2.5rem;
+    max-width: 64ch;
+}
+
+.legal__section {
+    margin-bottom: 2rem;
+}
+
+.legal__heading {
+    font-size: 1.2rem;
+    font-weight: 680;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.65rem;
+}
+
+.legal__text {
+    color: var(--c-ink-soft);
+    line-height: 1.65;
+    margin-bottom: 0.6rem;
+}
+
+/* Ссылки в подвале */
+.site-footer__links {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+}
+
+/* ── Контент-страницы (О нас / Миссия / Кейсы / Блог) ──────── */
+.page {
+    padding-top: var(--header-h);
+}
+
+.page__contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 2rem;
+    margin-top: 1.5rem;
+    font-size: var(--fs-lead);
+}
+
+.page__contacts a {
+    color: var(--c-purple);
+    text-decoration: none;
+}
+
+.page__contacts a:hover {
+    text-decoration: underline;
+}

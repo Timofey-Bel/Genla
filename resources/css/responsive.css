@@ -1,0 +1,233 @@
+/* ── Адаптив ────────────────────────────────────────────────── */
+
+/* Планшет */
+@media (max-width: 1024px) {
+    :root {
+        --header-h: 70px;
+    }
+
+    .grid--4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Плотное OS/контент-меню (5 разделов + действия) сворачиваем в «бургер»
+   уже на средних экранах, чтобы строка шапки не переполнялась и не «съезжала». */
+@media (max-width: 1120px) {
+    .site-header__inner--os .os-nav,
+    .site-header__inner--os .os-header-cta,
+    .site-header__inner--os .lang-switch {
+        display: none;
+    }
+
+    .site-header__inner--os .header-toggle {
+        display: grid;
+        position: static;
+    }
+
+    .site-header__inner--os {
+        justify-content: flex-start;
+    }
+
+    .site-header__inner--page {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 900px) {
+    /* OS-шапка на мобильных */
+    .site-header__inner--os .os-nav {
+        display: none;
+    }
+
+    .site-header__inner--os .os-header-cta {
+        display: none;
+    }
+
+    /* Переключатель языка — только в боковом меню, в шапке лишний */
+    .site-header__inner--os .lang-switch {
+        display: none;
+    }
+
+    .site-header__inner--os .header-toggle {
+        display: grid;
+        position: static;
+    }
+
+    /* На мобильном шапка ОС (главная): бургер прижат влево */
+    .site-header__inner--os {
+        justify-content: flex-start;
+    }
+
+    /* Контент-страницы (page): «Назад» слева, бургер справа */
+    .site-header__inner--page {
+        justify-content: space-between;
+    }
+
+    /* Lab-шапка на мобильных: «Назад» слева, бургер справа */
+    .lab-header-right {
+        display: none;
+    }
+
+    .site-header__inner--lab {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .site-header__inner--lab .lab-header-left {
+        display: flex;
+    }
+
+    .site-header__inner--lab .header-toggle {
+        display: grid;
+        position: static;
+    }
+    .hero__inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .hero__subtitle {
+        max-width: 46ch;
+    }
+
+    .media {
+        order: -1;
+    }
+
+    .grid--3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Шапка: прячем ряд кнопок в выпадающую панель */
+    .header-toggle {
+        display: grid;
+    }
+
+    .header-actions {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: var(--gutter);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        width: min(280px, 80vw);
+        padding: 0.75rem;
+        background: var(--c-white);
+        border-radius: var(--r-lg);
+        box-shadow: var(--shadow-lg), inset 0 0 0 1px var(--c-line);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: opacity var(--t-fast) var(--ease), transform var(--t-fast) var(--ease), visibility var(--t-fast);
+    }
+
+    .header-actions.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .header-actions .btn {
+        width: 100%;
+    }
+
+    .header-actions .cta-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .header-back {
+        order: -1;
+        justify-content: center;
+    }
+}
+
+/* Телефон */
+@media (max-width: 680px) {
+    .os__grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+        gap: 0.75rem;
+    }
+
+    /* ИИ — первым слотом на мобиле, выраженное ядро */
+    .os-tile--core {
+        order: -1;
+        flex-direction: column;
+        text-align: center;
+        padding: 1.1rem;
+    }
+
+    .os-tile {
+        padding: 0.85rem;
+        gap: 0.6rem;
+    }
+
+    .os-tile__arrow {
+        display: none;
+    }
+
+    .os-core__logo {
+        width: clamp(84px, 24vw, 120px);
+    }
+
+    .os-core__cta {
+        font-size: var(--fs-small);
+        padding: 0.45rem 0.85rem;
+    }
+
+    .grid--2,
+    .grid--3,
+    .grid--4 {
+        grid-template-columns: 1fr;
+    }
+
+    .faq__item summary {
+        font-size: 1.05rem;
+        padding-right: 2.5rem;
+    }
+
+    .chat-overlay .chat {
+        height: 88vh;
+    }
+}
+
+@media (max-width: 420px) {
+    .brand__tagline {
+        display: none;
+    }
+}
+
+/* ── Кнопки CTA на мобильных: ровные, одинаковой ширины ────── */
+@media (max-width: 680px) {
+    .hero__actions .cta-group,
+    .lab-cta__actions .cta-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.6rem;
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .hero__actions .cta-group .btn,
+    .lab-cta__actions .cta-group .btn {
+        width: 100%;
+    }
+
+    /* Чуть компактнее, чем btn--lg на десктопе */
+    .hero__actions .btn--lg,
+    .lab-cta__actions .btn--lg {
+        padding: 0.85rem 1.4rem;
+        font-size: var(--fs-small);
+    }
+
+    /* Кнопка-чип «Обсудить сейчас» в финальном CTA — на всю ширину */
+    .lab-cta__chat {
+        width: 100%;
+        max-width: 340px;
+        justify-content: center;
+    }
+}

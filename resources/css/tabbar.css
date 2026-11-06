@@ -1,0 +1,165 @@
+/* ── Мобильный нижний таббар ───────────────────────────────── */
+.tabbar {
+    display: none;
+}
+
+@media (max-width: 680px) {
+    .tabbar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 120;
+        display: flex;
+        justify-content: space-around;
+        align-items: stretch;
+        height: calc(64px + env(safe-area-inset-bottom, 0px));
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+        background: var(--glass-bg);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+        border-top: 1px solid var(--c-line);
+        box-shadow: 0 -8px 30px rgba(22, 22, 26, 0.07);
+    }
+
+    /* Футер заменяется таббаром */
+    .site-footer {
+        display: none;
+    }
+
+    /* Чтобы контент не прятался под таббаром */
+    body {
+        padding-bottom: 64px;
+    }
+}
+
+.tabbar__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    height: 64px;
+    color: var(--c-muted);
+    font-size: 0.66rem;
+    font-weight: 540;
+    letter-spacing: 0.01em;
+    transition: color var(--t-fast) var(--ease);
+}
+
+.tabbar__item svg {
+    width: 22px;
+    height: 22px;
+}
+
+.tabbar__item:hover,
+.tabbar__item:active {
+    color: var(--c-purple);
+}
+
+/* Центральная кнопка AI — приподнятая */
+.tabbar__item--ai {
+    position: relative;
+}
+
+.tabbar__orb {
+    width: 50px;
+    height: 50px;
+    margin-top: -24px;
+    border-radius: 50%;
+    background: var(--grad-accent);
+    box-shadow: var(--shadow-accent), 0 0 0 4px var(--c-white);
+    display: grid;
+    place-items: center;
+    color: #fff;
+    transition: transform var(--t-fast) var(--ease);
+}
+
+.tabbar__orb svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Анимированный белый шар внутри центральной кнопки AI —
+   стеклянная «жемчужина» с живым радужным переливом (как было в секции ИИ) */
+.tabbar__sphere {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 50% 116%, rgba(224, 150, 255, 0.55) 0%, rgba(224, 150, 255, 0) 44%),
+        radial-gradient(circle at 36% 30%,
+            #ffffff 0%,
+            #ffffff 27%,
+            #fcf3ff 49%,
+            #efe0ff 71%,
+            #dcc6ff 100%);
+    box-shadow:
+        inset 0 -5px 9px rgba(150, 90, 220, 0.42),
+        inset 0 4px 6px rgba(255, 255, 255, 1),
+        0 0 16px rgba(255, 255, 255, 0.9),
+        0 3px 9px rgba(120, 60, 200, 0.4);
+    animation: sphere-breathe 3.6s var(--ease) infinite;
+    will-change: transform;
+}
+
+/* Вращающийся радужный перелив по краю — «живой» свет в стекле */
+.tabbar__sphere::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 50%;
+    background: conic-gradient(from 210deg,
+        rgba(255, 150, 210, 0) 0deg,
+        rgba(255, 140, 205, 0.55) 65deg,
+        rgba(170, 160, 255, 0) 150deg,
+        rgba(140, 200, 255, 0.5) 245deg,
+        rgba(255, 150, 210, 0) 330deg);
+    -webkit-mask: radial-gradient(circle, transparent 54%, #000 72%);
+    mask: radial-gradient(circle, transparent 54%, #000 72%);
+    opacity: 0.75;
+    animation: sphere-swirl 4.5s linear infinite;
+    pointer-events: none;
+}
+
+/* Главный глянцевый блик сверху-слева */
+.tabbar__sphere::before {
+    content: '';
+    position: absolute;
+    top: 11%;
+    left: 18%;
+    width: 42%;
+    height: 34%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 42%,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0.8) 40%,
+        rgba(255, 255, 255, 0) 74%);
+    z-index: 1;
+    animation: sphere-shine 3.6s var(--ease) infinite;
+}
+
+@keyframes sphere-breathe {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.06); }
+}
+
+@keyframes sphere-shine {
+    0%, 100% { opacity: 0.9; transform: translate(0, 0) scale(1); }
+    50%      { opacity: 1; transform: translate(0.5px, 1px) scale(1.06); }
+}
+
+@keyframes sphere-swirl {
+    to { transform: rotate(360deg); }
+}
+
+.tabbar__item--ai:active .tabbar__orb {
+    transform: scale(0.94);
+}
+
+.tabbar__ai-label {
+    color: var(--c-purple);
+    font-weight: 640;
+}

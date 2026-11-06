@@ -1,0 +1,20 @@
+/* GENLA Technologies — дизайн-система (обычный CSS, без фреймворков) */
+
+/* Шрифт Inter, self-hosted через @fontsource (без внешних запросов) */
+@import '@fontsource-variable/inter';
+
+@import './tokens.css';
+@import './base.css';
+@import './layout.css';
+@import './header.css';
+@import './buttons.css';
+@import './os.css';
+@import './lab.css';
+@import './chat.css';
+@import './footer.css';
+@import './legal.css';
+@import './ai.css';
+@import './tabbar.css';
+@import './modal.css';
+@import './animations.css';
+@import './responsive.css';

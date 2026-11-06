@@ -1,0 +1,73 @@
+/* ── Дизайн-токены ─────────────────────────────────────────── */
+:root {
+    /* Базовые цвета */
+    --c-white: #ffffff;
+    --c-soft: #f7f7f9;
+    --c-tint: #fbfafd;
+    --c-line: #ececef;
+    --c-line-strong: #e0e0e6;
+
+    /* Графит / серый — текст */
+    --c-ink: #16161a;
+    --c-ink-soft: #3a3a44;
+    --c-muted: #84848f;
+    --c-muted-2: #a6a6b0;
+
+    /* Акцент: Pink → Purple */
+    --c-pink: #ff5da2;
+    --c-pink-light: #ffa8ce;
+    --c-purple: #7a5cff;
+    --c-purple-deep: #5b3fe0;
+    --grad-accent: linear-gradient(120deg, #ff5da2 0%, #7a5cff 100%);
+    --grad-accent-soft: linear-gradient(120deg, rgba(255, 93, 162, 0.12) 0%, rgba(122, 92, 255, 0.12) 100%);
+    --grad-text: linear-gradient(120deg, #ff5da2 0%, #7a5cff 70%);
+
+    /* Поверхности */
+    --c-bg: var(--c-white);
+    --c-surface: var(--c-white);
+    --c-surface-soft: var(--c-soft);
+
+    /* Типографика */
+    --font-sans: 'Inter Variable', 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+    /* Размеры заголовков (большие, с воздухом) */
+    --fs-display: clamp(2.75rem, 6vw, 5.25rem);
+    --fs-h1: clamp(2.25rem, 4.5vw, 3.75rem);
+    --fs-h2: clamp(1.75rem, 3vw, 2.75rem);
+    --fs-h3: clamp(1.25rem, 1.6vw, 1.5rem);
+    --fs-lead: clamp(1.05rem, 1.5vw, 1.375rem);
+    --fs-body: 1.0625rem;
+    --fs-small: 0.9375rem;
+    --fs-micro: 0.8125rem;
+
+    /* Радиусы */
+    --r-sm: 10px;
+    --r-md: 16px;
+    --r-lg: 24px;
+    --r-xl: 32px;
+    --r-pill: 999px;
+
+    /* Тени — мягкие, дорогие */
+    --shadow-xs: 0 1px 2px rgba(22, 22, 26, 0.04);
+    --shadow-sm: 0 2px 8px rgba(22, 22, 26, 0.05);
+    --shadow-md: 0 10px 30px rgba(22, 22, 26, 0.07);
+    --shadow-lg: 0 24px 70px rgba(22, 22, 26, 0.10);
+    --shadow-accent: 0 20px 60px rgba(122, 92, 255, 0.22);
+
+    /* Размеры макета */
+    --container: 1200px;
+    --container-wide: 1320px;
+    --gutter: clamp(1.25rem, 4vw, 2.5rem);
+    --header-h: 76px;
+
+    /* Стекло (blur 20px по ТЗ) */
+    --glass-bg: rgba(255, 255, 255, 0.72);
+    --glass-blur: 20px;
+
+    /* Анимация */
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --t-fast: 0.18s;
+    --t-mid: 0.4s;
+    --t-slow: 0.7s;
+}
