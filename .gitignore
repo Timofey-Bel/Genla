@@ -25,3 +25,16 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Мастер-исходники графики (тяжёлые оригиналы, не нужны рантайму)
+/public/images/tiles-original
+/public/icons-original
+/public/favicons-old
+/Иконки
+/правки
+/icons8-бесконечная-загрузка-color
+
+# Локальные файлы окружения и одноразовые скрипты
+/.osp
+/_commits.ps1
+/tools/_find.ps1
