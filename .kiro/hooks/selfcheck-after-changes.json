@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Self-check layout & structure",
+      "trigger": "Stop",
+      "description": "After each agent run, smoke-tests every section/direction over HTTP: 200s, og:image wiring, unified 3-button footer CTA, mobile tab-bar AI label, and no leaked Blade/errors.",
+      "action": {
+        "type": "command",
+        "command": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/selfcheck.ps1",
+        "timeout": 120
+      }
+    }
+  ]
+}
