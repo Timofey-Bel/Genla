@@ -94,7 +94,7 @@ class Genla
         return url(self::prefix().'/'.$slug);
     }
 
-    /** URL главной (GENLA OS) с учётом локали. */
+    /** URL главной (GENLA) с учётом локали. */
     public static function homeUrl(): string
     {
         if (config('genla.routing.mode') === 'subdomain') {
@@ -106,6 +106,23 @@ class Genla
         $prefix = self::prefix();
 
         return url($prefix !== '' ? $prefix : '/');
+    }
+
+    /**
+     * Текст из lang с разметкой **жирный** → безопасный HTML.
+     * Всё экранируется, разворачивается только <strong>.
+     */
+    public static function md(?string $text): \Illuminate\Support\HtmlString
+    {
+        $html = preg_replace('/\*\*(.+?)\*\*/u', '<strong>$1</strong>', e((string) $text));
+
+        return new \Illuminate\Support\HtmlString($html);
+    }
+
+    /** Текст без разметки ** (для title, meta, alt, JSON-LD). */
+    public static function plain(?string $text): string
+    {
+        return str_replace('**', '', (string) $text);
     }
 
     /** @return array<string,mixed>|null */

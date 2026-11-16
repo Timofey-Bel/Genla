@@ -33,14 +33,14 @@
     <meta property="og:title" content="@yield('title', __('genla.company.full_name'))">
     <meta property="og:description" content="@yield('description', __('genla.company.mission'))">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:image" content="@yield('og_image', asset('og-cover.png').'?v=1')">
+    <meta property="og:image" content="@yield('og_image', asset('og-cover.png').'?v=4')">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="{{ __('genla.company.full_name') }}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="@yield('title', __('genla.company.full_name'))">
     <meta name="twitter:description" content="@yield('description', __('genla.company.mission'))">
-    <meta name="twitter:image" content="@yield('og_image', asset('og-cover.png').'?v=1')">
+    <meta name="twitter:image" content="@yield('og_image', asset('og-cover.png').'?v=4')">
 
     @stack('head')
 
@@ -60,6 +60,11 @@
             'modalLeads' => __('genla.modal_leads'),
             'actionLabels' => __('genla.action_labels'),
             'errors' => __('genla.form_errors'),
+            'partner' => [
+                'required' => __('genla.partner_form.required'),
+                'consent_required' => __('genla.partner_form.consent_required'),
+                'error' => __('genla.partner_form.error'),
+            ],
         ];
     @endphp
     <script>window.__genla = {!! json_encode($genlaJs, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!};</script>

@@ -2,16 +2,17 @@
 
 /*
 |--------------------------------------------------------------------------
-| Genla — texts (EN)
+| Genla — тексты (EN)
 |--------------------------------------------------------------------------
-| English copy. Mirrors the structure and keys of lang/ru/genla.php.
-| Structure (slug, grid, images, settings) lives in config/genla.php;
-| Genla::lab() merges structure with these texts for the current locale.
+| Весь словесный контент сайта. Структура (slug, сетка, картинки, настройки)
+| остаётся в config/genla.php. Genla::lab() мёржит структуру с этими текстами
+| по текущей локали. Английская версия — в lang/en/genla.php (та же структура).
+|
+| Страницы и лаборатории описаны блоками (sections) — см. components/blocks.
+| Строки могут содержать **жирный** текст: выводится через Genla::md().
 */
 
 return [
-
-    // HTTP error pages (resources/views/errors/*)
     'errors' => [
         'home' => 'Back to home',
         'ai' => 'Open Genla AI',
@@ -25,434 +26,21 @@ return [
 
     'company' => [
         'name' => 'Genla',
-        'full_name' => 'Genla Technologies',
-        'tagline' => 'Systems integrator of artificial intelligence',
-        'mission' => 'We are building a future where artificial intelligence empowers people instead of replacing them. Our mission is to unite human potential and advanced technology to achieve fundamentally new results in life, society and business.',
-        'mission_short' => 'Uniting human potential and advanced technology to achieve fundamentally new results in life, society and business.',
+        'full_name' => 'Genla',
+        'tagline' => 'Decentralised platform and systems integrator',
+        'mission' => 'Genla\'s mission is to unite human potential with advanced technology to achieve extraordinary results in life, career and business.',
+        'mission_short' => 'We unite human potential with advanced technology to achieve extraordinary results in life, career and business.',
         'city' => 'Moscow',
-        'about' => [
-            'Genla Technologies is a systems integrator of artificial intelligence.',
-            'We build and deploy solutions powered by neural networks, compute infrastructure and autonomous cybernetic systems — for life and business.',
-            'We bring people, knowledge and technology together into one digital ecosystem, with practical solutions that deliver measurable results and long-term value.',
-        ],
-        'approach' => [
-            ['title' => 'Audit', 'text' => 'We analyse your processes and find room to grow.'],
-            ['title' => 'Integration', 'text' => 'We build a roadmap and deploy the solutions.'],
-            ['title' => 'Support', 'text' => 'We keep your infrastructure evolving.'],
-        ],
-        'principles' => [
-            ['title' => 'OWASP', 'text' => 'Aligned with modern security standards.'],
-            ['title' => 'NDA', 'text' => 'Full confidentiality and protection of intellectual property.'],
-            ['title' => 'Data law', 'text' => 'On-premise solutions and secure data storage.'],
-        ],
+        'address' => '2nd Vyazovsky Proezd 10, bld. 2, Moscow 109428, Russia',
     ],
 
-    // About page — full structured content.
-    'about' => [
-        'eyebrow' => 'About us',
-        'hook' => 'While everyone else is simply “deploying” artificial intelligence, we design new models for managing enterprise performance.',
-        'title' => 'Genla Technologies — a unique systems-integration ecosystem for artificial intelligence that raises your business performance',
-        'intro' => [
-            'Genla Technologies is an international technology company specialising in the systems integration of artificial intelligence, digital transformation and business performance improvement.',
-            'We see artificial intelligence not as a stand-alone technology, but as a new management layer for the enterprise — one that multiplies labour productivity, cuts operating costs, speeds up decision-making and builds long-term competitive advantage.',
-            'The company was founded by executives and managers with years of experience building and running complex business processes in strategic communications, marketing, analytics and digital transformation. Practical experience managing large teams, large-scale projects and high-load organisational systems shaped our core approach: deploying artificial intelligence must deliver a measurable economic effect and a sustainable rise in organisational performance.',
-        ],
-        'goal_title' => 'Our task is to deliver a measurable economic effect',
-        'goal_lead' => 'We deploy artificial-intelligence technologies only where they can achieve concrete business results:',
-        'goal_points' => [
-            'increase the productivity of employees and departments',
-            'cut operating costs',
-            'speed up management decision-making',
-            'lower the cost of maintaining business processes',
-            'improve the quality of forecasting and risk management',
-            'enable business scaling without a proportional rise in costs',
-        ],
-        'goal_footer' => 'Every project starts with a comprehensive assessment of the potential for efficiency gains, forecasting the economic effect and building a transformation roadmap.',
-        'directions_title' => 'Three directions for a manifold rise in company performance',
-        'directions' => [
-            [
-                'title' => 'Productivity and intelligent automation',
-                'lead' => 'We build artificial-intelligence systems that multiply the effectiveness of intellectual labour for employees, engineering teams and management departments. Our solutions deliver:',
-                'points' => [
-                    'automation of intellectual operations',
-                    'faster software development',
-                    'automated creation of documents, reporting and content',
-                    'deployment of digital employees and intelligent assistants',
-                    'shorter execution time for complex business tasks',
-                ],
-            ],
-            [
-                'title' => 'Communication, knowledge and competency management',
-                'lead' => 'We build intelligent systems for knowledge management, corporate communications, training and customer interaction. Our technologies let you:',
-                'points' => [
-                    'unite fragmented information flows',
-                    'create a single digital knowledge space',
-                    'speed up employee onboarding and training',
-                    'improve the quality of internal and external communications',
-                    'build a self-learning organisational environment',
-                ],
-            ],
-            [
-                'title' => 'Analytics and intelligent management',
-                'lead' => 'We deploy decision-support systems built on artificial intelligence, mathematical modelling and data analysis. Our solutions let you:',
-                'points' => [
-                    'identify hidden points of growth',
-                    'forecast the outcomes of management decisions',
-                    'reduce operational and strategic risk',
-                    'improve planning quality',
-                    'move from reactive to predictive management',
-                ],
-            ],
-        ],
-        'science_title' => 'Scientific and engineering base',
-        'science_lead' => 'Genla Technologies’ work rests on the methodology of systems cybernetics, uniting modern approaches to managing complex systems, mathematical modelling, artificial intelligence and software engineering. Our team includes:',
-        'science_points' => [
-            'specialists from the Ivannikov Institute for System Programming of the Russian Academy of Sciences',
-            'experts in information security',
-            'experienced machine-learning engineers',
-            'specialists in the industrial operation of artificial intelligence',
-            'architects of high-load computing systems',
-            'specialists in robotics and industrial automation',
-            'researchers and developers of applied artificial-intelligence technologies',
-            'a professional community of young engineers, programmers and researchers developing new technology directions within our ecosystem',
-        ],
-        'labs_title' => 'An ecosystem of eight specialised laboratories',
-        'labs_lead' => 'Genla Technologies is an ecosystem of eight specialised laboratories. Each laboratory has its own management structure, direction lead, research group and engineering team.',
-        'labs' => [
-            ['name' => 'GenUp', 'tag' => 'Corporate training for the AI era', 'text' => 'Preparing leaders, management teams and employees to work in the new technological environment, building internal competencies and securing organisations’ technological leadership.'],
-            ['name' => 'GenReview', 'tag' => 'AI-integration audit and strategy', 'text' => 'A comprehensive audit of business processes, assessment of the potential for efficiency gains, development of an AI-deployment strategy and forecasting of the economic effect.'],
-            ['name' => 'GenEtics', 'tag' => 'Next-generation AI in the company’s DNA', 'text' => 'Development of corporate AI models, intelligent knowledge bases, agentic systems and new digital management layers.'],
-            ['name' => 'GenBox', 'tag' => 'Next-generation server computing systems', 'text' => 'Development and deployment of specialised computing infrastructure for training and operating artificial-intelligence systems.'],
-            ['name' => 'GenBlock', 'tag' => 'Next-generation modular data centres', 'text' => 'Building autonomous, scalable and fault-tolerant infrastructure for corporate and government clients.'],
-            ['name' => 'GenX', 'tag' => 'Industrial robotics', 'text' => 'Development and deployment of robotic systems, autonomous production systems and industrial-automation solutions.'],
-            ['name' => 'GenSec', 'tag' => 'Next-generation cybersecurity', 'text' => 'Securing AI infrastructure, building protected data-processing environments and managing technology risk.'],
-            ['name' => 'GenClaw', 'tag' => 'Digital assistants and autonomous employees', 'text' => 'Creating intelligent assistants, digital employees and multi-agent systems to automate complex corporate processes.'],
-        ],
-        'how_title' => 'How we work',
-        'how' => [
-            ['title' => 'Analysis and effect forecasting', 'text' => 'We audit business processes, identify the potential for efficiency gains, build a target solution architecture and calculate the economic effect of deployment.'],
-            ['title' => 'Design and deployment', 'text' => 'We design hardware-software system architecture, integrate solutions into existing infrastructure and ensure target metrics are met.'],
-            ['title' => 'Operation and development', 'text' => 'We provide technical maintenance, operational support, infrastructure development and scaling of deployed solutions.'],
-        ],
-        'qualities_title' => 'More than artificial intelligence',
-        'qualities' => [
-            ['title' => 'Secure', 'text' => 'We design solutions with information security, fault tolerance and technological independence in mind.'],
-            ['title' => 'Effective', 'text' => 'We deploy only technologies that deliver a measurable economic effect and a sustainable rise in business performance.'],
-            ['title' => 'Autonomous', 'text' => 'We build independent hardware-software infrastructure that gives full control over data, computing resources and technology.'],
-        ],
-        'closing' => 'Genla Technologies — an ecosystem of research, engineering and systems integration of artificial intelligence, delivering a manifold rise in business performance, technological independence and sustainable organisational development.',
-    ],
-
-    // Partner program page (/partners).
-    'partners' => [
-        'eyebrow' => 'Partners',
-        'title' => 'Building the future of people and technology together',
-        'lead' => 'We believe artificial intelligence is not just a new technological era, but a new social contract between people, knowledge and technology.',
-        'intro' => [
-            'Our goal is not simply deploying artificial intelligence into business processes. We want to help shape a society where technology helps people unlock their potential, frees them from monotonous, routine labour, improves quality of life and creates new opportunities for creativity, growth and self-realisation.',
-            'That is why Genla Technologies is not building a classic partner program, but an open partner ecosystem uniting business, science, government, professional communities and individual specialists around a shared goal — developing human-centric technology and raising the effectiveness of society.',
-            'We believe the development of artificial intelligence is impossible without the development of people.',
-        ],
-        'philosophy_title' => 'Our partnership philosophy',
-        'philosophy_lead' => 'Three fundamental principles of our philosophy underpin the Genla partner ecosystem:',
-        'philosophy' => [
-            ['title' => 'Genesis — to explore and understand', 'text' => 'Jointly explore new ways to apply technology, create new knowledge and build the scientific and methodological foundation of the future.'],
-            ['title' => 'Generation — to create and develop', 'text' => 'Combine competencies, resources and experience to create new products, services and solutions that raise organisational effectiveness and quality of life.'],
-            ['title' => 'Genius — to unlock potential', 'text' => 'Help people unlock their abilities, freeing them from routine work and creating conditions for creativity, growth and intellectual development.'],
-        ],
-        'audiences_title' => 'Who the partner ecosystem is built for',
-        'audiences_lead' => 'We are open to collaboration with organisations and specialists who share our understanding of the future of technology and society.',
-        'audiences' => [
-            [
-                'title' => 'Communications, marketing and consulting companies',
-                'lead' => 'We invite communications agencies, marketing and digital agencies, consulting companies, strategic-development agencies, and HR and education organisations to collaborate.',
-                'note' => 'You understand your clients’ tasks and industry specifics, while we handle the technological, engineering and scientific delivery of projects of any complexity.',
-                'sub_title' => 'Possible formats of cooperation',
-                'points' => [
-                    'joint project delivery',
-                    'strategic partnership',
-                    'joint participation in tenders',
-                    'development of comprehensive digital-transformation programs',
-                    'joint educational initiatives',
-                    'technology-partnership and white-label models',
-                ],
-            ],
-            [
-                'title' => 'Technology companies and systems integrators',
-                'lead' => 'We are open to collaboration with IT integrators, software developers, hardware suppliers, robotics manufacturers, information-security companies and industry technology companies.',
-                'note' => 'We see partnership as an opportunity to combine competencies to create new technological solutions and grow industry ecosystems.',
-                'sub_title' => 'Together we can build',
-                'points' => [
-                    'corporate artificial-intelligence systems',
-                    'computing infrastructure',
-                    'robotic systems',
-                    'digital employees and intelligent assistants',
-                    'protected corporate AI environments',
-                    'industry digital platforms',
-                ],
-            ],
-            [
-                'title' => 'Industry experts and professional communities',
-                'lead' => 'We invite independent consultants, industry experts, engineers, analysts, researchers, automation specialists, representatives of professional associations and authors of educational and expert projects.',
-                'note' => 'We believe the development of artificial intelligence is impossible without a strong professional community.',
-                'sub_title' => 'That is why we create conditions for',
-                'points' => [
-                    'exchanging knowledge and experience',
-                    'jointly developing new solutions',
-                    'participating in research projects',
-                    'developing professional competencies',
-                    'forming new industry standards',
-                ],
-            ],
-            [
-                'title' => 'Scientific, educational and research organisations',
-                'lead' => 'We see science and education as the foundation of sustainable technological development. We are open to collaboration with research institutes, research centres, universities, corporate universities, laboratories and education platforms.',
-                'note' => null,
-                'sub_title' => 'Areas of cooperation include',
-                'points' => [
-                    'fundamental and applied research',
-                    'joint scientific publications',
-                    'establishing research laboratories',
-                    'training a new generation of specialists',
-                    'implementing grant programs',
-                    'developing new educational methodologies',
-                    'providing computing infrastructure for research',
-                ],
-            ],
-            [
-                'title' => 'Government institutions and development institutes',
-                'lead' => 'We believe artificial intelligence should support the sustainable development of society and the economy.',
-                'note' => null,
-                'sub_title' => 'We are interested in projects aimed at',
-                'points' => [
-                    'raising labour productivity',
-                    'developing human capital',
-                    'technological sovereignty',
-                    'modernising industry',
-                    'developing education',
-                    'improving access to technology',
-                    'supporting regional development',
-                    'the digital transformation of government and social institutions',
-                ],
-            ],
-            [
-                'title' => 'Non-profits and public initiatives',
-                'lead' => 'Technology must serve society. That is why we are open to collaboration with charitable foundations, non-profit organisations, public associations, social projects, volunteer communities and initiatives in inclusion and human development.',
-                'note' => null,
-                'sub_title' => 'We pay special attention to projects aimed at',
-                'points' => [
-                    'helping people adapt to the new technological reality',
-                    'professional reskilling',
-                    'improving quality of life',
-                    'supporting people with disabilities',
-                    'developing accessible education',
-                    'popularising science and technology',
-                    'unlocking people’s creative and intellectual potential',
-                ],
-            ],
-            [
-                'title' => 'People of the future',
-                'lead' => 'We are always open to collaborating with people who want to help shape the new technological era.',
-                'note' => 'What matters most to us is not a current title or track record, but the drive to create something new and develop society.',
-                'sub_title' => 'We are interested in',
-                'points' => [
-                    'researchers',
-                    'engineers',
-                    'entrepreneurs',
-                    'educators',
-                    'developers',
-                    'artificial-intelligence specialists',
-                    'robotics specialists',
-                    'analysts',
-                    'managers',
-                    'students and young specialists',
-                ],
-            ],
-        ],
-        'mission_title' => 'Social mission',
-        'mission_lead' => 'We believe the main task of artificial intelligence is not to replace people, but to free them.',
-        'mission_from_title' => 'Free people',
-        'mission_from' => [
-            'from monotonous labour',
-            'from information overload',
-            'from inefficient processes',
-            'from the need to perform routine operations',
-        ],
-        'mission_for_title' => 'To let people focus on what makes them human',
-        'mission_for' => [
-            'creating',
-            'exploring',
-            'teaching',
-            'growing',
-            'designing',
-            'making decisions',
-            'unlocking their own potential',
-        ],
-        'mission_footer' => 'We believe the new technological era should raise the significance of people, not diminish their role.',
-        'build_title' => 'How we build partnerships',
-        'build_lead' => 'We do not use one-size-fits-all cooperation models. Every organisation, every specialist and every project has its own specifics, so the terms of collaboration are always shaped individually.',
-        'build_points' => [
-            'mutual trust',
-            'transparency',
-            'a long-term outlook',
-            'shared values',
-            'joint responsibility for the result',
-        ],
-        'start_title' => 'How to start collaborating',
-        'start' => [
-            ['title' => 'Dialogue', 'text' => 'We get acquainted and discuss shared goals, values and potential directions for cooperation.'],
-            ['title' => 'Designing the partnership', 'text' => 'Together we define the format of interaction, directions for growth and possible joint projects.'],
-            ['title' => 'Forming the ecosystem', 'text' => 'We formalise the agreements and begin working together.'],
-            ['title' => 'Growing together', 'text' => 'We develop technology, people and organisations, building the future together.'],
-        ],
-        'closing' => 'Genla Technologies is a community of people and organisations united by a shared goal: using technology to develop people, raise quality of life and unlock the potential of society.',
-        'contacts_title' => 'Partner contacts',
-        'contacts' => [
-            'telegram' => 'https://t.me/dobrovki',
-            'telegram_label' => 'Telegram: @dobrovki',
-            'phone' => '+7 925 707-19-27',
-            'phone_href' => '+79257071927',
-            'email' => 'ceo@genla.tech',
-        ],
-    ],
-
-    // Expertise page (instead of a blog) — development philosophy + technology approach + scientific base.
-    'expertise' => [
-        'eyebrow' => 'Expertise',
-        'title' => 'A philosophy of development: Genesis · Generation · Genius',
-        'lead' => 'For us, Genla is not a company name and not an endpoint of technological development. Genla is a system of views on how knowledge, technology and human potential are born, grow and scale.',
-        'lead2' => 'Our philosophy rests on three fundamental forces that accompany every evolution — biological, social, scientific and technological: Genesis — emergence, Generation — creation, Genius — surpassing. We treat them not as sequential stages but as a continuous cycle of development for any complex system — from a person or an organisation to artificial intelligence and civilisation as a whole. It is the union of these three principles that forms Genla — an ecosystem of continuous development, research, engineering and transformation.',
-        'stages' => [
-            ['name' => 'Genesis', 'tag' => 'To explore and understand', 'sub' => '“Why does the system work this way?”', 'text' => 'No technology begins with code or hardware. It begins with understanding. Genesis is the foundation of our work: research, systems thinking, a scientific approach and the search for root causes. At this stage we study the organisation as a complex system, uncovering hidden connections, constraints, risks and growth points. For us artificial intelligence is, first and foremost, a tool for reducing complexity and improving manageability. That is why every project starts with researching business processes, analysing information flows, building mathematical models, assessing the economic effect and designing the architecture of the future system.'],
-            ['name' => 'Generation', 'tag' => 'To create and scale', 'sub' => '“How do you build a system capable of growing?”', 'text' => 'Understanding without action creates no value. Generation is the stage of creation, engineering and scaling human and organisational capability. This is where intelligent systems, digital employees, computing infrastructure, corporate AI models, robotic systems and new layers of management and communication emerge. We see artificial intelligence as a tool that multiplies human capability, letting organisations reach a fundamentally new level of productivity.'],
-            ['name' => 'Genius', 'tag' => 'To grow and surpass', 'sub' => '“How do you secure a lasting edge?”', 'text' => 'True effectiveness appears once a system gains the ability to develop itself. Genius is the capacity of people, organisations and technology to keep learning, adapting and generating new knowledge. At this level appear predictive management models, autonomous intelligent systems, self-learning decision loops, intelligent agents, digital ecosystems and new management practices. For us, Genius is not a trait of a single person or technology — it is the state of a system capable of getting better every day.'],
-        ],
-        'genla_title' => 'Genla — an ecosystem of continuous development',
-        'genla_lead' => 'Genla is not a fourth stage. Genla is the space in which Genesis, Generation and Genius exist and develop at the same time. It is an ecosystem uniting scientific research, engineering development, computing infrastructure, industrial automation, cybersecurity, artificial intelligence, knowledge management and the development of human potential. That is why Genla Technologies is structured as an ecosystem of eight specialised laboratories, each with its own expertise, direction lead and engineering-research team.',
-        'approach_title' => 'Our approach to technology',
-        'approach_lead' => 'We see artificial intelligence not as a stand-alone software product but as a multi-layered system for managing organisational effectiveness.',
-        'approach' => [
-            ['title' => 'Computing infrastructure', 'text' => 'Design and deployment of specialised computing systems, corporate server stations and modular data centres for artificial-intelligence workloads.', 'labs' => 'Laboratories: GenBox, GenBlock.'],
-            ['title' => 'Intelligent systems and digital employees', 'text' => 'Creating corporate AI models, intelligent assistants, agentic systems and autonomous digital employees.', 'labs' => 'Laboratories: GenEtics, GenClaw.'],
-            ['title' => 'Industrial artificial intelligence and robotics', 'text' => 'Developing robotic systems, machine-vision systems, industrial automation and autonomous production solutions.', 'labs' => 'Laboratory: GenX.'],
-            ['title' => 'Artificial-intelligence information security', 'text' => 'Building protected data-processing environments, security audits, protection of corporate models and technological independence.', 'labs' => 'Laboratory: GenSec.'],
-            ['title' => 'Audit, training and business transformation', 'text' => 'Researching business processes, building an AI-deployment strategy, training management teams and supporting organisational transformation.', 'labs' => 'Laboratories: GenReview, GenUp.'],
-        ],
-        'foundation_title' => 'Scientific and methodological foundation',
-        'foundation_lead' => 'Our work rests on a synthesis of several scientific disciplines:',
-        'foundation_points' => [
-            'systems cybernetics',
-            'complex-systems theory',
-            'applied mathematics',
-            'machine learning',
-            'cognitive science',
-            'applied linguistics',
-            'software engineering',
-            'predictive analytics',
-        ],
-        'foundation_footer' => 'We see every organisation as a complex adaptive system whose effectiveness is determined not by the number of technologies used, but by the quality of how it manages knowledge, information and decision-making.',
-        'summary' => 'Choosing Genla Technologies, you gain not a technology vendor, but a partner for building a new model of effectiveness, management and organisational development.',
-    ],
-
-    // Cases page — 6 detailed cases (Before → Solution → Result).
-    'cases_page' => [
-        'eyebrow' => 'Cases',
-        'title' => 'Our cases',
-        'lead' => 'Real AI systems-integration projects: what the situation was, what we did and the result we achieved.',
-        'l_industry' => 'Industry',
-        'l_scale' => 'Scale',
-        'l_before' => 'Initial situation',
-        'l_solution' => 'What we did',
-        'l_result' => 'Result and economic effect',
-        'cta' => 'Discuss a similar project',
-        'footnote' => '* Figures and economic effects are based on internal analytics and specific client data following deployment of the implemented systems, are provided for informational purposes only, and depend on the individual parameters of each client IT environment.',
-        'items' => [
-            [
-                'title' => 'Research institute: AI infrastructure to scale unique expertise',
-                'industry' => 'Science, fundamental research, education',
-                'scale' => 'Knowledge base — 80 volumes, 30,000+ pages in a rare language',
-                'before' => 'The institute held an exclusive knowledge base locked away in printed editions. Manually searching a 30,000-page corpus cost experts hundreds of working hours every month. Access for external researchers and students was limited by complex terminology and a high entry barrier. Linear scaling of the consulting model was impossible.',
-                'solution' => 'We deployed an AI infrastructure to digitise and semantically analyse the entire corpus, building a vector knowledge base on a RAG architecture. We fine-tuned an LLM on the source’s specific terminology and semantic links. For data confidentiality the solution was deployed in the client’s local loop (on-premise) and then scaled to the cloud in a hybrid model. We launched a web platform, personal cabinets for experts and an interactive discussion panel that automatically enriches the vector base from verified discussions.',
-                'result' => [
-                    'Over 30,000 pages processed and available through instant semantic search; more than 50,000 pages of answers generated with precise references to the original sources.',
-                    'Thousands of scholar-hours saved, and a community of more than 300 active researchers formed around previously closed expertise.',
-                    'At the intersection of AI infrastructure and an academic knowledge base, a new scientific discipline took shape.',
-                ],
-            ],
-            [
-                'title' => 'Law firm: a proprietary AI solution and automated first-line consultations',
-                'industry' => 'Law, consulting',
-                'scale' => 'Corporate and private clients, an interregional team of lawyers',
-                'before' => 'The company used third-party software with a built-in AI module that had a number of critical limitations: slow query processing, per-module pricing, hard vendor lock-in and a high cost of ownership (up to 10,000 ₽/month per workstation). As the team scaled, infrastructure costs grew linearly, blocking the launch of free social services.',
-                'solution' => 'We built an isolated vector knowledge base of Russian legislation, integrating the current statutory acts (Labour Code, Civil Code, Criminal Code) into a single RAG system with answer verification down to articles and clauses of the codes. We created a specialised Telegram AI assistant that generates answers twice as fast as market analogues. We launched an intelligent first-consultation service: the system handles typical requests, qualifies leads and routes complex cases to specialist lawyers.',
-                'result' => [
-                    '**Technological independence and OpEx reduction of up to 80–85%:** a full move to a sovereign technology stack and an in-house IT loop. Independence from the external vendor removed the need to buy add-on modules.',
-                    '**Optimised cost of ownership:** replacing third-party licences removed the barrier of linearly growing software costs as the team expands. Example model: for a team of 20 specialists, savings on external software can reach up to 2.4M ₽ per year.',
-                    '**Analytical processes accelerated about 2× on average:** instant semantic search across legislation saves up to 30–40 hours per month per specialist.',
-                    '**Sales-funnel automation:** round-the-clock AI qualification of inbound traffic (24/7) with seamless routing of target clients to a deal.',
-                ],
-            ],
-            [
-                'title' => 'EdTech university: AI agents and a social-marketing infrastructure',
-                'industry' => 'Education, EdTech, community management',
-                'scale' => 'An online university with nationwide reach, a network of regional offline communities',
-                'before' => 'A specialised university in no-code and AI development is building a large ecosystem of specialists. The regional unit’s task: launch a sustainable offline community for students and alumni, raise retention and LTV, automate mentor matching and strengthen brand loyalty without direct advertising.',
-                'solution' => 'We built a single digital hub platform to coordinate offline activities (schedule, registration, format analytics) as the core of social marketing. We integrated a Telegram AI agent operating on a vector base of member profiles (stack, grade, career goals): automatic selection of learning tracks, mentor matching and targeted invitations of residents to relevant events. We organised a series of expert masterclasses and career sessions.',
-                'result' => [
-                    '**LTV growth of up to 34%:** engaging the audience in a long-term community ecosystem increased the frequency of buying advanced and adjacent education programs (repeat sales).',
-                    '**CAC reduction of up to 28%:** achieved through the viral effect within the community and organic brand integrations into adjacent niche communities.',
-                    '**Conversion to sale up to 14.5%:** on average, every seventh user who registered in the AI agent’s vector base became a paying student.',
-                    '**Brand effect:** a steady organic inflow of audience and the university’s integration into expert communities across digital, mass media, telecom and AI development.',
-                ],
-            ],
-            [
-                'title' => 'Health management centre: a personal AI agent for genetics-based bioregulation',
-                'industry' => 'Biotechnology, preventive medicine, wellness',
-                'scale' => 'A medical centre with a proprietary methodology, processing personalised biodata',
-                'before' => 'The centre was scaling a scientific methodology of systemic bioregulation of the body. It needed to automate the creation of individual prescriptions (nutrients, phyto-extracts, diet) based on genetic maps, ensure full data confidentiality per regulatory requirements and offload curating physicians, while turning the IT product into a standalone high-margin segment.',
-                'solution' => 'We built a personal AI agent on a vector model with verified medical protocols and a base of biophysical parameters of nutrients and nutraceuticals. We implemented an algorithm that automatically computes personalised recommendations: the AI analyses genetic polymorphisms and metabolic pathways, builds a map of bioregulatory sensitivity and determines precise dosages. The architecture was deployed on a local server inside the centre’s protected IT loop.',
-                'result' => [
-                    '**Partner-network sales growth of up to 24%:** driven by instant multilingual support from AI assistants and aligned consultation-quality standards across 20+ countries of presence.',
-                    '**New-partner onboarding accelerated up to 2.5×:** an automated AI school shortened the training cycle and brought distributors to their first deals faster.',
-                    '**International-support costs reduced by up to 35%:** thanks to automatic handling of up to 80% of routine and first-line requests by tier-1 AI agents.',
-                    '**Capitalisation of expertise:** the average check grew up to 2×, a move into the premium B2C segment and the launch of a separate digital business on a subscription model.',
-                ],
-            ],
-            [
-                'title' => 'International holding: an AI strategy and intelligent support for a partner network',
-                'industry' => 'International trade, manufacturing, franchising',
-                'scale' => 'A multi-vendor holding (presence in 20+ countries, more than 500 partners)',
-                'before' => 'A large industrial holding selling high-tech equipment faced decentralised training standards, uneven consulting quality across its partner network and the absence of a unified digital support ecosystem. It needed a comprehensive “AI-first” strategy, the architecture of a corporate online school and a solution for local AI compute (edge computing) at physical sites.',
-                'solution' => 'We ran a series of strategic sessions on integrating AI into the company’s loop. We designed a hybrid IT architecture: local compute for regional distribution centres and cloud synchronisation for global analytics. We designed the technical documentation and roadmaps for the AI learning platform (web, mobile apps, CRM integration, predictive reporting). Based on systems cybernetics we ran a model-security audit and load testing (pentest). We planned automated content factories.',
-                'result' => [
-                    '**Direct IT-integration budget optimisation:** cost savings at the design and architectural-planning stage exceeded 10M ₽.',
-                    '**Content Production costs reduced by up to 42%:** through automated generation of technical manuals and multilingual training modules on an AI content factory.',
-                    '**Partner satisfaction index (CSI) up to +18%:** by cutting support response time from several hours to several seconds.',
-                    '**Time-to-Market for new products cut by up to 30%:** a unified knowledge-distribution system rolled out equipment-service rules across the entire international network at once.',
-                ],
-            ],
-            [
-                'title' => 'Construction company: autonomous AI servers and a local MLOps loop',
-                'industry' => 'Construction, contracting',
-                'scale' => 'A large engineering company with high compute demand',
-                'before' => 'The client faced significant infrastructure barriers: the high cost of renting cloud GPU compute for AI, the lack of flexible financial instruments (instalments) to acquire enterprise-grade hardware, and a shortage of qualified technical support — creating a risk of missing digitalisation deadlines.',
-                'solution' => 'We audited the IT infrastructure and built an AI-transformation roadmap tailored to the construction sector. We arranged direct delivery of specialised server hardware from our warehouse in China, offering flexible financial terms (targeted instalments against collateral) and comprehensive technical support. We installed the system software and deployed an MLOps platform that lets the client’s team autonomously train, test and scale local models.',
-                'result' => [
-                    '**GPU-infrastructure costs reduced by up to 56%:** replacing constant cloud rental with an in-house on-premise loop optimised the CAPEX/OpEx balance, with hardware payback within 14 months.',
-                    '**Time-to-Deploy for new models accelerated up to 4×:** the local MLOps loop let the team deploy and test predictive scenarios (estimate analysis, photo-based defect control, special-equipment logistics optimisation) in days instead of weeks.',
-                    '**Up to 20% budget savings on management and design:** automating routine operations of the technical and project departments reduced payroll costs and removed human error in document verification.',
-                ],
-            ],
-        ],
-    ],
-
-    // Action labels (CTA). Structure (type/primary) stays in config.
     'actions' => [
         'consultation' => 'Book a consultation',
         'presentation' => 'Get a presentation',
         'call' => 'Request a call',
-        'contact' => 'Get in touch',
-        'chat' => 'Chat now',
+        'contact' => 'Contact us',
+        'chat' => 'Discuss now',
+        'partner' => 'Partnership application',
     ],
 
     // Interface strings (blade).
@@ -460,7 +48,7 @@ return [
         'cta_consultation' => 'Book a consultation',
         'cta_presentation' => 'Get a presentation',
         'cta_call' => 'Request a call',
-        'cta_chat' => 'Chat now',
+        'cta_chat' => 'Discuss now',
         'cta_ai' => 'Start a dialogue',
         'back_to_os' => 'Back',
         'open_menu' => 'Open menu',
@@ -469,75 +57,1430 @@ return [
         'ai_start' => 'Start a dialogue',
         'ai_open_aria' => 'Open Genla — start a dialogue',
         'lab_eyebrow' => 'Lab',
+        'mission' => 'Mission',
         'about_lab' => 'About the lab',
-        'features_eyebrow' => 'Capabilities',
-        'features_title' => "What's inside",
-        'advantages_eyebrow' => 'Advantages',
-        'advantages_title' => 'Why it works',
-        'products_eyebrow' => 'Products & services',
-        'products_title' => "What's included",
-        'cases_eyebrow' => 'Use cases',
-        'cases_title' => 'How it is used',
-        'faq_eyebrow' => 'FAQ',
+        'audiences_title' => 'What you get',
         'faq_title' => 'Frequently asked questions',
-        'lab_cta_title' => 'Shall we discuss your project?',
-        'lab_cta_chat' => 'Chat now',
-        'footer_cta_lead' => 'We are happy to help! You can request a consultation or a personal presentation and we will get back to you shortly, or discuss any question with our digital representative right now!',
+        'lab_cta_title' => 'Let\'s discuss your task',
+        'lab_cta_chat' => 'Discuss now',
+        'footer_cta_lead' => 'Tell us about your task. You can book a consultation, request a presentation or discuss your question with Genla\'s digital representative right now.',
         'nav_quick' => 'Quick navigation',
         'tab_home' => 'Home',
         'tab_contact' => 'Contact',
-        'tab_presentation' => 'Presentation',
-        'tab_consultation' => 'Consultation',
-        'lang_switch' => 'Switch language',
-        'footer_back' => 'Back to Back',
+        'lang_switch' => 'Change language',
+        'footer_back' => 'To the home page',
         'privacy' => 'Personal data processing',
         'nav_about' => 'About',
         'nav_mission' => 'Mission',
+        'nav_capabilities' => 'Capabilities',
         'nav_cases' => 'Cases',
-        'nav_blog' => 'Expertise',
-        'legal_disclaimer' => 'The information on this website is for informational purposes only, reflects the results of specific integration projects and does not constitute a public offer as defined by Article 437 of the Civil Code of the Russian Federation. All calculations, partner-program terms and economic indicators are individual for each project and are fixed solely in bilateral agreements.',
         'nav_partners' => 'Partners',
-        'menu_directions' => 'Directions',
+        'legal_disclaimer' => 'The information on this website is provided for reference only, reflects the results of specific integration projects and is not a public offer as defined by Article 437 of the Civil Code of the Russian Federation. All calculations, partner programme terms and economic indicators are individual for each project and are set out only in bilateral agreements.',
+        'menu_directions' => 'Labs',
         'back' => 'Back',
-        'to_site' => 'To the site',
+        'to_site' => 'To the website',
     ],
 
-    // Mission page — full philosophy text.
-    'mission_page' => [
-        'eyebrow' => 'Our mission',
-        'lead' => [
-            'We are building a future where artificial intelligence empowers people instead of replacing them.',
-            'Our mission is to unite human potential and advanced technology to achieve fundamentally new results in life, society and business.',
-            'We believe the main value of any technological revolution lies not in the technology itself, but in the new possibilities it opens up for people. That is why we build solutions that help people and organisations break free from routine, overcome limitations, unlock intellectual and creative potential, improve quality of life and reach goals that seemed unreachable only yesterday.',
-            'We believe artificial intelligence should be a tool for human development, not a tool for replacing people. Technology should free up time for creativity, research, creation, communication, learning and the realisation of human potential. It should help people become freer, more effective and happier.',
-            'We strive to build a digital future where intelligent systems let our partners, clients and communities be drivers of progress, build sustainable development and create new value for society.',
+    // The four audiences — identical on every page.
+    'audiences' => [
+        'Company employee or independent professional',
+        'Sole proprietor or solopreneur',
+        'Startup or project team',
+        'Executive or representative of a large organisation',
+    ],
+
+    'about' => [
+        'seo_title' => 'Genla: a decentralised platform and systems integrator',
+        'seo_description' => 'Genla brings together around 100 available specialists and a community of around 1,000 experts. AI, software development and infrastructure with unified management and data control.',
+        'hero' => [
+            'title' => 'Genla',
+            'subtitle' => 'A decentralised platform and systems integrator',
+            'paragraphs' => [
+                'We help employees, independent professionals, entrepreneurs and organisations work more effectively with artificial intelligence, software solutions and computing infrastructure.',
+                'We combine international expertise, our own developments and the work of specialised teams. You get direct access to the specialists and resources you need, unified project management and control over your data.',
+            ],
+            'stats' => [
+                ['value' => 'Around 100 specialists', 'text' => 'permanently available to form project teams.'],
+                ['value' => 'Around 1,000 members', 'text' => 'in an international community of experts and specialists.'],
+                ['value' => '8 labs', 'text' => 'research, development and practical solutions for people and businesses.'],
+            ],
         ],
-        'principles_title' => 'Three fundamental principles of development underpin our philosophy',
-        'principles' => [
-            ['title' => 'Genesis — to understand', 'text' => 'Explore the world, look for patterns, create knowledge and find new meaning.'],
-            ['title' => 'Generation — to create', 'text' => 'Bring together people, technology and ideas to create new opportunities, products and forms of interaction.'],
-            ['title' => 'Genius — to surpass', 'text' => 'Unlock human potential, overcome limitations and continuously grow humanity’s capacity for creativity, learning and creation.'],
+        'sections' => [
+            [
+                'title' => 'Who we are',
+                'paragraphs' => [
+                    'Genla is an alliance of professionals and a collaboration platform for developers, engineers, researchers, industry experts and seasoned IT leaders.',
+                    'Our company has a horizontal structure. Specialists and teams keep their professional independence and come together around a specific client task. Genla organises their collaboration, designs the overall architecture, controls quality and is accountable for delivering on agreed commitments.',
+                    'Around 100 specialists across a range of narrow fields are permanently available on the platform. A wider community brings together around 1,000 members from Russia, Belarus, China, the Netherlands, India and other countries. It extends access to knowledge, rare expertise and experience of solving problems across industries.',
+                    'We build each team around the nature of the task, the specialists\' experience, their availability and security requirements. For the client, everything works through a single window: one point of contact, an agreed plan and clear accountability from Genla for the project.',
+                ],
+            ],
+            [
+                'title' => 'How our platform works',
+                'paragraphs' => [
+                    'Clients get direct access to the specialists and resources of the ecosystem, without a chain of intermediaries. The relevant experts can discuss the task with you, explain their decisions and take your feedback into account as the work progresses.',
+                    'Genla provides everything needed for a shared result: team selection, project management, decision alignment, information access control and quality assurance. The project manager ties the participants\' work together, manages timelines and helps the client make decisions.',
+                    'This model makes it possible to bring in rare expertise at the right stage, quickly change the team as the task evolves and use available resources without having to keep every specialisation on staff.',
+                ],
+                'footer' => 'Decentralisation shapes how we collaborate. Project management, access rules and accountability remain unified.',
+            ],
+            [
+                'title' => 'Why Genla is a systems integrator',
+                'paragraphs' => [
+                    'We connect software products, AI models, data, hardware, infrastructure and business processes into a system that solves the client\'s problem.',
+                    'For example, automating the preparation of commercial proposals may require access to current terms, document handling, integration with an accounting system, approval rules and protection of client information. Genla designs the entire process and verifies how its parts work together.',
+                    'Our expertise covers problem analysis, design, development, infrastructure selection and setup, implementation, security assessment and support. To deliver, we use our own developments, suitable partner products and the expertise of platform members.',
+                    'The client receives a coherent result with clear stages and acceptance criteria. Genla takes on the coordination of specialists and the compatibility of solutions, and after implementation helps the team master the system and develop it within the agreed scope.',
+                ],
+            ],
+            [
+                'title' => 'What this means for the client',
+                'layout' => 'cards',
+                'cols' => 2,
+                'items' => [
+                    [
+                        'title' => 'International expertise',
+                        'paragraphs' => [
+                            'Your task can draw on the knowledge of specialists from different countries and professional fields. We can combine engineering experience, a scientific approach and practical business understanding, selecting participants to match the project requirements.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Cost-effective pricing',
+                        'paragraphs' => [
+                            'You bring in specialists and resources in the amount you need. Direct interaction cuts the costs of handing tasks between contractors, while the use of suitable ready-made components and Genla\'s own tools reduces repeated development and routine work.',
+                            'When planning, we take into account the costs of implementation, ongoing operation and development. Our aim is to minimise unnecessary costs while maintaining the agreed quality, security and result. The cost of work, resources and project management is set out in the proposal.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Speed',
+                        'paragraphs' => [
+                            'A permanent pool of specialists helps us assemble a team faster. Direct communication with the people doing the work removes intermediate approvals, and phased delivery lets you confirm the value of a solution before scaling it.',
+                        ],
+                    ],
+                    [
+                        'title' => 'A single window',
+                        'paragraphs' => [
+                            'You do not need to coordinate developers, engineers, data and security specialists yourself. Genla brings their work together, manages the project and ensures a clear process of interaction, from the first discussion to ongoing support.',
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'title' => 'International expertise and data control',
+                'paragraphs' => [
+                    'Client sovereignty is one of the architectural requirements for our solutions. By this we mean the ability to manage your own infrastructure, corporate knowledge, data access and the rules by which intelligent systems operate.',
+                    'International participation is organised within the rules of each specific project. A specialist\'s access is determined by their task, their authority and the client\'s approval. Membership in the community does not in itself grant access to client systems or information.',
+                    'Within a project, we build control at several levels:',
+                ],
+                'layout' => 'list',
+                'items' => [
+                    '**Data location.** We determine where data may be stored and processed, which services are permitted and what restrictions apply to data transfer. If required, we deploy the solution on the client\'s hardware or in a dedicated environment.',
+                    '**Access rights.** We grant access for a specific role and task, limit the permissions of people and digital employees, and review them as work is completed.',
+                    '**Environment separation.** We keep development and testing separate from production systems. For tasks that do not need original client data, we use prepared, anonymised or synthetic datasets.',
+                    '**Activity monitoring.** We set up logging of significant events, monitoring of connected systems and a procedure for responding to detected risks.',
+                    '**Change management.** We agree on new connections, updates and any expansion of permissions. Critical actions follow established rules and involve the responsible people.',
+                ],
+                'after' => [
+                    'For these tasks, we use Genla\'s own developments, including tools for controlling data and the behaviour of intelligent systems, together with the necessary infrastructure protection mechanisms. The scope of protection is determined by the project\'s architecture and risks.',
+                    'For projects with special requirements, we take into account restrictions related to national security, permitted team composition, infrastructure location and external dependencies. Confidentiality, access and liability terms are set out in the project documents.',
+                ],
+                'footer' => 'The client should know where their data is, who works with it and how the system\'s operation is controlled.',
+            ],
+            [
+                'title' => 'What our expertise is built on',
+                'paragraphs' => [
+                    'Genla runs eight labs. Each develops its own area of expertise and practical solutions for clients:',
+                ],
+                'layout' => 'list',
+                'items' => [
+                    '**GenReview**: research, audit, consulting and choosing a well-founded development path.',
+                    '**GenClaw**: autonomous digital employees for personal and business tasks.',
+                    '**GenPromo**: communications, marketing, personalised content and analytics.',
+                    '**GenFleet**: Genla hardware and ready-to-use computing systems.',
+                    '**GenCloud**: cloud resources, secure workstations and corporate environments.',
+                    '**GenType**: digital genetics and the authenticity of intelligent systems.',
+                    '**GenSec**: security for people, data and systems; development of GenSec AI.',
+                    '**GenX**: research and data collection for training the robotics of the future.',
+                ],
+                'after' => [
+                    '**GenType is Genla\'s main lab and our core research competence.** We develop approaches that help intelligent systems preserve their principles, professional traits and quality of work as models are updated and contexts change.',
+                    'We believe that sustainable AI development requires systems that can stay true to their purpose, take feedback into account and do their job well. That is why we combine software engineering with research into language, behaviour and governance. In our research, we collaborate with academic and non-profit organisations.',
+                ],
+            ],
+            [
+                'title' => 'What you get',
+                'layout' => 'audiences',
+                'cols' => 2,
+                'items' => [
+                    [
+                        'title' => 'Company employee or independent professional',
+                        'paragraphs' => [
+                            'We help you work out which tools are useful in your particular job: for finding and analysing information, preparing documents, communication and repetitive operations. We select and configure solutions, and explain how to apply them to real tasks and assess the quality of their output.',
+                            'You get a practical way to cut routine work, raise the quality of your output and free up time for tasks where your experience and independent judgement matter most. When working with corporate information, we follow your organisation\'s rules and respect your level of authority.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Sole proprietor or solopreneur',
+                        'paragraphs' => [
+                            'We help you organise sales, communication, content preparation and request handling to suit your scale and budget. We determine what can be automated, where a ready-made product is enough and which work is best handed to a digital employee or a specialist.',
+                            'You get access to expertise and infrastructure without having to build a large permanent team. The solution can be developed in stages as your clients and tasks grow, while you stay in control of your costs and your business.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Startup or project team',
+                        'paragraphs' => [
+                            'We help you test an idea, define the first useful version of the product, choose the architecture and assemble a team to build it. We bring in the expertise needed for the prototype, pilot, infrastructure, security and reaching your audience.',
+                            'You get a clear plan for testing hypotheses and building the product, along with the option to bring in specialists for individual stages. This helps you get user feedback sooner and direct your budget towards the project\'s confirmed needs.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Executive or representative of a large organisation',
+                        'paragraphs' => [
+                            'We help connect individual initiatives with the organisation\'s goals: raising productivity, preserving corporate knowledge, reducing costs and ensuring controlled use of AI. We study existing processes and systems, design the changes, run a pilot and organise the rollout.',
+                            'You get unified project coordination, access to rare expertise and agreed success criteria. Requirements for data, infrastructure, access, business continuity and ongoing support are taken into account during design and delivery.',
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Our approach',
+                'paragraphs' => [
+                    'At the centre of our work are people: their goals, professional independence and quality of life. We aim to free up time spent on repetitive tasks, help people make well-founded decisions and create more of value.',
+                    'We judge a solution by what changes in the work: how much time it saves and how it affects quality, costs, security and growth opportunities. We choose the criteria together with the client.',
+                    'We start by understanding the task. Sometimes the best next step is to change a process, configure an existing tool or postpone a purchase. If new development is not needed, we say so directly.',
+                    'Clients should retain their independence: understand the decisions made, have the necessary access and documentation, and know the terms of support and further development. The procedure for handing over results and the rights to them are agreed within the project.',
+                ],
+            ],
+            [
+                'title' => 'How to start working with us',
+                'layout' => 'steps',
+                'items' => [
+                    [
+                        'title' => 'We discuss your task',
+                        'paragraphs' => ['We find out what you want to improve, what resources you already have and what constraints need to be considered.'],
+                    ],
+                    [
+                        'title' => 'We identify useful changes',
+                        'paragraphs' => ['You can start with a free basic audit. For complex tasks, we agree on an in-depth study with detailed analysis.'],
+                    ],
+                    [
+                        'title' => 'We propose a solution',
+                        'paragraphs' => ['We define the scope of work, team, architecture, timelines, budget and acceptance criteria.'],
+                    ],
+                    [
+                        'title' => 'We build and test',
+                        'paragraphs' => ['We complete the agreed stages, present the results and test the solution against your real work scenarios.'],
+                    ],
+                    [
+                        'title' => 'We hand over and support',
+                        'paragraphs' => ['We help you master the system and organise its ongoing support within the agreed scope.'],
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Frequently asked questions',
+                'layout' => 'faq',
+                'items' => [
+                    ['q' => 'Is Genla a company or a community of specialists?', 'a' => 'Genla is a company, a decentralised collaboration platform and a systems integrator. The community extends access to expertise. For your project, Genla forms a specific team, organises its work and is accountable for the agreed commitments.'],
+                    ['q' => 'Who is responsible for the result in a horizontal model?', 'a' => 'When a project is delivered through Genla, the client has a single point of accountability: Genla, an assigned project manager and an agreed process of interaction. Participants\' roles, the scope of work, timelines and acceptance criteria are fixed before the relevant stages begin.'],
+                    ['q' => 'Will all community members get access to our data?', 'a' => 'No. Community membership does not grant such access. Only selected specialists join the project, with the permissions they need for their tasks. Access conditions and information handling rules are determined by the client\'s requirements and the project rules.'],
+                    ['q' => 'Can we use international expertise while keeping our data inside the company?', 'a' => 'Yes, if the architecture and scope of work allow the expert task to be separated from access to the original data. For example, a specialist can work with a task description, anonymised materials or a test environment. For closed parts of the project, we restrict the team composition and connection methods. These conditions are defined before work begins.'],
+                    ['q' => 'What makes the project less expensive?', 'a' => 'The team is assembled for the required scope of work. Specialists interact directly, ready-made components are used where it makes sense, and our own tools cut routine operations. This helps reduce organisational and duplicated costs. The final cost depends on the task and on the requirements for quality, security, timelines and support.'],
+                    ['q' => 'Can we keep our existing software, hardware and infrastructure?', 'a' => 'Yes. We first assess your existing resources and whether they can be used. We propose changes only where they are needed to achieve the goal. If required, we deploy the solution on the client\'s hardware or in a dedicated environment.'],
+                    ['q' => 'Do we need to order development or buy hardware right away?', 'a' => 'No. You can start with a consultation and a free basic audit. Its purpose is to identify useful next steps. The outcome may be configuring existing tools, changing a process, running a pilot or a recommendation to postpone new investment.'],
+                ],
+            ],
         ],
         'closing' => [
-            'It is precisely the union of these three principles that forms Genla — an ecosystem of continuous development where people and technology grow together.',
-            'We believe artificial intelligence can do more than raise labour productivity and economic efficiency — it can become a tool for improving quality of life, developing society and unlocking human potential.',
-            'Our task is to make sure the new technological era becomes an era not of replacing people, but of their new flourishing.',
+            'title' => 'Let\'s start with your task',
+            'text' => 'Tell us what you want to improve in your work, project or organisation. We will help you assess the possibilities, define the next step and find the resources you need.',
         ],
-        'statement' => 'Because the main technology of the future is the human being.',
     ],
 
-    // Home sections (About / Mission / Cases / Blog)
-    'home' => [
-        'about_eyebrow' => 'About us',
-        'mission_eyebrow' => 'Mission',
-        'cases_eyebrow' => 'Use cases',
-        'cases_title' => 'How Genla is used',
-        'case_more' => 'Learn more →',
-        'blog_eyebrow' => 'Blog',
-        'blog_title' => 'Sharing our expertise',
-        'blog_lead' => 'Articles on GEN technologies, neural networks and infrastructure. This section is coming soon.',
-        'blog_soon' => 'Soon',
-        'blog_posts' => ['What GEN technologies are', 'How to adopt neural networks in business', 'On-premise or cloud'],
+    'mission_page' => [
+        'seo_title' => 'Genla\'s mission: human potential and organisational independence',
+        'seo_description' => 'Genla\'s mission is to combine human potential with advanced technology to achieve extraordinary results in life, career and business. Human capabilities, sovereignty, leadership.',
+        'hero' => [
+            'title' => 'Mission',
+            'paragraphs' => [
+                '**Genla\'s mission is to combine human potential with advanced technology to achieve extraordinary results in life, career and business.**',
+                'We create systems, products and solutions that expand human capabilities, improve quality of life and make organisations more effective.',
+                'By strengthening technological sovereignty, we help our partners become drivers of progress and lasting leaders in their industries.',
+            ],
+        ],
+        'sections' => [
+            [
+                'title' => 'We start with people',
+                'paragraphs' => [
+                    'Behind every work task is a person: their time, attention, knowledge, responsibility and desire to do something useful. That is why our starting point is understanding what they need to change and what result will genuinely improve their situation.',
+                    'We help reduce repetitive operations, simplify access to knowledge and free up time for meaningful work. We want new tools to help people develop their skills, make well-founded decisions and act with more confidence in a changing world.',
+                    'For us, quality of life also concerns what happens outside work: whether people still have the energy and time for family, creativity, relationships and personal growth. We want gains in efficiency to give people more freedom to shape their own lives.',
+                ],
+            ],
+            [
+                'title' => 'The future we want to build',
+                'paragraphs' => [
+                    'We are working towards a future in which access to strong expertise and modern tools helps more people bring their ideas to life. An independent professional can take on more complex tasks, an entrepreneur can grow their business, a small team can create products people want, and a large organisation can change in a meaningful and well-managed way.',
+                    'In this future, people set the goals, values and acceptable limits for the use of artificial intelligence. Intelligent systems help achieve these goals, take feedback into account and remain under the control of those whose interests they serve.',
+                    'We believe it is important to preserve the diversity of professional approaches, cultures and knowledge systems. People and organisations should be able to develop their own intelligent environment that fits their tasks, principles and responsibilities.',
+                ],
+            ],
+            [
+                'title' => 'The principles that guide us',
+                'layout' => 'cards',
+                'cols' => 3,
+                'items' => [
+                    [
+                        'title' => 'Value for people',
+                        'paragraphs' => ['We judge a solution by the changes it brings to real work and life. We take into account people\'s time, experience, personal boundaries and ability to make their own decisions. Every automation comes with clear rules of use and verification of results.'],
+                    ],
+                    [
+                        'title' => 'Honesty in choosing solutions',
+                        'paragraphs' => ['We start with the goal and the existing resources. We explain the possibilities and limitations of the proposed approaches. If a task can be solved by configuring an existing tool or changing a process, we recommend that path. Any new purchase or development must be justified.'],
+                    ],
+                    [
+                        'title' => 'Independence and sovereignty',
+                        'paragraphs' => ['We help clients retain control over their data, knowledge, infrastructure and the rules by which intelligent systems operate. We account for dependencies on vendors and external services, and provide the necessary documentation and clear terms for the future development of the solution.'],
+                    ],
+                    [
+                        'title' => 'Security and responsibility',
+                        'paragraphs' => ['We see security as protecting people, their information, resources and professional activity. We define system permissions, access rules and actions that require the involvement of a responsible person. We test solutions under the conditions in which they will be used and address the risks identified.'],
+                    ],
+                    [
+                        'title' => 'Collaboration and respect for contribution',
+                        'paragraphs' => ['We bring independent professionals together around a shared task. We encourage direct interaction, knowledge sharing and mutual accountability. We respect authorship, intellectual property and agreements between participants.'],
+                    ],
+                    [
+                        'title' => 'Growth through feedback',
+                        'paragraphs' => ['We compare expected results with actual ones, analyse mistakes and refine our solutions. Research and engineering help us test hypotheses, build experience and improve systems as tasks evolve.'],
+                    ],
+                ],
+            ],
+            [
+                'title' => 'What this means for you',
+                'layout' => 'audiences',
+                'cols' => 2,
+                'items' => [
+                    [
+                        'title' => 'Company employee or independent professional',
+                        'paragraphs' => [
+                            'We help you do higher-quality work and free your time from routine: searching for information, re-preparing materials, transferring data and other repetitive actions. We explain how to use the right tools, check their output and apply your own experience where it matters most.',
+                            'For us, a meaningful result is when you gain more professional independence, more opportunities for growth and more time for the tasks you find meaningful.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Sole proprietor or solopreneur',
+                        'paragraphs' => [
+                            'We help you get more out of limited time and budget. Access to specialists, digital employees and infrastructure lets you organise client work, proposal preparation and other processes as your business needs them.',
+                            'For us, a meaningful result is when you manage your workload better, understand your costs and can devote more attention to your product, your clients and growing your business.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Startup or project team',
+                        'paragraphs' => [
+                            'We help turn an idea into a testable hypothesis and a working product: define a useful first step, bring in the right expertise and get feedback from users. We keep an eye on the project\'s economics and on the team\'s independence in decision-making.',
+                            'For us, a meaningful result is when the team gets a well-founded development path, spots mistakes earlier and directs resources to what creates real value for users.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Executive or representative of a large organisation',
+                        'paragraphs' => [
+                            'We help raise the organisation\'s effectiveness with due regard for people, processes, corporate knowledge and security requirements. We design changes so that they can be managed, their value can be verified and the solutions can grow along with the tasks.',
+                            'For us, a meaningful result is when the organisation operates more resiliently, employees get useful tools and management retains control over data, infrastructure and key decisions.',
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Why we chose a horizontal model',
+                'paragraphs' => [
+                    'To fulfil this mission, Genla is developing as a decentralised platform and systems integrator. Horizontal collaboration lets us bring together the knowledge and experience of independent specialists, researchers and teams around a specific task.',
+                    'We aim to make strong expertise more accessible: we arrange direct interaction with professionals, bring in resources on demand and cut unnecessary costs of passing tasks between participants. Genla provides coordination, consistency of decisions and accountability for the commitments made.',
+                    'International cooperation expands what this alliance can achieve. At the same time, information handling follows the requirements of each specific project: the client defines acceptable access conditions and retains the necessary control over their data.',
+                ],
+            ],
+            [
+                'title' => 'Intelligent systems that stay true to their purpose',
+                'paragraphs' => [
+                    'We see one of the key challenges in AI development as a system\'s ability to consistently perform its intended work: to preserve its core principles, take feedback into account and maintain quality as the context changes and models are updated.',
+                    'This challenge is the focus of **GenType, Genla\'s main lab**. We are developing digital genetics: approaches to shaping and preserving the unique properties of intelligent systems, their professional traits and their value orientations.',
+                    'By authenticity, we mean that a system\'s actual behaviour matches its purpose and principles. This requires research, verification and consistent development. We are convinced that this work is essential for building cybernetic systems that receive feedback, evaluate results and adjust their actions in people\'s interests.',
+                ],
+            ],
+            [
+                'title' => 'How we measure the value of our work',
+                'paragraphs' => [
+                    'Before implementation, we agree with the client on what should change. Depending on the task, we assess:',
+                ],
+                'layout' => 'list',
+                'items' => [
+                    '**Time and workload:** how much manual work has been eliminated and which tasks a person can now complete faster.',
+                    '**Quality:** whether there are fewer errors, rework and information losses.',
+                    '**Economics:** how the costs of performing the task, operating the solution and developing it have changed.',
+                    '**Independence:** whether the client can understand how the system works, manage it and make informed choices about next steps.',
+                    '**Security and resilience:** how clear and verifiable the access rights, system actions and failure response procedures are.',
+                ],
+                'after' => [
+                    'It matters to us that the value lasts in day-to-day work. That is why we take user experience into account after implementation and use it for further improvements.',
+                ],
+            ],
+            [
+                'title' => 'Frequently asked questions',
+                'layout' => 'faq',
+                'items' => [
+                    ['q' => 'What do you mean by extraordinary results?', 'a' => 'By extraordinary results we mean a qualitative expansion of capabilities: a person handles tasks that were previously beyond their reach, a team creates a new product, or an organisation enters a new field or significantly improves the quality of its work. For each project, we set specific goals and check the result against agreed metrics.'],
+                    ['q' => 'What does Genla\'s human-centred approach mean?', 'a' => 'People define the goal and the criteria for a system\'s usefulness. When choosing solutions, we consider their tasks, independence, safety and working conditions. Significant decisions, and responsibility for them, remain within the authority of people and the organisation.'],
+                    ['q' => 'How is greater efficiency connected to quality of life?', 'a' => 'Reducing repetitive operations can free up time and ease excessive workload. We aim to help people direct these resources towards meaningful work, personal growth and their private lives. The specific effect depends on the task and on how the solution is used.'],
+                    ['q' => 'Why is client independence important to you?', 'a' => 'People and organisations should understand how their data is used, what dependencies arise and who makes the decisions. We help put the necessary controls in place and agree on the terms for operating and developing the system in advance.'],
+                    ['q' => 'How does the mission shape the proposal a client receives?', 'a' => 'We start with the need and assess the value of the changes. A proposal may include consulting, configuring existing tools, a ready-made product or custom development. If implementation is not advisable right now, we explain why and suggest a well-founded next step.'],
+                    ['q' => 'Where can we start?', 'a' => 'With a discussion of your task and a free basic audit. This helps set priorities and understand which changes are worth considering. For tasks that require in-depth research, we agree on an extended audit separately.'],
+                ],
+            ],
+        ],
+        'closing' => [
+            'title' => 'Start with what matters to you',
+            'text' => 'Tell us what you want to change in your work, project or organisation. Together we will define what result would be valuable for you and where to begin.',
+        ],
+    ],
+
+    'capabilities' => [
+        'seo_title' => 'Genla capabilities: hardware assembly, data centre and systems integration',
+        'seo_description' => 'An assembly workshop and warehouse in China, a hardware warehouse in Russia, our own data centre and Genla teams. Hardware, products, services and systems integration.',
+        'hero' => [
+            'title' => 'Capabilities',
+            'subtitle' => 'Hardware, infrastructure and teams for your goals',
+            'paragraphs' => [
+                'Genla brings together its own assembly workshop and warehouse in China, a hardware warehouse in Russia, its own data centre, research groups, engineers, developers and marketing specialists. These resources allow us to build end-to-end systems, supply ready-made products and hardware, and provide individual services.',
+                'You choose the scale of cooperation you need, from a single task to the long-term development of your infrastructure, product or business. We select the resources, organise the work and take responsibility for the agreed result.',
+            ],
+        ],
+        'sections' => [
+            [
+                'title' => 'Resources you can rely on',
+                'layout' => 'cards',
+                'cols' => 2,
+                'items' => [
+                    [
+                        'title' => 'Assembly workshop and hardware warehouses',
+                        'paragraphs' => [
+                            'Genla has its own assembly workshop and warehouse in China, as well as a hardware warehouse in Russia. We select components for the client\'s needs, assemble servers and computing systems, and configure and test them before handover. Our design bureau in Russia helps engineer configurations around workload, deployment conditions and future upgrade options.',
+                            'You receive hardware prepared for your work, with an agreed scope of delivery and support terms. If required, we pre-install the software environment, models and application services.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Our own data centre',
+                        'paragraphs' => [
+                            'Genla operates its own data centre and computing infrastructure for hosting servers, applications, data and intelligent systems. We provide virtual resources, dedicated servers and capacity for AI workloads, and build corporate cloud environments.',
+                            'You can use our resources, host the solution on your own hardware or combine several environments. Performance, access, backup and support are defined by the project requirements.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Research groups',
+                        'paragraphs' => [
+                            'Researchers and scientists help with tasks that require testing new approaches. We formulate hypotheses, study data, build experimental solutions and assess their applicability before large-scale deployment.',
+                            'Our research areas include the digital genetics of intelligent systems, model training and fine-tuning, feedback in cybernetic systems, and data for training robotics. We collaborate with academic and non-profit organisations.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Engineers and developers',
+                        'paragraphs' => [
+                            'The platform brings together specialists in software engineering, artificial intelligence, data, infrastructure and information security. Their expertise allows us to build applications, integrate corporate systems, deploy models, configure digital employees and run solutions in production.',
+                            'Around 100 specialists are permanently available to form project teams. An international community of around 1,000 members widens the search for rare expertise. We assemble a dedicated team and project manager for your task.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Marketing and communications specialists',
+                        'paragraphs' => [
+                            'Experts in marketing, creative, analytics and communications help convey the value of a product, find its audience and build engagement with it. We combine strategy, personalised content, promotion and response analysis.',
+                            'You can commission a single communications task or end-to-end support for a product launch. We define the scope of work and performance metrics based on the audience, project stage and budget.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Our own products',
+                        'paragraphs' => [
+                            'We develop the GenBook, GenBox, GenCube and GenBlock hardware and the GenClaw, GenSec AI, GenSpace and GenRouter software solutions. Our own products provide a foundation for recurring tasks and can be configured for specific work scenarios.',
+                            'You can choose a standalone product, order the configuration you need or include it in an end-to-end project. Features, available configuration and deployment options are determined when the solution is selected.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Supply and partner resources',
+                        'paragraphs' => [
+                            'Warehouses in China and Russia, logistics and direct relationships with manufacturers and component suppliers help us run hardware projects. Professional partnerships widen access to engineering solutions, industry knowledge and resources.',
+                            'For the client, this means more options for configuration and delivery. Genla aligns supplies with the rest of the work, taking into account timelines, compatibility and future maintenance terms.',
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'title' => 'What you can get through the platform',
+                'layout' => 'cards',
+                'cols' => 2,
+                'items' => [
+                    [
+                        'title' => 'A ready-made product',
+                        'paragraphs' => [
+                            'A suitable software solution or service for a specific task: working with models, setting up a digital workspace, automation or security. We will help you choose the features, configure access and get started.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Hardware and computing resources',
+                        'paragraphs' => [
+                            'A workstation, server, computing system or resources in our data centre. Depending on the task, we offer purchase, rental or capacity as a service. We will select the configuration and plan for its future expansion.',
+                        ],
+                    ],
+                    [
+                        'title' => 'An individual service',
+                        'paragraphs' => [
+                            'Consulting, research, development, integration, infrastructure setup, security assessment, marketing or technical support. You can bring in the expertise you need for a limited stage and keep your existing project team.',
+                        ],
+                    ],
+                    [
+                        'title' => 'An end-to-end project',
+                        'paragraphs' => [
+                            'A coherent solution in which software, AI, hardware, data and business processes work together. Genla takes responsibility for the overall architecture, coordination of participants, implementation and verification of the result.',
+                        ],
+                    ],
+                ],
+                'footer' => 'You can start with the scope you need right now. The next stages depend on your goals and the results achieved.',
+            ],
+            [
+                'title' => 'How we find the best terms',
+                'paragraphs' => [
+                    'Our goal is to offer the most cost-effective way of delivering the solution for the client, taking into account quality, timelines, security and future costs. That is why we look at the entire lifecycle of the solution: supply or development, implementation, operation and possible upgrades.',
+                    'Our own assembly workshop, warehouse capacity and direct supplier relationships help us manage component sourcing and hardware preparation. Our own data centre offers a choice between buying infrastructure and using resources on demand. Ready-made products reduce repeated development, and the horizontal organisation of teams lets us bring in specialists at the stages where they are needed.',
+                    'You discuss your task directly with the relevant specialists. Genla provides unified project management, discloses the scope of work and resources, and agrees the budget before each stage begins.',
+                    'If improving an existing solution or changing a process is enough to reach the goal, we will recommend that option. Any new investment must bring clear value to the client.',
+                ],
+            ],
+            [
+                'title' => 'Capabilities for your needs',
+                'layout' => 'audiences',
+                'cols' => 2,
+                'items' => [
+                    [
+                        'title' => 'Company employee or independent professional',
+                        'paragraphs' => [
+                            'You can get a consultation, a configured workstation, access to models and computing power, a digital assistant or automation of a specific operation. We will help you choose tools for your profession, learn to use them and check their output.',
+                            'This lets you cut routine work, improve quality and take on more complex tasks. When corporate information is involved, we follow your organisation\'s rules and respect your level of authority.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Sole proprietor or solopreneur',
+                        'paragraphs' => [
+                            'You get access to developers, engineers, marketing and infrastructure specialists in the amount you need. You can start with an individual service, a ready-made product, hardware rental or automation of client communication.',
+                            'As your business grows, we help you develop the solution, add new features and scale resources. You keep a single point of contact at Genla and a clear breakdown of costs.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Startup or project team',
+                        'paragraphs' => [
+                            'You can test a hypothesis with a research group, build a prototype with developers, get infrastructure for a pilot and bring in specialists to reach your audience. For hardware products, engineering design, component sourcing and assembly are available.',
+                            'Together we define the first useful version, the validation criteria and the sequence of investments. After the pilot, we help prepare the product and infrastructure for further growth.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Executive or representative of a large organisation',
+                        'paragraphs' => [
+                            'You get access to the platform\'s assembly, warehouse and computing resources and professional teams for individual tasks or comprehensive modernisation. Genla can supply hardware, integrate AI with existing systems, build a corporate environment and organise ongoing support.',
+                            'We agree on the architecture, stages, responsibilities and acceptance criteria. We take into account requirements for data, access, business continuity and the long-term development of your infrastructure.',
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'title' => 'The client journey',
+                'layout' => 'steps',
+                'items' => [
+                    [
+                        'title' => 'Understanding the task',
+                        'paragraphs' => [
+                            'We discuss your goals, current situation, available resources and constraints. You can start with a consultation and a free basic audit. The outcome of this stage is a clear view of priorities and a useful next step.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Choosing the solution',
+                        'paragraphs' => [
+                            'We determine whether a ready-made product or an individual service is enough, which existing resources can be used and where development is required. For complex tasks, we agree on an in-depth study separately. You receive implementation options with their advantages and limitations.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Plan and terms',
+                        'paragraphs' => [
+                            'We prepare a proposal covering the scope of work, the hardware or resource configuration, the team, timelines, cost and acceptance criteria. We define data requirements, rules of engagement and support terms. You get a clear plan with named owners for each part.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Validation and delivery',
+                        'paragraphs' => [
+                            'If the solution requires testing a hypothesis, we start with a prototype or pilot. Once approved, we carry out development, assembly, configuration or integration. We present results stage by stage, test them against real work scenarios and incorporate feedback.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Handover',
+                        'paragraphs' => [
+                            'We conduct the agreed testing and acceptance, then hand over the hardware or solution along with the necessary access and documentation. We help users master the work scenarios. We define how requests are handled and who is responsible for ongoing operation.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Support',
+                        'paragraphs' => [
+                            'Within the agreed scope, we provide support, diagnostics, updates and system health monitoring. We analyse emerging issues and actual workload. For critical services, we separately define availability and response time requirements.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Long-term development',
+                        'paragraphs' => [
+                            'We revisit the project goals, assess the impact achieved and discuss new needs. We propose the improvements required: additional features, hardware upgrades, infrastructure expansion or the next stage of product development. Every change comes with a rationale, a defined scope and agreed terms.',
+                        ],
+                    ],
+                ],
+                'after' => [
+                    'Buying a single product or piece of hardware, or ordering a small service, follows a shorter path: selection, agreement on terms, delivery or execution, and acceptance. Ongoing support is chosen as needed.',
+                ],
+            ],
+            [
+                'title' => 'Long-term relationships',
+                'paragraphs' => [
+                    'We build relationships with clients that last for years. To do this, we retain the context of each task, respect the architectural decisions already made and help develop what has been built step by step.',
+                    'After implementation, it is important to understand how the solution works in practice: whether employees find it convenient, whether it justifies its costs, whether performance is sufficient and whether quality holds up. With long-term support, we agree to review these questions regularly and define the next steps together.',
+                    'A development plan may include improving user scenarios, new integrations, stronger security, model updates, more computing capacity or support for entering a new market. Priorities are set by the value to the client and the readiness of their team for change.',
+                    'We support the client\'s independence: we hand over agreed deliverables and documentation, explain how the solution works, and discuss intellectual property rights and maintenance terms in advance. This approach builds cooperation on trust and on the clear value of our work.',
+                ],
+            ],
+            [
+                'title' => 'An international platform with Russian roots',
+                'paragraphs' => [
+                    'Genla is growing as an international company and platform with Russian roots. Our assembly workshop and warehouse in China and our hardware warehouse and engineering expertise in Russia are complemented by professional ties in Belarus, the Netherlands, India and other countries.',
+                    'We keep expanding our network of partners and bringing in new teams and research expertise. Some of the professional relationships between our key members go back more than ten years. This experience helps us find specialists who know how to work together and take responsibility for their part of the result.',
+                    'We aim to work at the forefront of technology: we study new approaches, test their applicability and turn useful developments into accessible products and services. Clients get the opportunity to grow their solutions together with a growing platform.',
+                    'We organise international cooperation in line with each project\'s requirements. The team composition, data location and system access are agreed with the client. Confidential information remains under the established controls.',
+                ],
+            ],
+            [
+                'title' => 'Frequently asked questions',
+                'layout' => 'faq',
+                'items' => [
+                    [
+                        'q' => 'Can I buy only hardware or order a single service?',
+                        'a' => 'Yes. Through Genla you can buy a standalone product or hardware, rent resources, or order consulting, development, configuration, marketing or support. An end-to-end project is only needed when your task calls for one.',
+                    ],
+                    [
+                        'q' => 'Where are Genla\'s assembly workshop and warehouses located?',
+                        'a' => 'Our own assembly workshop and warehouse are in China. In Russia, we have a hardware warehouse and a design bureau. We select components and carry out assembly, configuration and testing. The configuration and scope of preparation are agreed to fit the client\'s task.',
+                    ],
+                    [
+                        'q' => 'Where can our systems run?',
+                        'a' => 'In Genla\'s own data centre, on the client\'s hardware or in agreed partner infrastructure. You can choose dedicated servers, virtual resources, a corporate cloud or a combination of environments. The choice depends on workload, budget and data requirements.',
+                    ],
+                    [
+                        'q' => 'Can you work with our IT team and existing contractors?',
+                        'a' => 'Yes. We can provide a specific area of expertise or take on an agreed scope of integration. Before work begins, we define roles, boundaries of responsibility and how we will work together, so that every participant understands their tasks.',
+                    ],
+                    [
+                        'q' => 'What makes your terms more cost-effective?',
+                        'a' => 'We use our own assembly workshop, warehouses and computing infrastructure, ready-made products, direct interaction with specialists and on-demand involvement of experts. We compare options taking into account implementation and operating costs. Specific terms depend on the scope of the task and the requirements for the result.',
+                    ],
+                    [
+                        'q' => 'What happens after implementation is complete?',
+                        'a' => 'We hand over the result and the necessary materials and help you start operating the solution. By agreement, we provide support and further development: we analyse user experience, fix issues, update components and plan improvements. The support format is chosen to fit your task.',
+                    ],
+                    [
+                        'q' => 'How can we tell a solution is right before making large investments?',
+                        'a' => 'For tasks with significant uncertainty, we offer research, a prototype or a pilot. We define the testing conditions and value criteria in advance. The results help you make an informed decision about the next stage.',
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Every project contributes to our mission',
+                'paragraphs' => [
+                    'Genla\'s mission is to combine human potential with advanced technology to achieve extraordinary results in life, career and business.',
+                    'Every project we take responsibility for helps turn this mission into practical change: expanding human capabilities, making organisations more effective, strengthening technological sovereignty and laying the foundation for the lasting leadership of our partners.',
+                    'Long-term cooperation lets us see these changes, build on the results achieved and discover new opportunities together.',
+                ],
+            ],
+        ],
+        'closing' => [
+            'title' => 'Let\'s discuss your task',
+            'text' => 'Tell us what you need right now: hardware, computing resources, a ready-made product, an individual service or an end-to-end solution. We will help you choose the right format and define the first step.',
+        ],
+    ],
+
+    'cases' => [
+        'seo_title' => 'Genla case studies — AI, marketing, audits and systems integration',
+        'seo_description' => 'Genla projects: websites and promotion, digital employees, model fine-tuning, audits, hardware and corporate clouds. Challenges, solutions, results and labs.',
+        'hero' => [
+            'title' => 'Case studies',
+            'subtitle' => 'How the platform\'s capabilities turn into results',
+            'paragraphs' => [
+                'We help employees, entrepreneurs and organisations solve specific problems: attract customers, reduce routine work, develop products, preserve knowledge and build their own infrastructure.',
+                'This page brings together Genla projects and joint work with the platform\'s specialist teams. Each case shows the challenge, the approach and the result achieved. In line with our confidentiality agreements, we do not disclose the names of clients or contractors, or any identifying details.',
+                'Figures are based on project data and client assessments. Worked examples are marked separately; when choosing a solution, we take into account the starting situation and the conditions in which it will be used.',
+            ],
+        ],
+        'labels' => [
+            'industry' => 'Industry',
+            'labs' => 'Project labs',
+            'role' => 'Genla’s role',
+            'task' => 'Challenge',
+            'solution' => 'Solution',
+            'result' => 'Result',
+            'estimate' => 'Worked example',
+            'more' => 'Case details',
+            'less' => 'Collapse',
+            'cta' => 'Discuss a similar project',
+        ],
+        'items' => [
+            [
+                'num' => '01',
+                'title' => 'Twenty websites for a group of education projects',
+                'industry' => 'Preparation for the Unified State Exam (EGE)',
+                'labs' => 'GenPromo, GenReview',
+                'task' => 'Build a consistent online presence for a group of companies so that prospective students and their parents could find suitable exam preparation services through different ways of searching for information.',
+                'solution' => 'We developed 20 websites using our own SEO and GEO presence methodology. The approach combines search engine optimisation with preparing information so that it can be found and used in generative search answers. The content is built around the educational offers and the audience\'s questions.',
+                'result' => [
+                    '**20 websites for a single group of education projects.** Each website presents EGE preparation services and creates a separate point of first contact with the offer.',
+                    'The methodology combines SEO and GEO: presence in search results and preparation of information for generative search answers. This created a foundation for further promotion and for expanding content across the preparation subjects.',
+                ],
+                'metrics' => [
+                    '**20 websites for a single group of education projects.**',
+                ],
+            ],
+            [
+                'num' => '02',
+                'title' => 'A custom language model for an education project',
+                'industry' => 'Education, intelligent services',
+                'labs' => 'GenType, GenCloud',
+                'task' => 'Improve the performance of an education project\'s agents, preserve their distinctive behaviour and speed up request processing. At the same time, the client needed to simplify the structure of the knowledge base and keep control over the model.',
+                'solution' => 'We fine-tuned a language model on Genla\'s own hardware, taking into account the project\'s professional specifics. The work focused on authentic agent behaviour, answer quality and consistent use of the knowledge base. The resulting model was deployed on the client\'s hardware.',
+                'result' => [
+                    '**The fine-tuned model is deployed on the client\'s hardware.** The agents\' answers improved, they work faster, and the knowledge base is simpler to organise.',
+                    'The education project gained its own foundation for developing intelligent services while keeping their individual character. The key evaluation parameters are answer quality on benchmark tasks, request processing time and knowledge base size. The numerical results of these measurements are not disclosed in the public case study.',
+                ],
+                'metrics' => [
+                    '**The fine-tuned model is deployed on the client\'s hardware.**',
+                ],
+            ],
+            [
+                'num' => '03',
+                'title' => 'Personal digital employees for a management company',
+                'industry' => 'Organisational management and everyday work processes',
+                'labs' => 'GenClaw',
+                'task' => 'Make employees more effective and give each of them a personal assistant that is useful both at work and for everyday tasks outside it.',
+                'solution' => 'We rolled out personal GenClaw agents to all employees of the management company. The company paid for its employees\' access to the solution. The agents were configured for each user\'s individual tasks so that digital assistance became part of their daily routine.',
+                'result' => [
+                    '**2× productivity growth, according to the client.**',
+                    '**100% of employees** of the management company received personal GenClaw agents paid for by the employer.',
+                    'Employees began organising their work more effectively and using their assistants outside the workplace. The client noted higher motivation and loyalty, as well as revenue growth alongside the rollout.',
+                ],
+                'metrics' => [
+                    '**2× productivity growth, according to the client.**',
+                    '**100% of employees** of the management company received personal GenClaw agents paid for by the employer.',
+                ],
+            ],
+            [
+                'num' => '04',
+                'title' => 'An audit that helped avoid unjustified spending',
+                'industry' => 'Food industry',
+                'labs' => 'GenReview',
+                'task' => 'Review an AI implementation proposal worth RUB 1 million and determine whether its scope matched the company\'s actual needs.',
+                'solution' => 'We analysed the proposed solution, its components and the required scope of work. The audit showed that the main need could be met with a freely available component and a service costing about RUB 1,000 per month. We also looked separately at which connection and configuration steps the client actually needed.',
+                'result' => [
+                    '**RUB 1 million** — the cost of the proposal the client declined after the audit.',
+                    '**About RUB 1,000 per month** — the subscription to a service suitable for the main task.',
+                    '**About RUB 12,000 per year** — the estimated cost of this subscription at the stated monthly price.',
+                    'The company gained a more cost-effective way to solve the problem and kept its budget for justified changes. The subscription estimate does not include connection, configuration and support; these are separate components of the solution\'s cost.',
+                ],
+                'metrics' => [
+                    '**RUB 1 million** — the cost of the proposal the client declined after the audit.',
+                    '**About RUB 1,000 per month** — the subscription to a service suitable for the main task.',
+                    '**About RUB 12,000 per year** — the estimated cost of this subscription at the stated monthly price.',
+                ],
+            ],
+            [
+                'num' => '05',
+                'title' => 'A corporate cloud with lower launch and ownership costs',
+                'industry' => 'Corporate infrastructure',
+                'labs' => 'GenReview, GenFleet, GenCloud',
+                'task' => 'Help a subsidiary of a large corporation choose a reliable contractor, purchase hardware and launch its own corporate cloud on economically sound terms.',
+                'solution' => 'We carried out an audit and helped shape the approach to delivering a multi-component project. We selected a specialist contractor, with whom the client signed a contract. The project covered hardware procurement and the launch of a corporate cloud, with freedom to choose suppliers and to develop the infrastructure independently in the future.',
+                'result' => [
+                    '**30% lower start-up costs** compared with the option originally considered.',
+                    '**50% lower estimated cost of ownership**, according to the project estimate.',
+                    'The client gained a working corporate cloud environment and a reliable contractor to deliver it.',
+                    'Genla\'s role: the audit, selecting the solution and connecting the client with a specialist team to carry out the project.',
+                ],
+                'metrics' => [
+                    '**30% lower start-up costs** compared with the option originally considered.',
+                    '**50% lower estimated cost of ownership**, according to the project estimate.',
+                ],
+            ],
+            [
+                'num' => '06',
+                'title' => 'A corporate knowledge base for a research organisation',
+                'industry' => 'Science and research',
+                'labs' => 'GenType, GenCloud',
+                'task' => 'Make a large body of specialised materials searchable and usable for researchers while keeping answers linked to the original sources.',
+                'solution' => 'We set up a digital knowledge base and enabled a language model to work with specialised terminology. We prepared the infrastructure for searching the materials and for working collaboratively with the accumulated expertise.',
+                'result' => [
+                    '**80 volumes, more than 30,000 pages** — the size of the processed knowledge base.',
+                    '**More than 50,000 pages of answers** with references to original sources have been generated through use of the system.',
+                    '**More than 300 researchers** — the community around the digital knowledge base.',
+                    'Researchers gained a single tool for searching and working with specialised materials. The scale of use is reflected in the volume of knowledge processed, the answers produced and the number of participants.',
+                ],
+                'metrics' => [
+                    '**80 volumes, more than 30,000 pages** — the size of the processed knowledge base.',
+                    '**More than 50,000 pages of answers** with references to original sources have been generated through use of the system.',
+                    '**More than 300 researchers** — the community around the digital knowledge base.',
+                ],
+            ],
+            [
+                'num' => '07',
+                'title' => 'Automating initial legal consultations',
+                'industry' => 'Legal services',
+                'labs' => 'GenType, GenClaw',
+                'task' => 'Organise the initial handling of enquiries and help specialists work with professional information in their own digital environment.',
+                'solution' => 'We created a knowledge base and an intelligent assistant for routine questions. Complex enquiries are designed to be passed on to a specialist. The solution combined access to professional materials with the first contact with a prospective client.',
+                'result' => [
+                    '**Up to 80–85%** — the stated reduction in operating costs for software.',
+                    '**On average 2 times faster** completion of analytical processes.',
+                    '**Up to 30–40 hours per month per specialist** — the stated time savings when working with information.',
+                    '**24/7** — initial enquiries handled by the intelligent assistant.',
+                ],
+                'metrics' => [
+                    '**Up to 80–85%** — the stated reduction in operating costs for software.',
+                    '**On average 2 times faster** completion of analytical processes.',
+                    '**Up to 30–40 hours per month per specialist** — the stated time savings when working with information.',
+                    '**24/7** — initial enquiries handled by the intelligent assistant.',
+                ],
+                'estimate' => '**Worked example for a team of 20 specialists.** With an initial software price of RUB 10,000 per person per month, costs amount to RUB 2.4 million per year. Cutting this item by 80–85% corresponds to savings of **RUB 1.92–2.04 million per year**. This illustrates the calculation and is not this client\'s actual budget; the costs of implementing and operating the new system must be taken into account in the overall project economics.',
+            ],
+            [
+                'num' => '08',
+                'title' => 'A digital environment for an education community',
+                'industry' => 'EdTech, professional communities',
+                'labs' => 'GenPromo, GenClaw',
+                'task' => 'Grow a community of students and alumni, help members find useful activities and keep them connected to the education project.',
+                'solution' => 'We combined the community\'s digital tools with expert meetings and professional activities. An intelligent assistant helped match members with formats of participation and supported interaction with them.',
+                'result' => [
+                    '**Up to 34%** — growth in LTV, the customer\'s value over the entire relationship.',
+                    '**Up to 28%** — reduction in CAC, the cost of acquiring a customer.',
+                    '**Up to 14.5%** — conversion of registered AI agent users into paying students.',
+                    'According to project data, the community became a channel for attracting an audience and generating repeat sales. The digital tools worked together with expert meetings and regular interaction with members.',
+                ],
+                'metrics' => [
+                    '**Up to 34%** — growth in LTV, the customer\'s value over the entire relationship.',
+                    '**Up to 28%** — reduction in CAC, the cost of acquiring a customer.',
+                    '**Up to 14.5%** — conversion of registered AI agent users into paying students.',
+                ],
+            ],
+            [
+                'num' => '09',
+                'title' => 'Digital support for knowledge work in bioregulation',
+                'industry' => 'Bioregulation, specialised knowledge',
+                'labs' => 'GenType, GenClaw',
+                'task' => 'Organise work with a specialised knowledge base, make it easier for the team to access materials and support the growth of the partner network.',
+                'solution' => 'We prepared digital assistants for working with professional information, initial enquiries and partner materials. We put the accumulated knowledge to use in consulting work and in onboarding new members of the network.',
+                'result' => [
+                    '**Up to 24%** — sales growth in the partner network.',
+                    '**Up to 2.5 times faster** onboarding of new partners.',
+                    '**Up to 35%** — reduction in support costs.',
+                    '**Up to 80%** of routine initial requests are handled by AI assistants.',
+                    'The figures relate to work organisation, support and the project\'s commercial results. The digital knowledge base became an everyday working tool for specialists and partners.',
+                ],
+                'metrics' => [
+                    '**Up to 24%** — sales growth in the partner network.',
+                    '**Up to 2.5 times faster** onboarding of new partners.',
+                    '**Up to 35%** — reduction in support costs.',
+                    '**Up to 80%** of routine initial requests are handled by AI assistants.',
+                ],
+            ],
+            [
+                'num' => '10',
+                'title' => 'An AI strategy for an international partner network',
+                'industry' => 'International business and partner sales',
+                'labs' => 'GenReview, GenPromo, GenCloud',
+                'task' => 'Determine how to use artificial intelligence in the work of an international organisation and in supporting its partners, and align the development priorities for digital services.',
+                'solution' => 'We carried out strategic work and prepared architectural proposals and a roadmap for developing AI tools. We covered partner network support, knowledge management and content preparation.',
+                'result' => [
+                    '**More than RUB 10 million** — reduction in the IT integration budget at the design and architecture planning stage.',
+                    '**Up to 42%** — reduction in content preparation costs.',
+                    '**Up to 18%** — growth in the partner satisfaction index.',
+                    '**Up to 30%** — reduction in time to market for new products.',
+                    'According to project data, the strategic work and the development of intelligent tools helped align digital initiatives, reduce costs and speed up support for the partner network.',
+                ],
+                'metrics' => [
+                    '**More than RUB 10 million** — reduction in the IT integration budget at the design and architecture planning stage.',
+                    '**Up to 42%** — reduction in content preparation costs.',
+                    '**Up to 18%** — growth in the partner satisfaction index.',
+                    '**Up to 30%** — reduction in time to market for new products.',
+                ],
+            ],
+            [
+                'num' => '11',
+                'title' => 'On-premises computing infrastructure for a construction company',
+                'industry' => 'Construction and engineering',
+                'labs' => 'GenReview, GenFleet, GenCloud',
+                'task' => 'Provide the organisation with its own computing resources for working with models and developing internal intelligent tools.',
+                'solution' => 'We selected server hardware and prepared an on-premises software environment. We arranged delivery, configuration and technical support terms tailored to the client\'s needs.',
+                'result' => [
+                    '**Up to 56%** — reduction in GPU infrastructure costs.',
+                    '**Up to 14 months** — hardware payback period, according to project calculations.',
+                    '**Up to 4 times faster** deployment of new models.',
+                    '**Up to 20%** — budget savings on management and design.',
+                    'The on-premises computing environment gave the team resources to run and develop models within its own infrastructure. The figures reflect a combination of hardware, software configuration and workflow automation.',
+                ],
+                'metrics' => [
+                    '**Up to 56%** — reduction in GPU infrastructure costs.',
+                    '**Up to 14 months** — hardware payback period, according to project calculations.',
+                    '**Up to 4 times faster** deployment of new models.',
+                    '**Up to 20%** — budget savings on management and design.',
+                ],
+            ],
+            [
+                'num' => '12',
+                'title' => 'An AI sales assistant for an online store',
+                'industry' => 'E-commerce, cosmetics and beauty equipment',
+                'labs' => 'GenClaw, GenPromo',
+                'task' => 'Help visitors navigate the store\'s range and find a suitable product category through an ordinary conversation.',
+                'solution' => 'We created an AI sales assistant that knows the catalogue and placed it on the website. Visitors can describe what they need in their own words and get information about the range in a single interface.',
+                'result' => [
+                    '**The website gained an additional consultation channel.** Product knowledge became available in a conversation; shoppers do not need to know the exact product name to start. The quantitative effect on sales is not stated in the public description.',
+                ],
+                'metrics' => [
+                    '**The website gained an additional consultation channel.**',
+                ],
+            ],
+            [
+                'num' => '13',
+                'title' => 'Better sales conversations at a renovation company',
+                'industry' => 'Renovation and contracting',
+                'labs' => 'GenReview, GenPromo',
+                'role' => 'Bringing in the client and connecting them with the specialist partner team that carried out the implementation',
+                'task' => 'Help managers hold better conversations with customers and move each enquiry on to the next step in the sale.',
+                'solution' => 'The partner team introduced AI call analysis and conversation reviews with expert feedback. The analytics were used together with staff training and the manager\'s own work with the team.',
+                'result' => [
+                    '**4.3 → 8.1 out of 10** — the department\'s quality score over the comparison period in July–August 2026.',
+                    '**8 out of 9 criteria** showed improvement.',
+                    '**70–75%** — conversion to a booked on-site measurement in certain periods, according to the manager.',
+                    'Conversation quality was assessed with analytics, training and the manager\'s work applied together. The advertising budget also changed during this period, so the growth in the number of measurements cannot be attributed entirely to AI.',
+                ],
+                'metrics' => [
+                    '**4.3 → 8.1 out of 10** — the department\'s quality score over the comparison period in July–August 2026.',
+                    '**8 out of 9 criteria** showed improvement.',
+                    '**70–75%** — conversion to a booked on-site measurement in certain periods, according to the manager.',
+                ],
+            ],
+            [
+                'num' => '14',
+                'title' => 'Developing consultative sales of building materials',
+                'industry' => 'Building materials sales',
+                'labs' => 'GenReview, GenPromo',
+                'role' => 'Bringing in the client and connecting them with the specialist partner team that carried out the implementation',
+                'task' => 'Help managers consult with more confidence, understand the buyer\'s needs and explain the value of the offer.',
+                'solution' => 'The partner team introduced call analysis and used its results in training. The manager gained the ability to choose conversations for review and track changes in the department\'s performance.',
+                'result' => [
+                    '**4.4 → 6.9 out of 10** — the department\'s quality score over the comparison period in June–July 2026.',
+                    '**Managers\' sales grew by about 50%** compared with the previous period, according to the manager.',
+                    '**2.5 → 6.0 out of 10** — the score for the quality of offer presentation.',
+                    'The analytics were used together with training and the manager\'s involvement. Sales were also affected by seasonality.',
+                ],
+                'metrics' => [
+                    '**4.4 → 6.9 out of 10** — the department\'s quality score over the comparison period in June–July 2026.',
+                    '**Managers\' sales grew by about 50%** compared with the previous period, according to the manager.',
+                    '**2.5 → 6.0 out of 10** — the score for the quality of offer presentation.',
+                ],
+            ],
+            [
+                'num' => '15',
+                'title' => 'Feedback for receptionists at a veterinary clinic',
+                'industry' => 'Veterinary care, customer service',
+                'labs' => 'GenReview, GenPromo',
+                'role' => 'Bringing in the client and connecting them with the specialist partner team that carried out the implementation',
+                'task' => 'Improve the handling of phone enquiries and appointment booking, and make feedback to receptionists faster.',
+                'solution' => 'The partner team set up AI conversation analysis based on the clinic\'s criteria. The results were used to give feedback to staff and to review cases with the manager.',
+                'result' => [
+                    '**By 22%** the booking success rate grew after two months, according to project data.',
+                    '**100% of calls** are covered by automated analysis.',
+                    '**9.0 → 9.7 out of 10** — the score for booking accuracy.',
+                    'The growth in booking success is given in percent, not percentage points. The baseline booking rate and the detailed calculation method are not disclosed in the public description.',
+                ],
+                'metrics' => [
+                    '**By 22%** the booking success rate grew after two months, according to project data.',
+                    '**100% of calls** are covered by automated analysis.',
+                    '**9.0 → 9.7 out of 10** — the score for booking accuracy.',
+                ],
+            ],
+            [
+                'num' => '16',
+                'title' => 'Higher order conversion for a delivery service',
+                'industry' => 'Water delivery, repeat sales',
+                'labs' => 'GenReview, GenPromo',
+                'role' => 'Bringing in the client and connecting them with the specialist partner team that carried out the implementation',
+                'task' => 'Improve the handling of first-time and repeat enquiries, and identify situations in which a manager misses an order or further contact.',
+                'solution' => 'The partner team introduced AI conversation analysis. The manager used the results to select cases, give feedback to staff and regularly review the department\'s work.',
+                'result' => [
+                    '**Cross-sales volume doubled** in May compared with February 2026, according to the client, without any increase in the advertising budget.',
+                    '**61% → 69%** — conversion from enquiry to order: an increase of **8 percentage points** comparing March and April.',
+                    '**50% → 72%** — the share of new customers who placed a second order: an increase of **22 percentage points** comparing March and May.',
+                    'The changes were observed alongside the introduction of analytics and the manager\'s regular work with the team. The contribution of AI was not measured separately.',
+                ],
+                'metrics' => [
+                    '**Cross-sales volume doubled** in May compared with February 2026, according to the client, without any increase in the advertising budget.',
+                    '**61% → 69%** — conversion from enquiry to order: an increase of **8 percentage points** comparing March and April.',
+                    '**50% → 72%** — the share of new customers who placed a second order: an increase of **22 percentage points** comparing March and May.',
+                ],
+            ],
+            [
+                'num' => '17',
+                'title' => 'A digital office for an expert-led project',
+                'industry' => 'Expert, educational and media projects',
+                'labs' => 'GenClaw, GenPromo',
+                'task' => 'Bring an expert\'s materials, programmes and areas of work together in a clear digital space and make the first contact with visitors easier.',
+                'solution' => 'We created a digital office with an AI assistant. It helps visitors find their way around the materials, choose the area they are interested in and pass their question on to the team.',
+                'result' => [
+                    '**A single point of first contact with the expert and their projects.** Visitors can now find materials and reach the team through a convenient digital interface. Conversion and time-saving figures are not stated in the public description.',
+                ],
+                'metrics' => [
+                    '**A single point of first contact with the expert and their projects.**',
+                ],
+            ],
+            [
+                'num' => '18',
+                'title' => 'Up to twenty warm leads per hour at an event',
+                'industry' => 'Fintech, event marketing',
+                'labs' => 'GenPromo',
+                'task' => 'Turn the company\'s presence at an industry event into a stream of interested contacts and subsequent sales.',
+                'solution' => 'We organised joint work by a photographer and a promoter using AI. Personalised photo content became a reason to start a conversation, and talking with the promoter helped move on to the guest\'s interests and the company\'s offer. The scenario combined creating content for the attendee, initial communication and following up after the event.',
+                'result' => [
+                    '**Up to 20 warm leads per hour.** The company gained an inflow of potential customers interested in further conversations.',
+                    'According to the project estimate, the return from the first deal was **10× the investment in the promotion**. The customer\'s further value over the entire relationship (LTV) was not included in this estimate.',
+                ],
+                'metrics' => [
+                    '**Up to 20 warm leads per hour.**',
+                    'According to the project estimate, the return from the first deal was **10× the investment in the promotion**',
+                ],
+            ],
+        ],
+        'sections' => [
+            [
+                'title' => 'Which experience may be useful to you',
+                'layout' => 'audiences',
+                'items' => [
+                    [
+                        'title' => 'Company employee or independent professional',
+                        'paragraphs' => [
+                            'Personal agents, a digital office and work with a knowledge base help reduce repetitive tasks, find information faster and organise your own work. You can start with a single task that regularly takes up your time.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Sole proprietor or solopreneur',
+                        'paragraphs' => [
+                            'Our experience in promotion, customer acquisition and automating initial enquiries can be applied to your business. An audit helps determine which tools you need now and which costs you can avoid.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Startup or project team',
+                        'paragraphs' => [
+                            'Cases on building websites, fine-tuning a model and setting up infrastructure show different ways to develop a product. We will help you choose a suitable first stage and the criteria for assessing its usefulness.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Executive or representative of a large organisation',
+                        'paragraphs' => [
+                            'Projects involving a corporate cloud, the rollout of personal agents and systematic work with data help assess the potential for change in your organisation. We will consider your scale, existing systems, security requirements and the terms of ongoing support.',
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Frequently asked questions',
+                'layout' => 'faq',
+                'items' => [
+                    [
+                        'q' => 'Why are company names not given in the case studies?',
+                        'a' => 'We respect our confidentiality agreements with clients and project participants. Publicly, we show the challenge, the approach and the results that may be disclosed. Additional materials are provided individually within the agreed terms.',
+                    ],
+                    [
+                        'q' => 'Who carries out the platform\'s projects?',
+                        'a' => 'The labs bring together specialists and specialist teams in each area of work. Several labs may take part in a project. In joint case studies, Genla\'s role is stated separately, including bringing in the client and connecting them with a suitable team.',
+                    ],
+                    [
+                        'q' => 'Can I get the same result?',
+                        'a' => 'The figures relate to specific projects. For your task, we first assess the starting situation and then choose the result criteria and the method of verification. The effect depends on the data, processes, team and the conditions in which the solution is used.',
+                    ],
+                    [
+                        'q' => 'Can I order just one part of a solution?',
+                        'a' => 'Yes. It can be an audit, a website, setting up a digital employee, fine-tuning a model, supplying hardware or another specific piece of work. We define the scope of Genla\'s involvement based on your task.',
+                    ],
+                ],
+            ],
+        ],
+        'closing' => [
+            'title' => 'Let\'s discuss your task',
+            'text' => 'Tell us what you want to improve in your work, project or organisation. We will find relevant experience, determine a suitable format for working together and the first useful step.',
+        ],
+    ],
+
+    'become_partner' => [
+        'seo_title' => 'Become a Genla partner: specialists, products and a regional network',
+        'seo_description' => 'Partnering with Genla: specialists, developers of boxed and SaaS products, ambassadors and franchisees. Leave your contact details for an introductory call and consultation.',
+        'hero' => [
+            'title' => 'Become a partner',
+            'subtitle' => 'Your independence. The reach of an international platform.',
+            'paragraphs' => [
+                'Genla brings together specialists, product developers, entrepreneurs and regional teams. Here you can earn with your expertise, distribute ready-made solutions, help clients or grow the platform in your own territory.',
+                'We are building a horizontal environment for collaboration: everyone focuses on what they do best, while shared products, infrastructure and support make it possible to take on larger challenges.',
+                'People are at the core of the platform. They set goals, create solutions, assess quality and take responsibility for results. Artificial intelligence extends their capabilities and helps them apply professional experience to greater effect.',
+                'The Genla platform economy pools resources for sales, development, computing and ongoing support. Participants bring in the skills a specific task requires, share the organisational workload and draw on collective experience. This helps reduce repeated costs, develop long-term projects and devote more attention to their own strengths.',
+                'Choose the role you are interested in and leave your contact details. We will message you in your preferred messenger, agree on a time and send you a meeting link. We will start by getting to know each other and discussing opportunities for cooperation.',
+            ],
+        ],
+        'roles_title' => 'Choose a role',
+        'roles' => [
+            ['key' => 'specialist', 'title' => 'Specialist', 'text' => 'Apply your expertise in Genla projects and take part in building and developing our products, including GenClaw. At the meeting we will discuss your strengths, suitable tasks and terms of cooperation.'],
+            ['key' => 'product', 'title' => 'Product partner', 'text' => 'Connect a ready-made boxed product for on-premises installation or a SaaS product that can be deployed on Genla servers. Retain authorship and earn income from sales or use of your solution through the platform.'],
+            ['key' => 'ambassador', 'title' => 'Platform ambassador', 'text' => 'Build client relationships, offer Genla products and services, and earn rewards for paid deals. Expand your own opportunities together with the platform.'],
+            ['key' => 'franchise', 'title' => 'Platform franchisee', 'text' => 'Build a regional team, bring ambassadors together and grow the Genla business in your city. This format is open to sole proprietors and LLCs after at least three months of successful cooperation as an ambassador.'],
+        ],
+        'role_cta' => 'Choose a role',
+        'sections' => [
+            [
+                'title' => 'Specialist',
+                'layout' => 'cards',
+                'cols' => 2,
+                'items' => [
+                    [
+                        'title' => 'The work of the future, built around your expertise',
+                        'paragraphs' => [
+                            'We invite independent specialists, self-employed professionals and solopreneurs. The platform needs researchers, engineers, programmers, managers, salespeople, marketers, organisers and other professionals who can take responsibility for a specific result.',
+                            'Leave your contact details and specify your field. At the interview we will discuss your specialisation, tasks that interest you, your rates and a workload that suits you. Once the terms are agreed, we connect you to the cooperation system and match you with suitable projects.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Freedom without a vertical chain of command',
+                        'paragraphs' => [
+                            'You decide which tasks to accept, agree on your workload and organise your own working time. Each project has a coordinator, a shared goal, deadlines and quality criteria. Responsibility is distributed among participants according to their roles.',
+                        ],
+                    ],
+                    [
+                        'title' => 'A more stable professional practice',
+                        'paragraphs' => [
+                            'The platform helps you find suitable projects and build long-term relationships with clients. You can take part in individual stages, support solutions after launch or work in a permanent project team. Workload depends on demand, skills and the availability agreed with the specialist.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Legal and organisational support',
+                        'paragraphs' => [
+                            'Work is formalised through clear agreements: tasks, cost, deadlines, acceptance criteria, payment terms, confidentiality and rights to the results. Genla helps organise interaction with the client, document changes and resolve disputes within the agreed obligations.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Growth among professionals',
+                        'paragraphs' => [
+                            'You get access to knowledge sharing, task reviews, training on the platform\'s products and projects with specialists from other disciplines. You can deepen your specialisation, master related tasks, and grow as a project manager or practice lead.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Bonuses, events and networking',
+                        'paragraphs' => [
+                            'The participation programme includes bonuses, gifts and free attendance at industry events by invitation from the platform and its partners. Opportunities depend on the participant\'s activity, contribution and available invitations. We help specialists attend major events in their industry, make new connections and present the results of their work.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Build and develop GenClaw',
+                        'paragraphs' => [
+                            'GenClaw grows through the work of people: developers, engineers, researchers, industry experts, and quality and security specialists. Team members design agent behaviour, create skills and integrations, review results, deploy solutions and improve them based on real user tasks.',
+                            'We value professional judgement, initiative and responsibility. Specialists are rewarded for their contribution to building, deploying and developing the product on agreed terms.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Learn to build your own AI agents',
+                        'paragraphs' => [
+                            'We are developing a separate line of paid hands-on training for specialists, entrepreneurs and teams. We help you master building, configuring and using your own agents: from defining the task and connecting tools to quality checks, secure data handling and further development of the solution.',
+                            'The goal of the training is to give people more independence and opportunities in their work. The programme, format and cost are agreed before classes begin. Training is optional; for participation in partner projects we assess skills and the appropriate format of cooperation.',
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Product partner',
+                'layout' => 'cards',
+                'cols' => 2,
+                'items' => [
+                    [
+                        'title' => 'A ready-made product, new distribution opportunities',
+                        'paragraphs' => [
+                            'We invite developers and rights holders of ready-made solutions that can be connected to the Genla ecosystem. Two formats suit this role:',
+                            '**Boxed product**: a ready-made solution with delivery, documentation and the option of on-premises installation, either on the client\'s hardware or in Genla infrastructure.',
+                            '**SaaS product on Genla servers**: a software service that can be deployed in our infrastructure and provided to users by subscription or another agreed model.',
+                            'An essential condition is that the product can actually be deployed. For SaaS, hosting on Genla servers is part of the cooperation model. External dependencies and required integrations are reviewed during the technical assessment.',
+                        ],
+                    ],
+                    [
+                        'title' => 'The developer keeps their name',
+                        'paragraphs' => [
+                            'The product listing shows the product name and its developer. Rights to the existing solution remain with the rights holder under the agreed licence. Genla\'s authority to host, sell, provide access to and support the product is defined separately.',
+                            'An application can be submitted by the developer, the rights holder or their authorised representative. At the first meeting we will discuss the product and the hosting terms. Details of the developer, the rights holder and the contracting party are confirmed when the cooperation is prepared.',
+                        ],
+                    ],
+                    [
+                        'title' => 'What the platform offers',
+                        'paragraphs' => [
+                            'Genla helps present the product to clients, organise demonstrations, identify use cases and involve the partner network in sales. For agreed placements we provide computing infrastructure, engineering support and collaboration with regional teams.',
+                            'A ready-made product can be sold on its own or used in complex projects. Opportunities for audience reach, integrations and support grow together with the ecosystem.',
+                        ],
+                    ],
+                    [
+                        'title' => 'How income is generated',
+                        'paragraphs' => [
+                            'Options include licence sales, subscriptions, usage-based payments or separate implementation fees. Before connecting the product, we agree on prices, revenue sharing, hosting costs, support obligations and payout procedures. Commercial terms are discussed individually for each product.',
+                        ],
+                    ],
+                    [
+                        'title' => 'How we connect a solution',
+                        'paragraphs' => [
+                            'We get to know the developer, hold a demonstration and check the product\'s readiness for deployment. We then agree on licensing, hosting, support and sales terms. After the technical review and formalisation of the cooperation, we prepare a listing that names the developer and connect the product to the platform\'s available channels.',
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Platform ambassador',
+                'layout' => 'cards',
+                'cols' => 2,
+                'items' => [
+                    [
+                        'title' => 'Grow client relationships with Genla behind you',
+                        'paragraphs' => [
+                            'An ambassador connects client needs with the platform\'s capabilities. You can offer clients research, consulting, development, hands-on training, marketing, hardware, cloud resources or a service subscription, backed by a specialist team.',
+                            'The format suits individuals, self-employed professionals, sole proprietors and legal entities. It is especially useful for those who already work in a related industry, understand client needs and want to broaden their offering, reach and audience loyalty.',
+                            'You keep your relationships with your clients and can grow your own business. Genla helps assess the task, select specialists, prepare a proposal and organise delivery of the agreed work.',
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Clear terms for each line of business',
+                'paragraphs' => [
+                    'Before work with a client begins, we agree on how your involvement is recorded and what the reward is paid for. Services, hardware, subscriptions and infrastructure each have their own terms.',
+                ],
+                'layout' => 'table',
+                'table' => [
+                    'head' => ['Line of business', 'What the reward is paid for'],
+                    'rows' => [
+                        ['Audit, consulting, development, integration, marketing', 'Paid work or agreed stages of a project brought in by the ambassador.'],
+                        ['Hands-on training', 'Paid programmes and classes, if bringing in participants is covered by the agreed terms.'],
+                        ['Hardware', 'A paid delivery, taking into account the agreed configuration and deal economics.'],
+                        ['Service subscriptions', 'Activation and subsequent paid periods, if recurring rewards are provided for under the terms of that line of business.'],
+                        ['Cloud resources, rental and support', 'Paid services and service periods within the agreed programme.'],
+                    ],
+                ],
+                'after' => [
+                    'For every deal, the calculation base, rate, amount, triggering event and payout procedure are clear. With staged payments, we take the corresponding portion of the payment into account.',
+                ],
+            ],
+            [
+                'title' => 'Payouts as soon as the deal terms are met',
+                'paragraphs' => [
+                    'We initiate the reward payout as soon as the corresponding payment from the client is received and the agreed conditions are met. For a reward on a paid stage, there is no need to wait for an entire multi-year project to be completed. The transfer procedure, required documents and timelines are set out in the agreement.',
+                ],
+            ],
+            [
+                'title' => 'Higher turnover, more opportunities',
+                'paragraphs' => [
+                    'As paid turnover and the quality of cooperation grow, more privileges become available: personal commercial terms, support for joint marketing, experts joining client meetings, priority resource planning, event invitations and the development of your own team.',
+                    'We want ambassadors to build a long-term business based on useful solutions and client trust.',
+                ],
+            ],
+            [
+                'title' => 'From ambassador to regional development',
+                'paragraphs' => [
+                    'You can invite other ambassadors, help them learn the products and develop joint projects. This work lays the foundation for becoming a franchisee.',
+                    'After at least three months of effective cooperation, an evaluation of results and the signing of a separate contract, a sole proprietor or LLC can obtain regional status. This opens up the opportunity for regular income from paid deals by representatives assigned to your territory under the terms of the agreement.',
+                ],
+            ],
+            [
+                'title' => 'Platform franchisee',
+                'layout' => 'cards',
+                'cols' => 2,
+                'items' => [
+                    [
+                        'title' => 'Build Genla in your region',
+                        'paragraphs' => [
+                            'Franchisees form the regional foundation of the platform. They are independent entrepreneurs and companies that develop the market, build teams, support ambassadors and organise projects in their territory.',
+                            'The main source of income in this model is management activity and scaling the regional network: developing sales, coordinating participants, maintaining client relationships and increasing the number of valuable projects.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Conditions for the transition',
+                        'paragraphs' => [
+                            'A franchisee can be **only a sole proprietor or an LLC**.',
+                            'You need **at least three months of cooperation with Genla as an ambassador**.',
+                            'Based on our joint work, we evaluate the results, the quality of client interactions and readiness to develop the territory.',
+                            'The status, city or region, authority and commercial terms are set out in a separate franchise agreement.',
+                            'If you are just getting to know Genla, you can apply with an interest in regional development. We will start cooperating with you as an ambassador and walk the path to a regional partnership together.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Regular income from the regional network',
+                        'paragraphs' => [
+                            'A franchisee receives an agreed regional reward from the activity of all platform representatives assigned to their territory. Payouts are tied to actual paid deals and to the network development functions performed.',
+                            'The model of regular payouts and royalties, the set of deals taken into account, the accrual period and the obligations of the parties are determined individually. This makes it possible to build income on the long-term development of the territory and repeat client business.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Products and expertise of an international platform',
+                        'paragraphs' => [
+                            'You get access to the product line, specialised labs, engineering support, audit methodologies, sales materials and training for your regional team. For complex tasks you can bring in the platform\'s specialists and resources.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Additional sources of profit',
+                        'paragraphs' => [
+                            'We help develop regional services, ongoing support, hardware supply, infrastructure services and industry projects. Together we can create specialised offerings, hold business events and launch new products with local teams.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Acceleration and territorial development',
+                        'paragraphs' => [
+                            'We support the preparation of regional initiatives: we help work out the project, its economics, presentation materials and interaction with development institutions. We assist in finding suitable accelerator programmes and federal and municipal business support measures, preparing to take part in them, and building dialogue with the relevant authorities.',
+                            'Decisions on granting state support are made by the relevant organisations under the rules of their programmes. Our role is to help prepare a well-founded project and organise professional work with the available opportunities.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Independence within a shared system of values',
+                        'paragraphs' => [
+                            'You retain your entrepreneurial autonomy and the ability to grow your regional business. We are united by our mission, quality standards, responsibility to the client and respect for the contribution of every participant.',
+                            'The territory, the format of brand use, the division of authority, support and the economics of cooperation are discussed individually. Together we can take on tasks that would be out of reach for a single participant.',
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'title' => 'An international community where life and work are interesting',
+                'paragraphs' => [
+                    'Genla brings together people from different cities and countries. We are connected by professional challenges, an interest in new knowledge and a desire to create meaningful change.',
+                    'We hold meetups, gatherings, festivals and group trips, introduce participants to one another and support community initiatives. Here you can find colleagues for a new project, discuss a difficult problem, share experience and spend time with like-minded people.',
+                    'We are building an environment in which an international family of professionals helps everyone stay independent and feel supported. The community\'s opportunities grow with the contributions of its members.',
+                ],
+            ],
+            [
+                'title' => 'How to join',
+                'layout' => 'steps',
+                'cols' => 2,
+                'items' => [
+                    [
+                        'title' => 'Submit a short application',
+                        'paragraphs' => [
+                            'Choose the role you are interested in and specify your field and contact details.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Agree on a meeting time',
+                        'paragraphs' => [
+                            'We will message you in your chosen messenger, taking your preferences into account, and send a link once the time is confirmed.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Meet the team',
+                        'paragraphs' => [
+                            'During the consultation or interview we will discuss your experience, goals and a possible format of cooperation. If needed, we will arrange a separate product demonstration or a discussion of your projects.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Agree on terms and start working together',
+                        'paragraphs' => [
+                            'We will define tasks, rewards and responsibilities, formalise the agreements and provide the necessary materials and support. After that, we will help you develop projects and expand your involvement in the platform.',
+                        ],
+                    ],
+                ],
+                'after' => [
+                    'Every partnership helps fulfil Genla\'s mission: combining human potential with advanced technology to achieve extraordinary results in life, career and business.',
+                ],
+            ],
+            [
+                'title' => 'Frequently asked questions',
+                'layout' => 'faq',
+                'items' => [
+                    ['q' => 'Do I need to be a programmer to join?', 'a' => 'No. We need specialists in research, engineering, management, sales, marketing, customer service and other areas. Specify your field in the short application, and we will discuss suitable tasks at the meeting.'],
+                    ['q' => 'Can I take part in developing GenClaw?', 'a' => 'Yes. We need developers, engineers, researchers, and experts in workflows, quality and security. At the meeting we will discuss how your experience can help build, deploy and improve GenClaw.'],
+                    ['q' => 'Can I learn to build my own AI agents?', 'a' => 'We are developing a separate line of paid hands-on training for this. It helps specialists, entrepreneurs and teams build, configure and use their own agents for work tasks. The programme, format and cost are discussed during a consultation. Training is voluntary and is not a condition of partnership.'],
+                    ['q' => 'What kind of product can I offer the platform?', 'a' => 'A ready-made boxed solution with on-premises installation, or a SaaS product that can be hosted on Genla servers. At the meeting we will discuss the solution\'s capabilities, the developer, and the delivery and hosting terms. An idea without a finished product may become a separate project task, but not an application for product placement.'],
+                    ['q' => 'Can I offer a SaaS product that runs only with an external provider?', 'a' => 'Product partnership requires the ability to deploy the service in Genla infrastructure. A link to an external service that cannot be hosted this way does not fit this format.'],
+                    ['q' => 'Who will be listed as the product developer?', 'a' => 'The actual developer named in the agreed product listing. Before connecting the product, we separately record the rights holder and the platform\'s rights to host, distribute and support the solution.'],
+                    ['q' => 'Who sets my rate and schedule?', 'a' => 'At the meeting you tell us your desired pay and available workload. The terms of each specific task are agreed before work begins. Freedom to organise your time goes hand in hand with commitments on deadlines and quality.'],
+                    ['q' => 'When does an ambassador receive their reward?', 'a' => 'We initiate the payout once the corresponding payment from the client is received and the agreed conditions are met. The rate, calculation base, documents and transfer procedure are set in advance for the relevant line of business or deal.'],
+                    ['q' => 'Can I deliver projects and bring in clients at the same time?', 'a' => 'Yes, roles can be combined by agreement. In each project we separately record involvement in delivery, client acquisition and management, so the economics are clear to all parties.'],
+                    ['q' => 'Does inviting ambassadors immediately grant franchisee status?', 'a' => 'Building a team lays the foundation for the transition. The status requires a sole proprietorship or LLC, at least three months of work as an ambassador, successful results and a separate contract with Genla.'],
+                    ['q' => 'Can I apply for my city right away?', 'a' => 'Yes. Just specify your city in the application, and we will discuss development plans at the meeting. If the required period of cooperation has not yet been completed, we will start with the ambassador role. Submitting an application does not in itself secure a territory.'],
+                    ['q' => 'What do you need for the first introduction?', 'a' => 'Provide your first name, last name and patronymic (if applicable), city of residence, field of activity, messenger contact and a convenient time to reach you. If you represent a sole proprietorship or a company, include its name. We will discuss your experience, product and terms of cooperation at the meeting.'],
+                    ['q' => 'Where will the meeting link be sent?', 'a' => 'To the messenger you specify. We will first contact you and confirm the time, then send a link to the interview or consultation. The preferred time in your application helps us arrange contact; the exact meeting time is agreed with you directly.'],
+                ],
+            ],
+        ],
+        'closing' => [
+            'title' => 'Let\'s get acquainted',
+            'text' => 'Leave your contact details and a convenient time to reach you. We will message you in your messenger, arrange a meeting and send a link. We will discuss the details in person.',
+        ],
+    ],
+
+    // Single short form on the "Become a partner" page.
+    'partner_form' => [
+        'title' => 'Let\'s get acquainted',
+        'text' => 'Leave your contact details and a convenient time to reach you. We will message you, agree on a meeting and send you a link. We will discuss the details in person.',
+        'role_label' => 'Role you are interested in',
+        'roles' => [
+            'specialist' => 'Specialist',
+            'product' => 'Product partner',
+            'ambassador' => 'Platform ambassador',
+            'franchise' => 'Platform franchisee',
+        ],
+        'last_name_label' => 'Last name',
+        'first_name_label' => 'First name',
+        'middle_name_label' => 'Patronymic',
+        'middle_name_hint' => 'If applicable',
+        'city_label' => 'City of residence',
+        'city_hint' => 'If the name is ambiguous, add the country or region.',
+        'org_label' => 'Company or sole proprietor name',
+        'org_hint' => 'Fill in if you are applying on behalf of a company or sole proprietorship',
+        'activity_label' => 'Field of activity',
+        'activity_hint' => 'What do you do or what product are you developing?',
+        'messenger_label' => 'Messenger',
+        'messengers' => [
+            'telegram' => 'Telegram',
+            'whatsapp' => 'WhatsApp',
+            'max' => 'MAX',
+            'other' => 'Other',
+        ],
+        'messenger_other_label' => 'Messenger name',
+        'contact_label' => 'Messenger contact',
+        'contact_hint' => 'We will send the meeting invitation here',
+        'time_label' => 'Convenient time to contact you',
+        'time_placeholder' => 'Weekdays after 16:00 Moscow time',
+        'time_hint' => 'Specify days, time and time zone. If no time zone is given, we will go by your city.',
+        'consent_before' => 'I give my ',
+        'consent_link' => 'consent to the processing of my personal data',
+        'consent_after' => ' for reviewing the application and arranging a meeting with Genla',
+        'privacy_link' => 'Personal data processing policy',
+        'submit' => 'Send application',
+        'sending' => 'Sending…',
+        'success' => 'Thank you! Your application has been received. We will message you in the selected messenger, agree on a time and send you a meeting link.',
+        'error' => 'The application could not be sent. Your data is still in the form. Please try again.',
+        'required' => 'Please fill in this field',
+        'consent_required' => 'Please confirm your consent to personal data processing',
+        'check_failed' => 'The check was not passed. Wait a few seconds and send the application again.',
+    ],
+
+    'partner_consent' => [
+        'title' => 'Consent to personal data processing for a partnership application',
+        'intro' => 'By submitting an application on the "Become a partner" page, I freely, of my own will and in my own interest give GENLA LLC my consent to the processing of my personal data in accordance with Federal Law No. 152-FZ of 27.07.2006 "On Personal Data" on the terms below.',
+        'sections' => [
+            ['heading' => 'Operator', 'body' => ['GENLA Limited Liability Company, TIN 9721262619, PSRN 1267700045777. Address: 2nd Vyazovsky Proezd 10, bld. 2, Moscow 109428. Email: info@genla.tech.']],
+            ['heading' => 'Data processed', 'body' => ['Last name, first name, patronymic (if any), city of residence, company or sole proprietor name (if given), field of activity, chosen messenger and contact in it, convenient contact time, chosen role, as well as the submission date, page address, IP address and browser information.']],
+            ['heading' => 'Purpose', 'body' => ['Reviewing the application, contacting me in the chosen messenger, agreeing on a time and arranging an introduction, interview or consultation with Genla.']],
+            ['heading' => 'Processing operations', 'body' => ['Collection, recording, systematisation, storage, clarification, use and deletion, with or without automation. Only employees who handle enquiries have access to the data.']],
+            ['heading' => 'Term and withdrawal', 'body' => ['The consent is valid until the purpose of processing is achieved or until it is withdrawn. Consent can be withdrawn at any time by writing to info@genla.tech.']],
+        ],
     ],
 
     // Personal data processing consent
@@ -653,6 +1596,7 @@ return [
         'contact' => 'Get in touch',
         'default' => 'Send a request',
     ],
+
     'modal_leads' => [
         'consultation' => 'Leave your contacts — we will suggest a solution and answer your questions.',
         'presentation' => 'We will send an ecosystem presentation tailored to your request.',
@@ -660,6 +1604,7 @@ return [
         'contact' => 'Leave your contacts and we will get back to you.',
         'default' => 'Leave your contacts and we will get in touch.',
     ],
+
     'action_labels' => [
         'consultation' => 'Book a consultation',
         'presentation' => 'Get a presentation',
@@ -667,6 +1612,7 @@ return [
         'contact' => 'Get in touch',
         'default' => 'Send a request',
     ],
+
     'form_errors' => [
         'name' => 'Please enter your name',
         'contact' => 'Please enter a phone or email',
@@ -675,320 +1621,581 @@ return [
 
     // Scripted assistant (fallback when the external agent is unavailable).
     'scripted' => [
-        'greeting' => 'Hello. I am Genla. Describe your task — I will match it to a lab in the ecosystem or arrange a consultation. Where shall we start?',
-        'greeting_suggestions' => ['I need GPU servers', 'Automate processes', 'Build a product', 'Partner program'],
-        'overview' => 'Genla is an ecosystem of directions around a single intelligent core: servers and infrastructure (GenBox, GenBlock), digital assistants and autonomous agents (GenClaw), team training (GenUp), corporate neural networks (GenEtics), cybersecurity (GenSec), industrial robotics (GenX) and AI integration audit (GenReview). Which task is closest to yours?',
-        'overview_suggestions' => ['Compute power', 'Automation', 'Software development', 'Model training'],
-        'lab_match' => 'It looks like :name is a good fit — :sub. Open the lab, or discuss your task with the team right away?',
-        'lab_match_suggestions' => ['Partner program', 'Get a presentation', 'Other directions'],
-        'action_consultation' => 'Happy to pass your request to the team. Describe your task in a few words — or leave your contacts and we will reach out.',
+        'greeting' => 'Hello, I am Genla. Describe your task and I will suggest a lab or arrange a consultation. Where shall we start?',
+        'greeting_suggestions' => ['Free basic audit', 'Digital employees', 'Hardware for AI', 'Become a partner'],
+        'overview' => 'Genla has eight labs: GenReview — research, audit and consulting; GenClaw — autonomous digital employees; GenPromo — communications and promotion; GenFleet — hardware and turnkey AI systems; GenCloud — cloud services and workspace; GenType — digital genetics and model development; GenSec — security of people, data and AI; GenX — data and research for robotics. You can start with a free basic audit. Which task is closest to yours?',
+        'overview_suggestions' => ['Free basic audit', 'Digital employees', 'Cloud resources', 'AI security'],
+        'lab_match' => 'It looks like :name would suit you — :sub. Open the lab page or discuss the task with the team right away?',
+        'lab_match_suggestions' => ['Get a presentation', 'Book a consultation', 'Other labs'],
+        'action_consultation' => 'I am ready to pass your request to the team. Describe the task in a couple of words — or leave your contacts and we will get in touch.',
         'action_presentation' => 'We will prepare a presentation for your request. Leave your contacts and we will send the materials.',
-        'action_call' => 'We will arrange a call. Leave your number — we will call you back at a convenient time.',
-        'action_suggestions' => ['I need GPU servers', 'Automate processes', 'Audit & strategy'],
-        'fallback' => 'Tell me a bit more about your task and I will match it to a lab. For example: compute power, automation, software development, model training, or audit and strategy.',
-        'fallback_suggestions' => ['I need GPU servers', 'Automate processes', 'Build a product', 'Audit & strategy'],
+        'action_call' => 'We will arrange a call. Leave your number and we will call you back at a convenient time.',
+        'action_suggestions' => ['Free basic audit', 'Digital employees', 'Hardware for AI'],
+        'fallback' => 'Tell me a little more about the task and I will suggest a lab. For example: audit and choosing a solution, digital employees, promotion, hardware, cloud, model fine-tuning, security or robotics.',
+        'fallback_suggestions' => ['Free basic audit', 'Digital employees', 'Promotion', 'AI security'],
     ],
 
-    // ── Labs (texts). Structure (slug, glyph, hero_image, actions) lives in config. ──
+    // ── Лаборатории (тексты). Структура (slug, glyph, hero_image, actions) — в config/genla.php. ──
     'labs' => [
 
         'ai' => [
             'name' => 'Assistant',
-            'short' => 'Intelligent core',
+            'short' => 'The intelligent core',
             'hero_title' => 'Genla',
             'hero_subtitle' => 'The intelligent interface to the whole ecosystem',
-            'description' => 'Genla answers questions, helps you choose a solution, provides presentations and arranges consultations. A single core that connects every lab in the ecosystem.',
+            'description' => 'Genla answers questions, helps pick a solution, provides decks and arranges consultations. A single core connecting every direction of the ecosystem.',
             'features' => [
-                ['title' => 'Real-time dialogue', 'text' => 'Describe your task in your own words — the system understands the context.'],
-                ['title' => 'Routing across labs', 'text' => 'It points you to the lab that solves your task.'],
+                ['title' => 'Real-time dialogue', 'text' => 'Describe the task in your own words — the system will understand the context.'],
+                ['title' => 'Routing across directions', 'text' => 'It will point you to the direction that solves your task.'],
                 ['title' => 'Solution matching', 'text' => 'It assembles a scenario for your infrastructure and goals.'],
-                ['title' => 'Consultation & presentation', 'text' => 'It passes your request to the team in one click.'],
+                ['title' => 'Consultation and deck', 'text' => 'It passes your request to the team in one click.'],
             ],
             'advantages' => [
-                ['title' => 'One interface', 'text' => 'The entire ecosystem from a single window.'],
-                ['title' => 'Request context', 'text' => 'Answers tailored to your situation, not templates.'],
-                ['title' => 'Fast handoff', 'text' => 'From a question to the right lab in seconds.'],
+                ['title' => 'One interface', 'text' => 'The whole ecosystem is available from a single window.'],
+                ['title' => 'Request context', 'text' => 'Answers that account for your situation, without templates.'],
+                ['title' => 'Fast transition', 'text' => 'From a question to the right direction in seconds.'],
             ],
             'products' => [],
             'cases' => [
-                ['title' => 'Entry point', 'text' => 'A user describes a task — Genla identifies the direction and suggests the next step.'],
-                ['title' => 'Ecosystem navigation', 'text' => 'A complex request is broken down into the labs that cover it.'],
+                ['title' => 'Entry point', 'text' => 'A visitor describes the task — Genla identifies the direction and suggests the next step.'],
+                ['title' => 'Navigating the ecosystem', 'text' => 'A complex request is broken down into the directions that cover it.'],
             ],
             'faq' => [
-                ['q' => 'Is this a live chat with a manager?', 'a' => 'No, it is the intelligent interface of the ecosystem. When needed, it passes your request to the team.'],
-                ['q' => 'Can I connect my own model?', 'a' => 'Yes. The response driver is pluggable — you can use an external agent or a corporate LLM.'],
-                ['q' => 'Is my data stored?', 'a' => 'The dialogue is used only to answer and to match a solution.'],
+                ['q' => 'Is this a live chat with a manager?', 'a' => 'No, this is the intelligent interface to the ecosystem. When needed it passes the request to the team.'],
+                ['q' => 'Can I connect my own model?', 'a' => 'Yes. The reply driver is pluggable — you can use an external agent or a corporate LLM.'],
+                ['q' => 'Is the conversation stored?', 'a' => 'The dialogue is used only to answer and to match a solution.'],
             ],
-        ],
-
-        'genx' => [
-            'name' => 'GenX',
-            'short' => 'Industrial robotics',
-            'hero_title' => 'GenX',
-            'hero_subtitle' => 'AI embodied. End-to-end industrial robotics and integration of autonomous systems',
-            'description' => 'The GenX lab moves industrial, logistics and commercial enterprises to next-generation robotics (Embodied AI). We handle the design, supply and seamless integration of robotic systems with an estimated investment payback period of up to 12–24 months. Direct partner contracts with global market leaders (Geek+, Unitree, Gaussian, JAKA, Dobot and others) let GenX combine an advanced component base with the intelligent algorithms of the GenEtics cognitive core and the GenSec cybersecurity loop. Clients can choose flexible financial models: classic procurement (CAPEX) and the Robot-as-a-Service format (RaaS / OPEX) with comprehensive 24/7 technical SLA support.',
-            'features' => [
-                ['title' => 'Smart warehouse logistics', 'text' => 'Deployment of autonomous mobile robots (AMR) and Goods-to-Person systems. The optimisation raises the throughput of warehouse complexes by an average of up to 300–500%*.'],
-                ['title' => 'Automated industrial cleaning', 'text' => 'Integration of unmanned scrubbers and industrial cleaning stations: continuous 24/7 quality control and optimisation of related operating costs by up to 50–60%*.'],
-                ['title' => 'Collaborative systems and flexible automation', 'text' => 'Deployment of cobots (manipulators) for precision operations and Bin Picking systems with no need to design safety zones. The estimated payback period of a unit starts from 12 months.'],
-                ['title' => 'Autonomous predictive monitoring', 'text' => 'Integration of quadruped inspection robots with thermal imagers, LiDAR systems and gas analysers for early detection of anomalies and prevention of infrastructure failures.'],
-            ],
-            'advantages' => [
-                ['title' => 'Justified and predictable ROI', 'text' => 'Every robotics project is preceded by a rigorous financial-model calculation. The integration targets payback figures within 24 months of operation.'],
-                ['title' => 'High fault tolerance', 'text' => 'Direct supply of industrial equipment with a verified uptime rate (a global reliability benchmark).'],
-                ['title' => 'Flexible budget management', 'text' => 'The option to choose between capital expenditure (CAPEX) and a service subscription model (RaaS / OPEX) that minimises the load on the company’s cash flow.'],
-            ],
-            'products' => [
-                ['name' => 'Geek+', 'text' => 'Global leader in warehouse robotics.'],
-                ['name' => 'Unitree', 'text' => 'Advanced quadruped robots.'],
-                ['name' => 'Gaussian Robotics', 'text' => 'Autonomous commercial and industrial cleaning.'],
-                ['name' => 'JAKA', 'text' => 'Collaborative manipulators.'],
-                ['name' => 'Dobot', 'text' => 'Flexible cobots for small and medium businesses.'],
-                ['name' => 'Deep Robotics', 'text' => 'Industrial inspection of hazardous zones.'],
-                ['name' => 'VisionNav', 'text' => 'Autonomous pallet handling.'],
-                ['name' => 'Pudu Robotics', 'text' => 'Service robots.'],
-                ['name' => 'Hikrobot', 'text' => 'Machine vision systems.'],
-            ],
-            'cases' => [
-                ['title' => 'End-to-end link with GenBox and GenSec', 'text' => 'Streaming telemetry, LiDAR and computer-vision data from the robot fleet is processed locally on GenBox servers with ultra-low latency (up to 10 ms). Protection of the robotics control channels is provided by GenSec modules based on post-quantum encryption.'],
-                ['title' => 'Intelligent orchestration (GenClaw)', 'text' => 'A specialised AI component performs continuous monitoring and high-level efficiency auditing of the robot fleet: tracking the volume of goods moved and the area processed, plus predictive detection of equipment-wear markers.'],
-            ],
-            'faq' => [
-                ['q' => 'What are the basic financial terms and ownership models?', 'a' => 'A classic outright purchase of the equipment (CAPEX) with capitalisation on the balance sheet is available, as well as the operational RaaS model (Robot-as-a-Service), where the client pays a fixed service subscription that includes maintenance and 24/7 SLA support.'],
-                ['q' => 'Which documents govern the payback and reliability figures?', 'a' => 'Target financial and technical metrics, including payback parameters of up to 24 months, are calculated within an individual technical specification based on an audit of your site and are fixed in a bilateral project-implementation agreement.'],
-                ['q' => 'Is official manufacturer service support provided?', 'a' => 'Yes. Direct contracts with manufacturers guarantee the authenticity of the component base, priority access to software updates, and authorised repair and scheduled maintenance by the engineers of our service centre.'],
-            ],
-            'footnote' => '* Information disclaimer: all efficiency figures shown (including the warehouse-logistics optimisation metrics of up to 300–500% and operating-cost reduction of up to 50–60%), payback periods and technical parameters of the GenX lab’s robotic systems are based on the results of completed cases, are provided for informational purposes only, do not constitute a public offer (Art. 437 of the Civil Code of the Russian Federation) and are calculated individually for each site.',
         ],
 
         'genreview' => [
             'name' => 'GenReview',
-            'short' => 'AI integration audit & strategy',
-            'hero_title' => 'GenReview',
-            'hero_subtitle' => 'Audit and strategic advisory in AI integration',
-            'description' => 'Sustainable digital transformation and the integration of AI solutions require accurate preliminary analysis. We carry out an independent, comprehensive audit of the existing IT infrastructure, operational business processes and data architecture to assess their readiness for artificial-intelligence adoption. The result is a detailed strategic roadmap that minimises integration risks and ensures a predictable return on investment (ROI).',
-            'features' => [
-                ['title' => 'Expert business-process analysis', 'text' => 'A comprehensive systemic diagnosis of the current (As-Is) state of the company’s operations, its individual departments and cross-functional teams.'],
-                ['title' => 'Technology audit of the IT infrastructure', 'text' => 'Assessment of the existing technology stack, identification of infrastructure constraints, and a review of the quality, connectivity and security of the accumulated data sets.'],
-                ['title' => 'Identification of growth points', 'text' => 'Defining priority, commercially justified scenarios for automation, model training and custom development of AI systems.'],
-                ['title' => 'Setting investment priorities', 'text' => 'Grading transformation projects into short-term solutions with a quick economic effect (Quick Wins) and long-term strategic initiatives.'],
+            'short' => 'Research, audit and consulting',
+            'subtitle' => 'Research and solutions for your development path',
+            'seo_title' => 'GenReview — research, audit and consulting | Genla',
+            'seo_description' => 'Free basic audit, in-depth analytics and expert support. We help employees, entrepreneurs and companies choose the changes that are worth making.',
+            'intro' => 'We help you understand what AI can do for you, choose worthwhile changes and find the right specialists. You can start with a free basic audit.',
+            'mission' => 'To help people and organizations find a well-grounded path to their goals amid constant change, while saving time and resources and preserving freedom of choice.',
+            'about' => [
+                'GenReview is the entry point to the expertise of Genla and its partners. We help you work out which AI capabilities are useful for you specifically, what can be improved right now and which changes will justify the cost.',
+                'Our work draws on the experience of our professional community and hub, collaboration with EdTech projects, and the expertise of researchers, developers, engineers and business transformation practitioners. This lets us look at a problem from several angles and compare different ways of solving it.',
+                'We start with the goals of the person or organization, their current processes and constraints. Sometimes the best next step is to change how work is done, master a tool that is already available or postpone a purchase. A well-founded recommendation to build or buy nothing is a complete research outcome in its own right.',
             ],
-            'advantages' => [
-                ['title' => 'Risk Management', 'text' => 'Proactive identification and mitigation of technological, infrastructure and organisational risks at the early stages of AI integration.'],
-                ['title' => 'Optimised return on investment', 'text' => 'Prioritising the deployment of AI scenarios with a measurable financial result and justified project payback periods.'],
-                ['title' => 'Technological sovereignty and independence', 'text' => 'An objective audit with no ties to specific IT vendors. We select the architecture and hardware-software systems based solely on the client’s commercial benefit.'],
+            'sections' => [
+                [
+                    'title' => 'What we offer',
+                    'layout' => 'cards',
+                    'cols' => 3,
+                    'items' => [
+                        [
+                            'title' => 'Free basic audit',
+                            'paragraphs' => ['An initial look at your task, a discussion of processes and key pain points, a preliminary assessment of AI opportunities and a recommended next step. It helps you understand whether deeper research is needed.'],
+                        ],
+                        [
+                            'title' => 'Extended audit',
+                            'paragraphs' => ['An analysis of the client\'s situation and industry using our proprietary methodology: processes, data, resources, constraints, risks, available solutions and alternatives. The output is a set of change priorities, expected impact, cost estimates, validation criteria and a sequence of actions.'],
+                        ],
+                        [
+                            'title' => 'Expert support',
+                            'paragraphs' => ['Help with choosing contractors, writing the brief, comparing proposals, running a pilot and accepting the work. The client can work directly with independent developers and specialized teams.'],
+                        ],
+                    ],
+                    'after' => [
+                        'In the supervisory format, Genla\'s responsibility for expert support and the contractor\'s responsibility for the work are defined separately. In a turnkey project, Genla takes on the agreed implementation obligations. Guarantees apply to specific results and the conditions for achieving them.',
+                    ],
+                ],
             ],
-            'products' => [],
-            'cases' => [
-                ['title' => 'Systemic diagnosis', 'text' => 'A deep analysis of the business architecture to determine the most effective areas for integrating advanced AI solutions.'],
-                ['title' => 'Transformation roadmap', 'text' => 'After the pre-project consulting, the client receives a practical step-by-step plan for digital and AI modernisation, not an abstract analytical report.'],
-            ],
-            'faq' => [
-                ['q' => 'What is the final deliverable of the audit?', 'a' => 'A practical roadmap for the enterprise’s digital and AI transformation with prioritised stages, a total-cost-of-ownership (TCO) calculation and target ROI figures.'],
-                ['q' => 'Are you bound by commitments to specific software vendors?', 'a' => 'No. The GenReview lab provides fully independent consulting, focusing on open standards and the optimal solution stack for the client.'],
-                ['q' => 'How is the security of our corporate data ensured?', 'a' => 'All infrastructure-analysis work is carried out strictly within the legal framework (including compliance with 152-FZ) and only after a non-disclosure agreement (NDA) is signed.'],
-            ],
-            'footnote' => '* Information disclaimer: all analytical calculations, payback (ROI) forecasts and roadmaps produced within the GenReview lab are individual in nature, depend on the specifics of the client’s business, do not constitute a public offer (Art. 437 of the Civil Code of the Russian Federation) and are governed solely by a bilateral agreement for the provision of consulting services.',
-        ],
-
-        'genetics' => [
-            'name' => 'GenEtics',
-            'short' => 'Next-generation neural networks in the company’s DNA',
-            'hero_title' => 'GenEtics',
-            'hero_subtitle' => 'Training and embedding next-generation neural networks into your company’s DNA',
-            'description' => 'The GenEtics lab specialises in building secure, isolated and customised neural-network solutions tailored to the specific business tasks of the enterprise segment. We ensure seamless integration of AI into the company’s operational structure, uniting corporate data sets, the expertise of staff and the computing power of next-generation models into a single protected ecosystem.',
-            'features' => [
-                ['title' => 'Absolute confidentiality (Air-Gapped AI)', 'text' => 'Neural networks are deployed and fine-tuned strictly within the client’s local or isolated cloud loop. Any transfer of data to public commercial models is completely ruled out.'],
-                ['title' => 'Distortion-free architecture (Zero-Hallucination)', 'text' => 'Building systems on the company’s verified proprietary knowledge bases. The search algorithms deliver maximum accuracy when generating documents and answers, with references to the original sources.'],
-                ['title' => 'Deep contextual customisation', 'text' => 'Adapting models to your industry’s specific terminology, internal regulations, product matrices and the architecture of ERP/CRM systems.'],
-                ['title' => 'Full integration cycle', 'text' => 'End-to-end project support: from custom architecture design and secure deployment to upskilling of the relevant teams.'],
-            ],
-            'advantages' => [
-                ['title' => 'Security by Design', 'text' => 'Information security and fault tolerance are built into the architecture of solutions at the level of the basic design of the code and infrastructure.'],
-                ['title' => 'Technological sovereignty (Client Sovereignty)', 'text' => 'The client retains full control over the developed AI system, the model weights, the compute infrastructure and the accumulated data.'],
-                ['title' => 'Compliance and ethics (Ethical AI)', 'text' => 'Transparency of decision-making algorithms, deterministic processes and responsible, regulated use of artificial-intelligence technologies.'],
-            ],
-            'products' => [],
-            'cases' => [
-                ['title' => 'Isolated corporate LLMs', 'text' => 'Design, custom development and deployment of sovereign large language models within the protected perimeter of the enterprise.'],
-                ['title' => 'Upskilling and staff adaptation', 'text' => 'Comprehensive retraining of employees to ensure seamless operational interaction within the Human–AI paradigm.'],
+            'audiences' => [
+                ['You get a review of your work tasks and a clear plan for applying AI: which operations can be sped up, what can be delegated, which tools are already available and what changes the process itself requires. Based on the agreed audit scope, you receive prioritized recommendations so you can start with a useful step and avoid unnecessary subscriptions and development.'],
+                ['You get an assessment of where your own time has become a bottleneck for the business: in sales, paperwork, communications or management. We help you choose between an off-the-shelf service, a process change and custom development, and define the first stage, the required spending and the criteria you can use to measure the benefit.'],
+                ['You get an independent review of your idea, its intended users and the ways to implement it. In an extended study, we develop solution options, requirements for the first product, a hypothesis testing plan and resource estimates. We help you choose contractors and organize the work without overcomplicating the project too early.'],
+                ['You get a rationale for AI investment decisions: which processes are a priority, how ready your data and team are, and where the constraints lie. The extended audit provides a comparison of options, a sequence of pilots, success criteria and a division of responsibilities that you can use for internal discussion and for setting tasks.'],
             ],
             'faq' => [
-                ['q' => 'Is there a risk of data leaking into public services?', 'a' => 'Ruled out. The Air-Gapped AI architecture guarantees that training, inference and data storage all take place strictly within your company’s isolated perimeter.'],
-                ['q' => 'Which security and compliance standards do the solutions meet?', 'a' => 'The systems we develop are designed in line with the requirements of international and national standards: ISO/IEC 42001, SOC 2 Type II, 152-FZ (Russia) and GDPR.'],
-                ['q' => 'What data does the model use to generate analytics and answers?', 'a' => 'Exclusively verified structured and unstructured knowledge bases provided by the client, which minimises the risk of generating unreliable information.'],
+                ['q' => 'What does the free basic audit include?', 'a' => 'An initial discussion of the task, the main pain points and possible areas for improvement. In-depth analysis of the industry, processes and economics is part of the extended audit.'],
+                ['q' => 'Can you advise us not to buy anything?', 'a' => 'Yes. If your current tools are sufficient or a change does not justify the cost, the recommendation will say so.'],
+                ['q' => 'Can we work directly with the developer we choose?', 'a' => 'Yes. Genla can help you choose a contractor, write the brief and support the project. Responsibilities and the cost of supervisory work are agreed separately.'],
+                ['q' => 'How do we know the audit was useful?', 'a' => 'Afterwards, it should be clear which actions are justified, what can be postponed and where to start. In the extended audit, we also define priorities, required resources and the criteria for evaluating the results of the changes.'],
             ],
-            'footnote' => '* Information disclaimer: the architecture, the set of models used and the information-security parameters within the GenEtics lab are designed individually for each client, do not constitute a public offer (Art. 437 of the Civil Code of the Russian Federation) and are fixed solely in bilateral agreements and service level agreements (SLA).',
-        ],
-
-        'genbox' => [
-            'name' => 'GenBox',
-            'short' => 'Next-generation server stations',
-            'hero_title' => 'GenBox',
-            'hero_subtitle' => 'High-performance hardware-software systems and server stations for enterprise tasks and ML computing',
-            'description' => 'The GenBox lab moves companies away from renting third-party cloud capacity towards building a sovereign computing infrastructure. We design and supply mobile, high-performance GPU server stations optimised for neural-network training, inference and resource-intensive ML tasks. Direct OEM contracts with leading component manufacturers in China and our own engineering centre in Moscow let us ship directly from stock, offer flexible financial instruments (leasing, instalments), customise configurations to the client’s budget and provide full SLA service.',
-            'features' => [
-                ['title' => 'Direct OEM supply', 'text' => 'Direct access to an advanced component base and high-performance graphics processors straight from leading Asian manufacturers, with no middlemen.'],
-                ['title' => 'In-house engineering centre', 'text' => 'Assembly, comprehensive load testing and pre-installation of MLOps platforms at our own production facility in Moscow.'],
-                ['title' => 'Optimisation of financial flows', 'text' => 'Flexible financing programs (targeted leasing, instalments) adapted to the client’s cash flow.'],
-                ['title' => 'Comprehensive SLA service', 'text' => 'Official warranty obligations, continuous equipment monitoring and round-the-clock technical support (24/7).'],
-            ],
-            'advantages' => [
-                ['title' => 'Minimised upfront CAPEX', 'text' => 'Thanks to instalment and flexible leasing programs, you receive a ready, configured server system for use right away, removing the need for large one-off capital costs at the start of the project.'],
-                ['title' => 'Placement flexibility', 'text' => 'The architecture of GenBox stations lets you run them in ordinary office or domestic spaces — without renting racks in commercial data centres (Colocation) and without costly server rooms with precision air conditioning.'],
-                ['title' => 'IT outsourcing and OpEx optimisation', 'text' => 'At the client’s request, Genla takes on the infrastructure and technical support of the equipment: from hosting the stations at our verified sites (colocation) to remote DevOps and MLOps administration under a single service contract.'],
-                ['title' => 'Infrastructure autonomy', 'text' => 'Full independence from the tariffs, limitations and risks of external cloud providers. Compute resources are localised under your control.'],
-                ['title' => 'Predictable and reduced TCO', 'text' => 'An on-premise compute loop of your own provides a transparent cost of ownership and pays off significantly faster than continuously renting third-party GPU capacity.'],
-                ['title' => 'Flexible upgrade and buyout', 'text' => 'Terms are provided for a phased buyout of the equipment and programs for upgrading the component base as the scale of your AI models grows.'],
-            ],
-            'products' => [],
-            'cases' => [
-                ['title' => 'Training and high-load inference', 'text' => 'Deployment of hardware capacity for continuous fine-tuning of large language models, inference and execution of distributed ML tasks.'],
-                ['title' => 'Corporate on-premise AI', 'text' => 'Building a sovereign on-premise infrastructure for the secure processing of Big Data within the client’s protected perimeter.'],
-            ],
-            'faq' => [
-                ['q' => 'Is acquisition through financial instruments available?', 'a' => 'Yes. Flexible targeted leasing and instalment programs are available, adapted to the company’s operational cash flow, as well as direct supply from stock in Moscow.'],
-                ['q' => 'How are warranty obligations governed?', 'a' => 'All supplied OEM components are covered by a comprehensive official warranty. Every station undergoes mandatory multi-stage stress testing before shipping. Service support is provided under service level agreements (SLA 24/7).'],
-                ['q' => 'What tasks is the architecture designed for?', 'a' => 'The hardware systems are optimised for end-to-end AI tasks: local neural-network training, inference of enterprise models, predictive Big Data analytics and the deployment of protected internal IT loops.'],
-            ],
-            'footnote' => '* Information disclaimer: all technical configurations, leasing, instalment and upgrade terms, and the cost of the GenBox lab’s hardware-software systems are calculated individually for the project parameters, do not constitute a public offer (Art. 437 of the Civil Code of the Russian Federation) and are fixed solely in the specifications attached to bilateral supply and service agreements. The equipment configurations shown are basic reference models.',
-        ],
-
-        'genblock' => [
-            'name' => 'GenBlock',
-            'short' => 'Next-generation modular data centres',
-            'hero_title' => 'GenBlock',
-            'hero_subtitle' => 'Modular, mobile data centres and high-load server solutions of a new generation',
-            'description' => 'The GenBlock lab specialises in the design and deployment of autonomous infrastructure for supercomputing at any scale. We build fault-tolerant server solutions for stationary data centres, as well as mobile modular data centres in heavy-duty block containers built to the client’s individual technical specification. The structures are engineered to stringent reliability standards, adapted for operation in extreme climatic conditions, and suit both outdoor placement and integration inside existing non-specialised industrial and warehouse premises.',
-            'features' => [
-                ['title' => 'Stationary server systems', 'text' => 'Design and supply of server racks optimised for peak enterprise-grade AI/ML workloads.'],
-                ['title' => 'Mobile modular data centres', 'text' => 'Autonomous high-strength block containers that scale to and host up to 18 high-load server racks inside a single module — a full-fledged infrastructure with no capital construction.'],
-                ['title' => 'Intelligent climate system', 'text' => 'Dynamic cooling management based on AI metrics, delivering unprecedented energy efficiency (PUE < 1.2).'],
-                ['title' => 'Industrial and aerospace reliability', 'text' => 'Structural protection against vibration, temperature and electromagnetic impact for continuous operation in extreme environments.'],
-            ],
-            'advantages' => [
-                ['title' => 'No capital-construction costs', 'text' => 'GenBlock infrastructure requires no construction of permanent buildings. A modular data centre is assembled and tested at the factory, then quickly installed on any prepared site — wherever the cheapest electricity and high-speed internet are available, which radically lowers the cost of computing.'],
-                ['title' => 'A dual asset: heat recovery', 'text' => 'In the optimal 12-rack configuration, the total thermal output of a single module ranges from 360 kW to 1.2+ MW. At the client’s request, the data centre is equipped with heat-recovery systems that convert server heat into heating for industrial, warehouse or office spaces of thousands of m² — this zeroes out or substantially reduces heating costs (OpEx).'],
-                ['title' => 'Placement flexibility', 'text' => 'The system can be deployed both outdoors and inside a building that needs constant heating, acting as a powerful primary heat source.'],
-                ['title' => 'Fault tolerance up to 99.999%', 'text' => 'Multi-stage redundancy of the power and cooling systems guarantees business-process continuity (Disaster Recovery) and a predictable cost of ownership.'],
-            ],
-            'products' => [],
-            'cases' => [
-                ['title' => 'Industrial enterprises and remote sites', 'text' => 'Deployment of mobile data centres on extraction platforms, fields and plants near cheap energy sources, while simultaneously using server heat to warm the local infrastructure.'],
-                ['title' => 'Critical infrastructure and backup nodes', 'text' => 'Protected corporate, government and departmental data-processing nodes, Disaster Recovery and backup programs with no spending on capital structures.'],
-            ],
-            'faq' => [
-                ['q' => 'Is it necessary to build a special building for the data centre?', 'a' => 'No. A site with access to cost-effective electricity and communication channels is enough. A modular data centre is delivered ready-made and launched right away, saving months of time and millions of roubles on capital construction.'],
-                ['q' => 'How many racks are in a module and what are the heat parameters?', 'a' => 'Up to 18 server racks. The basic optimal solution is designed for 12 racks — in this configuration the system steadily generates from 360 kW to 1.2 MW and more of thermal output. When heat recovery is integrated, this heat is directed to warm non-specialised premises (workshops, warehouses, hangars).'],
-                ['q' => 'Which industry standards do the solutions meet?', 'a' => 'Design and assembly are carried out in strict compliance with the Tier III / Tier IV reliability standards (Uptime Institute), AS9100, ISO 27001, and national requirements for electrical safety and fire protection.'],
-                ['q' => 'How energy-efficient is the climate design?', 'a' => 'The intelligent climate-control system delivers a PUE below 1.2, which reduces associated cooling costs by up to 30–40%.'],
-            ],
-            'footnote' => '* Information disclaimer: all technical parameters of the GenBlock systems, including the figures for generated thermal output, the maximum rack capacity, server configurations, container dimensions and leasing/supply terms, are calculated individually for the client’s technical specification, do not constitute a public offer (Art. 437 of the Civil Code of the Russian Federation) and are fixed solely in the specifications attached to individual bilateral agreements.',
-        ],
-
-        'genup' => [
-            'name' => 'GenUp',
-            'short' => 'Corporate training in the AI era',
-            'hero_title' => 'GenUp',
-            'hero_subtitle' => 'Corporate training for hyper-efficiency in the AI era',
-            'description' => 'Technology solutions are only effective when staff have the skills to manage them. The GenUp lab carries out a comprehensive modernisation of human capital, launching a synergy between employees and artificial intelligence. We rebuild operational thinking and optimise workflows, taking individual and team productivity to the level of maximum efficiency.',
-            'features' => [
-                ['title' => 'Process transformation', 'text' => 'A deep rethinking and re-engineering of workflows through the lens of the Human-AI Collaboration methodology.'],
-                ['title' => 'Evolution of corporate culture', 'text' => 'Ensuring a sustainable transition (Mindset Shift) from perception barriers to the effective adoption and integration of AI tools.'],
-                ['title' => 'Applied integration', 'text' => 'A focus on solving real operational business tasks from the very first day the programs are introduced, fully excluding abstract theory.'],
-                ['title' => 'Human–AI synergy', 'text' => 'Building seamless interaction where employees and intelligent agents function as a single ecosystem.'],
-            ],
-            'advantages' => [
-                ['title' => 'Productivity optimisation', 'text' => 'Delivering an increase in the individual productivity of specialists by an average of up to 40–60%*.'],
-                ['title' => 'Automation of routine operations', 'text' => 'Reducing the time spent on linear and repetitive tasks by up to 70%*.'],
-                ['title' => 'Development of in-house expertise', 'text' => 'Building a sustainable culture of innovation, increasing staff engagement and capitalising on the company’s internal competencies.'],
-            ],
-            'products' => [],
-            'cases' => [
-                ['title' => 'Training on real business processes', 'text' => 'The client’s team masters AI tools directly on its company’s current operational tasks, generating value during the training itself.'],
-                ['title' => 'Measurable return on investment (ROI)', 'text' => 'Every program is designed around efficiency metrics, delivering a transparent and measurable financial return for the business.'],
-            ],
-            'faq' => [
-                ['q' => 'Will AI replace our employees?', 'a' => 'No. The People-First principle: technology augments people rather than replacing them.'],
-                ['q' => 'How is the training delivered?', 'a' => 'Practical Learning — through employees’ real working tasks.'],
-                ['q' => 'What happens after the training?', 'a' => 'Continuous Growth — constant skill updates as AI evolves.'],
-            ],
-            'footnote' => '* The time-optimisation and productivity-growth figures shown are based on internal analytics of deployed GenUp programs, are provided for informational purposes only, do not constitute a public offer (Art. 437 of the Civil Code of the Russian Federation) and depend on the client’s initial level of digitalisation and the specifics of its business processes.',
+            'closing' => 'Tell us about your work, project or company. We will help you determine what is worth changing now and which costs you can avoid.',
         ],
 
         'genclaw' => [
             'name' => 'GenClaw',
-            'short' => 'Digital assistants and autonomous workers',
-            'hero_title' => 'GenClaw',
-            'hero_subtitle' => 'Intelligent digital assistants and autonomous AI agents for business-process automation',
-            'description' => 'The GenClaw lab specialises in the design, training and deployment of next-generation AI agents that operate within your organisation’s protected loop. We offer two levels of automation built around a human-centric approach: interactive assistants that multiply the effectiveness of your current specialists, and autonomous digital workers capable of handling complex cross-functional business processes turnkey. The software agents run 24/7/365, minimise the human factor in routine operations and operate strictly within verified corporate knowledge bases.',
-            'features' => [
-                ['title' => 'Level 1. Interactive assistants', 'text' => 'Intelligent AI helpers that work in synergy with an employee. Interaction is delivered through convenient web interfaces, corporate messengers and internal omnichannel platforms.'],
-                ['title' => 'Level 2. Autonomous digital workers', 'text' => 'Software agents that carry out continuous chains of operational tasks without direct human involvement: from extracting and verifying data to automatically drafting contracts, updating the CRM and sending documents to counterparties.'],
-                ['title' => 'Data verification (Zero-Hallucination)', 'text' => 'The agents operate exclusively on confirmed information from the company’s proprietary knowledge bases, which minimises the risk of generating unreliable data and distorting facts.'],
-                ['title' => 'Sovereign information security', 'text' => 'All operational activity, correspondence history and trade secrets are localised within your company’s protected perimeter, ruling out external leaks.'],
+            'short' => 'Autonomous digital employees',
+            'subtitle' => 'Autonomous digital employees tailored to your tasks',
+            'seo_title' => 'GenClaw — autonomous digital employees | Genla',
+            'seo_description' => 'Deployment of general-purpose AI agents: skills, memory, tools and background tasks. Hosted on a device, a server or in a private cloud.',
+            'intro' => 'We set up digital employees for personal and business tasks, with working tools, persistent context and the ability to run in the background 24/7.',
+            'mission' => 'To free up people\'s time for decisions, creativity and human interaction by handing repetitive and long-running digital work over to controlled agents.',
+            'about' => [
+                'GenClaw is a Genla solution for running autonomous digital employees. It helps with personal and business tasks: researching information, preparing documents, working with applications and maintaining recurring processes. The client gets a configurable workspace in which the digital employee retains context, uses the tools it needs and acts within the permissions it has been given.',
+                'Together with the client, we build the digital employee\'s workspace: browser, files, applications, memory, a skill library and access rules. The agent receives a task, plans a sequence of actions, uses the available tools and returns the result for review.',
+                'Skills make it possible to reuse proven ways of working, and persistent context helps take the history of interactions into account. Data and permissions are separated for different employees and departments.',
+                'Work can be triggered on request, on a schedule or by an event, including round-the-clock background processing. 24/7 operation relies on always-available infrastructure, cost control and ongoing support. Actions with significant consequences are carried out within agreed permissions and confirmation rules.',
             ],
-            'advantages' => [
-                ['title' => 'Process continuity (24/7/365)', 'text' => 'Digital workers ensure stable task execution with no breaks, holidays or sick leave, maintaining the uninterrupted pace of business operations.'],
-                ['title' => 'High operational speed', 'text' => 'Optimising the process architecture cuts the execution time of typical and linear tasks by an average of up to 80–95%*.'],
-                ['title' => 'Scaling without risk', 'text' => 'A manifold increase in business productivity without a proportional expansion of headcount. The target ROI figures for this area can be reached within 3–6 months of operation.*'],
+            'sections' => [
+                [
+                    'title' => 'Versatility you can configure',
+                    'paragraphs' => [
+                        'Instead of a separate project for every new task, the client gets an extensible environment where skills can be added, models swapped and services connected. Corporate knowledge search, rule-based workflows and specialized tools can all run inside this environment.',
+                        'For development tasks, a digital employee can work with code, project files and checks. Its capabilities are configured for the specific process so that the team gets verifiable results and keeps control over changes.',
+                        'We are developing GenClaw so that digital employees use context efficiently, reuse useful results and cut unnecessary model calls. We measure the effect by the cost of a successfully completed task at the agreed level of quality.',
+                    ],
+                ],
+                [
+                    'title' => 'Where the solution is hosted',
+                    'layout' => 'list',
+                    'items' => [
+                        'On a mini PC or a work device, for a personal agent and tasks that suit its capacity.',
+                        'On a GenBox workstation or a selected GenCube system, for local models that fit the configuration and for team work.',
+                        'On a GenBlock server, for an agreed multi-user workload.',
+                        'In a private cloud owned by the client, Genla or a partner, when this meets the project requirements.',
+                    ],
+                    'after' => [
+                        'Where the agent environment runs and where the language model runs are chosen separately. An agent on a mini PC can call an external model; fully local processing requires suitable computing resources.',
+                    ],
+                ],
             ],
-            'products' => [
-                ['name' => 'Analyst', 'text' => 'Automatic processing of Big Data sets, report building and predictive analytics.'],
-                ['name' => 'Marketer', 'text' => 'Generation of multichannel content, media planning and optimisation of promo activities.'],
-                ['name' => 'Lawyer', 'text' => 'Initial documentation audit and checking of contracts for compliance with regulations and the statutory framework.'],
-                ['name' => 'Internal communications assistant', 'text' => 'Supporting staff engagement, collecting feedback, facilitation and burnout prevention.'],
-                ['name' => 'Support specialist', 'text' => 'Round-the-clock automated handling of first-line customer requests.'],
-                ['name' => 'Sales manager', 'text' => 'Initial qualification of inbound leads, surveying and deal support.'],
-                ['name' => 'Executive assistant', 'text' => 'Calendar management, task prioritisation, meeting minutes and tracking of assignments.'],
-                ['name' => 'Quality specialist', 'text' => 'Automated control of adherence to scripts, standards and SLAs.'],
-                ['name' => 'Researcher', 'text' => 'Information gathering, patent and bibliographic reviews, and R&D support.'],
-                ['name' => 'Corporate trainer / Tutor', 'text' => 'Personalised employee training, onboarding and control of knowledge-base mastery.'],
-                ['name' => 'HR specialist / Recruiter', 'text' => 'Resume screening against set filters, initial candidate assessment and handling of HR FAQs.'],
-                ['name' => 'Specialist for your tasks', 'text' => 'We can build a specialist tailored to your tasks, matching the specifics of your business.'],
-            ],
-            'cases' => [
-                ['title' => 'An integrated AI department', 'text' => 'Combining several specialised AI assistants and autonomous agents into an end-to-end digital pipeline that fully covers a particular business process or operational area.'],
-                ['title' => 'End-to-end seamless integration', 'text' => 'Building multi-level automation chains with automatic two-way data updates in the client’s CRM, ERP systems, inventory and accounting.'],
+            'audiences' => [
+                ['You get a configurable assistant for finding information, preparing documents, processing materials and handling routine work operations. It uses approved tools and persistent context to reduce repeated data entry. You set the goal, review the result and stay in control of significant actions.'],
+                ['You get a digital employee you can assign part of your administrative work, proposal preparation, analysis and day-to-day task management. We configure skills for your processes, work schedule and spending limits. This helps keep operations running regularly with a small team or when you work on your own.'],
+                ['You get an agent workspace for research, development, hypothesis testing and operational support of your project. You can start with a single task, reuse configured skills and connect new tools as needed. The solution\'s composition and the cost of running tasks are validated in a pilot.'],
+                ['You get a managed rollout of digital employees with separate roles, access rights and departmental context. We define action confirmation rules, hosting requirements, cost tracking and quality criteria. A pilot lets you assess how well the solution fits a process before expanding it to other teams.'],
             ],
             'faq' => [
-                ['q' => 'What guarantees the accuracy of the AI agents’ answers?', 'a' => 'The verification framework used (Zero-Hallucination) blocks any possibility of generating random or fabricated data. The agent is strictly limited to the loop of documents and regulations provided by your company.'],
-                ['q' => 'What infrastructure are the digital workers deployed on?', 'a' => 'On-premise deployment scenarios are available directly on your local capacity (including GenBox hardware systems) or in the isolated cloud loop of Genla Technologies.'],
-                ['q' => 'Which regulatory standards do GenClaw solutions meet?', 'a' => 'The systems’ architecture supports a role-based access model (RBAC), end-to-end logging and auditing of agent actions, ensuring full compliance with data-protection legislation (152-FZ and GDPR).'],
+                ['q' => 'How is a digital employee different from a regular chatbot?', 'a' => 'It can carry out a sequence of actions with connected tools and use skills and persistent context. Its capabilities are defined by its configuration and permitted actions.'],
+                ['q' => 'Can the agent run on a mini PC?', 'a' => 'Yes, if the device has enough resources for the agent environment and the selected tasks. The model can run remotely in this case. Running the model fully locally requires separate hardware selection.'],
+                ['q' => 'What does 24/7 operation mean?', 'a' => 'The ability to run background and scheduled tasks on always-available infrastructure. The support level, spending limits and availability are agreed for each project.'],
+                ['q' => 'Who controls what the digital employee does?', 'a' => 'The client defines roles, permitted tools and the limits of authority. Significant actions are subject to agreed confirmations and logging.'],
             ],
-            'footnote' => '* Information disclaimer: all efficiency figures shown, including the time-optimisation metrics of up to 80–95%, the estimated investment payback periods (ROI) from 3–6 months and the accuracy parameters of the GenClaw lab’s AI agents, are based on the results of previously completed cases, are provided for informational purposes only, do not constitute a public offer (Art. 437 of the Civil Code of the Russian Federation) and are calculated individually for each project following a pre-project audit.',
+            'closing' => 'Choose a task you would like to hand over to a digital employee. We will define the tools, working rules, hosting and the way to verify the results.',
+        ],
+
+        'genpromo' => [
+            'name' => 'GenPromo',
+            'short' => 'Communications and promotion',
+            'subtitle' => 'Communications and promotion in the age of artificial intelligence',
+            'seo_title' => 'GenPromo — communications and promotion with AI | Genla',
+            'seo_description' => 'Strategy, creative, personalized content and analytics. Communications support for entrepreneurs, startups and companies.',
+            'intro' => 'We combine strategy, creative, personalized content and analytics to help products find their audience and build lasting relationships with it.',
+            'mission' => 'To help useful products and ideas find their audience through precise, timely and meaningful communications.',
+            'about' => [
+                'GenPromo is a full-cycle communications agency that brings together strategy, creative, artificial intelligence and data.',
+                'We run a continuous cycle: research the audience, formulate a hypothesis, create the content and the offer, launch the communication, analyze the response and improve the next step. Personalization takes the audience\'s situation and interests into account, and analytics helps test the practical value of each decision.',
+                'Automation reduces the amount of manual preparation, content adaptation and routine reporting. Experienced specialists are responsible for strategy, concept, meaning, quality and business relationships. For each project, we bring in partners who share a responsible approach and are ready to work with new tools.',
+            ],
+            'sections' => [
+                [
+                    'title' => 'What we offer',
+                    'paragraphs' => [
+                        'Communications strategy, positioning, campaign and special project development, content production and adaptation, personalized engagement scenarios, marketing operations automation and results analytics.',
+                        'We tie evaluation to the client\'s objective: lead quality, acquisition costs, conversion, repeat purchases, the speed of preparing materials and the consistency of communications.',
+                    ],
+                ],
+            ],
+            'audiences' => [
+                ['You get help presenting your expertise: shaping your offer and preparing professional materials, content and communications for the right audience. For a company employee, the work may relate to the product or area they are responsible for. The result is a clear communications plan and an approved set of materials.'],
+                ['You get coordinated promotion of your product or service, from understanding the audience and the offer to content, campaigns and lead analysis. We match the scope of work to your resources, automate suitable repetitive operations and show which actions generate a response. You can start with a single product or channel.'],
+                ['You get your positioning, messaging and promotion channels tested before you scale your budget. We create launch materials, run communication experiments and analyze audience response. This helps refine the product and the offer based on real inquiries and feedback.'],
+                ['You get a communications program with agreed goals, brand guidelines, content production and analytics. We organize collaboration between specialists and departments, the approval process and the personalization of materials for different audiences. Results are evaluated against selected business metrics and the quality of communications.'],
+            ],
+            'faq' => [
+                ['q' => 'Can we start with a single campaign or product?', 'a' => 'Yes. The scope of work depends on the task: you can start with audience research, a positioning test or a single communications campaign.'],
+                ['q' => 'How are results evaluated?', 'a' => 'Before launch, we choose metrics tied to the task: lead quality, conversion, acquisition costs, repeat purchases or the speed of preparing materials.'],
+                ['q' => 'Who is responsible for content and publications?', 'a' => 'Specialists are responsible for strategy and quality. The approval process, publishing and the use of automation are defined for each specific project.'],
+            ],
+            'closing' => 'Tell us about your product, audience and promotion goals. We will define the first stage of work and the metrics we will use to evaluate the results.',
+        ],
+
+        'genfleet' => [
+            'name' => 'GenFleet',
+            'short' => 'Hardware and turnkey AI systems',
+            'subtitle' => 'Genla hardware and turnkey systems for working with AI',
+            'seo_title' => 'GenFleet — hardware and turnkey AI systems | Genla',
+            'seo_description' => 'GenBook, GenCube, GenBox and GenBlock: hardware supply and rental, model and service deployment, integration and support.',
+            'intro' => 'We select Genla hardware and turn it into a ready-to-use working system, complete with models, services, configuration and agreed support.',
+            'mission' => 'To make the computing infrastructure you need available as part of a working solution, with clear terms for purchase, rental and support.',
+            'about' => [
+                'GenFleet brings together products under the Genla brand: GenBook, GenBox, GenCube and GenBlock. We select a configuration for your tasks, prepare the hardware for operation and deploy the agreed software components.',
+                'The offering includes hardware supply or rental, installation of models and services, integrations, maintenance and further development of the system. The client gets an agreed solution scope and a single accountable support team.',
+                'Genla takes care of organizing supply, deployment and operation, bringing in the necessary manufacturers and partners. The architecture is not tied to the mandatory use of a single cloud provider.',
+            ],
+            'sections' => [
+                [
+                    'title' => 'GenFleet products',
+                    'layout' => 'cards',
+                    'cols' => 4,
+                    'items' => [
+                        [
+                            'title' => 'GenBook',
+                            'image' => '/images/products/genbook.png?v=2',
+                            'alt' => 'GenBook',
+                            'paragraphs' => ['Professional laptops and mobile workstations with a tailored software environment and access to corporate services.'],
+                        ],
+                        [
+                            'title' => 'GenCube',
+                            'image' => '/images/products/gencube.png?v=1',
+                            'alt' => 'GenCube',
+                            'paragraphs' => ['Compact computing systems for personal and research AI tasks. The ability to run models locally depends on the selected configuration.'],
+                        ],
+                        [
+                            'title' => 'GenBox',
+                            'image' => '/images/products/genbox.png?v=1',
+                            'alt' => 'GenBox',
+                            'paragraphs' => ['Tower workstations and enterprise AI systems for models, agents, analytics and engineering tasks.'],
+                        ],
+                        [
+                            'title' => 'GenBlock',
+                            'image' => '/images/products/genblock-unicorn.png?v=2',
+                            'alt' => 'GenBlock',
+                            'paragraphs' => ['Rack-mounted server systems for team work and compute-intensive workloads within agreed infrastructure.'],
+                        ],
+                    ],
+                    'after' => [
+                        'Configurations are selected based on tasks, data volume and expected workload. For each product, we can discuss supply, rental and the support you need.',
+                    ],
+                ],
+                [
+                    'title' => 'What can be deployed',
+                    'paragraphs' => [
+                        'Autonomous digital employees, a workspace for interacting with models, local model access, corporate services, the client\'s own applications and compatible products from ecosystem partners.',
+                        'The system can be located on the client\'s premises or at an agreed site. For rental, the configuration, software, support scope, maintenance and terms for changing resources are defined in advance. Integrations and licenses are listed separately in the proposal unless they are included in the package.',
+                    ],
+                ],
+            ],
+            'audiences' => [
+                ['You get a work device or computing system selected for your software and tasks. The agreed scope may include setting up the environment, models and applications, access rights and support. You know which configuration you are using and what work is covered by support.'],
+                ['You get a ready-made set of hardware and services without having to select and coordinate every component yourself. We help you choose between purchase and rental, the installation site and the level of maintenance you need. The proposal sets out the solution scope, costs and terms for future configuration changes.'],
+                ['You get hardware for development, experiments and product launch that matches the current stage of your project. You can consider rental and a configuration for a specific workload, and define model and software environment requirements in advance. As the project grows, upgrades or additional resources can be discussed.'],
+                ['You get a hardware and software system for an agreed number of users and tasks, with a hosting and operations plan. The project may include supply, deployment of models and services, integrations and support. Terms for acceptance, maintenance and infrastructure development are set in advance.'],
+            ],
+            'faq' => [
+                ['q' => 'Can the hardware be rented?', 'a' => 'Yes. The supply or rental format, configuration, software and support scope are defined in the proposal.'],
+                ['q' => 'Can you install your services and solutions from other developers?', 'a' => 'Yes. We deploy agreed Genla services, the client\'s applications and compatible partner solutions. We take into account the requirements and terms of use of each component.'],
+                ['q' => 'Where will the hardware be located?', 'a' => 'On the client\'s premises or at an agreed site. The choice depends on the tasks, data requirements, operations and resource availability.'],
+                ['q' => 'What does support include?', 'a' => 'The scope of maintenance, updates, support and upgrades is defined for each specific system. The proposal lists included and additional work separately.'],
+            ],
+            'closing' => 'Tell us about your tasks, number of users and hosting requirements. We will select the configuration, usage format and support scope.',
+        ],
+
+        'gencloud' => [
+            'name' => 'GenCloud',
+            'short' => 'Cloud services and workspace',
+            'subtitle' => 'Cloud resources and a workspace for individuals and teams',
+            'seo_title' => 'GenCloud — cloud services and workspace | Genla',
+            'seo_description' => 'Virtual servers, secure workstations and corporate cloud. GenSpace for working with models and GenRouter for applications and agents.',
+            'intro' => 'We provide cloud resources, secure workstations and AI tools, and help you build your own corporate environment.',
+            'mission' => 'To provide access to computing and intelligent tools, with the freedom to choose where they are hosted, the level of control and the amount of resources.',
+            'about' => [
+                'GenCloud provides virtual servers, secure workstations, application infrastructure and the means to build a corporate cloud.',
+                'We deploy the environment on Genla hardware in the data center we use, on the client\'s hardware, or at a suitable partner site. Where needed, we consider international partners, taking into account the task, service availability and data processing requirements.',
+                'The client can purchase or lease hardware and use it as the foundation of their own cloud. GenCloud is responsible for organizing the environment: virtualization, access, operations, redundancy and other agreed services.',
+            ],
+            'sections' => [
+                [
+                    'title' => 'Cloud services',
+                    'layout' => 'cards',
+                    'cols' => 4,
+                    'items' => [
+                        [
+                            'title' => 'VPS / VDS virtual servers',
+                            'paragraphs' => ['Resources for applications, websites, corporate services, development and testing.'],
+                        ],
+                        [
+                            'title' => 'GPU resources',
+                            'paragraphs' => ['Computing power for suitable tasks such as running models, data processing and research.'],
+                        ],
+                        [
+                            'title' => 'Data storage',
+                            'paragraphs' => ['Storage with agreed capacity, access rights and operating terms.'],
+                        ],
+                        [
+                            'title' => 'Backup',
+                            'paragraphs' => ['Backup and recovery configured to meet project requirements.'],
+                        ],
+                        [
+                            'title' => 'Environment for AI services',
+                            'paragraphs' => ['Deployment of models, applications and agent systems with the chosen access control and monitoring tools.'],
+                        ],
+                        [
+                            'title' => 'Private cloud',
+                            'paragraphs' => ['A corporate environment on dedicated Genla resources, the client\'s hardware or an agreed site.'],
+                        ],
+                        [
+                            'title' => 'Hybrid infrastructure',
+                            'paragraphs' => ['Combining your own resources with suitable partner services.'],
+                        ],
+                        [
+                            'title' => 'Secure workstations',
+                            'paragraphs' => ['Virtual work environments with access to applications and data within assigned permissions.'],
+                        ],
+                    ],
+                ],
+                [
+                    'title' => 'Products',
+                    'layout' => 'cards',
+                    'cols' => 2,
+                    'items' => [
+                        [
+                            'title' => 'GenSpace — a workspace for interacting with different models',
+                            'paragraphs' => ['A single space for research, preparing materials and solving work tasks with AI. Its purpose is to make model capabilities accessible to individuals and teams through a convenient work interface.'],
+                        ],
+                        [
+                            'title' => 'GenRouter — model access for applications and agents',
+                            'paragraphs' => ['A service for connecting language models of different tiers, including models hosted on Genla hardware. The choice is based on a balance of quality, cost, speed and data requirements. It is an infrastructure component for developers, corporate systems and agents.'],
+                        ],
+                    ],
+                    'after' => [
+                        'The set of available models, routing features and terms of use are described in the current offer for each product.',
+                    ],
+                ],
+            ],
+            'audiences' => [
+                ['You get a workspace with access to the applications, files, models and computing resources you need. Depending on the task, this can be a virtual workstation or a GenSpace environment. Agreed access settings let you work with the right tools without administering servers yourself.'],
+                ['You get a cloud foundation for your services and daily work: virtual resources, data storage and access to AI tools. We select the right configuration so you pay for a justified amount and know who is responsible for operations. Backup, recovery and support terms are agreed separately.'],
+                ['You get an environment for developing, testing and launching your product, including model access through GenRouter and suitable computing resources. We define the requirements for workload, data and participant access. As your tasks change, the resource configuration and operating terms can be revised.'],
+                ['You get a design for a corporate cloud or secure work environment that accounts for your departments, applications and data requirements. We consider your own hardware, dedicated resources and partner sites. The outcome defines the architecture and the procedures for access, redundancy, support and cost control.'],
+            ],
+            'faq' => [
+                ['q' => 'Do we need to buy our own hardware?', 'a' => 'Not necessarily. You can use cloud resources or consider dedicated infrastructure for the task. The resource configuration and hosting format are determined when discussing the project.'],
+                ['q' => 'Can you build a cloud on our servers?', 'a' => 'Yes, this option is considered during the assessment. We check compatibility, available resources and operating requirements.'],
+                ['q' => 'What is the difference between GenSpace and GenRouter?', 'a' => 'GenSpace is a workspace for individuals and teams. GenRouter provides model access for software systems, developers and agents.'],
+                ['q' => 'Can we use a site outside Russia?', 'a' => 'Where needed, we consider partner sites abroad. The choice depends on the task, service availability and data requirements.'],
+            ],
+            'closing' => 'Tell us about your applications, users and data requirements. We will propose a suitable environment and the terms for operating it.',
+        ],
+
+        'gentype' => [
+            'name' => 'GenType',
+            'short' => 'Digital genetics and model development',
+            'subtitle' => 'Digital genetics and preserving the uniqueness of intelligent systems',
+            'seo_title' => 'GenType — digital genetics and model development | Genla',
+            'seo_description' => 'Genla\'s flagship lab: digital genetics, model authenticity and building cybernetic systems with stable principles and consistent quality of work.',
+            'intro' => 'We are developing Genla\'s core competence: digital genetics and building authentic cybernetic systems that keep their principles and do quality work as they evolve.',
+            'mission' => 'To develop authentic cybernetic systems that preserve their knowledge, values and quality of work, while supporting human autonomy and the diversity of digital genotypes.',
+            'about' => [
+                'GenType is Genla\'s flagship lab and home to our core competence: digital genetics and building human-centered cybernetic systems. We are developing an approach to creating, studying and preserving unique types of intelligent systems. It is based on value-oriented training and fine-tuning of language models, research into their behavior and evaluation of the quality of their work.',
+                'By "digital genotype" we mean the combination of knowledge, values, ways of working with information and stable behavioral traits shaped by the model\'s architecture, data and training process. The concept of "digital DNA" helps describe which properties of a system should be preserved as it evolves and which may change.',
+                'Practical work includes data preparation, adaptation and fine-tuning, behavior testing, configuring the deployment environment and feedback. Across successive versions of a system, we aim to preserve its significant traits while developing useful capabilities.',
+                'A company gains the ability to develop its own intelligent core that reflects its domain, professional standards, values and culture. This core can be used in agents, corporate services and industry solutions.',
+            ],
+            'sections' => [
+                [
+                    'title' => 'GenType\'s main task',
+                    'paragraphs' => [
+                        'We see the main Achilles\' heel of future AI in the gap between a model\'s capabilities and its ability to reliably do the work it is meant for: to keep its goals, take feedback into account, follow important principles and meet quality requirements as the context changes and the system itself is updated.',
+                        'This is the problem we solve at GenType. By authenticity we mean preserving the system\'s own body of knowledge, values and professional traits as they show up in real behavior. We test how these properties are preserved across successive model versions and in different work situations.',
+                        'We are convinced that without developing this competence it is impossible to ensure the authenticity and consistent quality of full-fledged cybernetic systems: systems that receive feedback, evaluate results and adjust their actions to meet a goal. That is why we consider GenType a necessary foundation of our AI work and the main research direction at Genla.',
+                    ],
+                ],
+                [
+                    'title' => 'Diversity in an age of blended information',
+                    'paragraphs' => [
+                        'We see a risk that repeated use of similar data and generated content, shared evaluation criteria and constant training iterations will make the behavior of different models converge. For us, this is a reason to study how to preserve independent ways of working with knowledge, linguistic and cultural diversity, professional approaches and values.',
+                        'GenType\'s task is to help create and preserve diverse digital genotypes so that the development of intelligent systems supports the uniqueness of people and organizations. Checking that these properties are preserved through updates becomes part of working with a model.',
+                    ],
+                ],
+                [
+                    'title' => 'An interdisciplinary research field',
+                    'paragraphs' => [
+                        'We are developing digital genetics as an interdisciplinary research field. It brings together expertise in linguistics and natural language processing (NLP), psychology, machine learning, systems cybernetics, molecular biology and other disciplines.',
+                        'We study which principles of inheritance, variability, adaptation and regulation can be useful in designing digital systems. The link to biology provides research questions and models to study; specific ways of transferring them require separate validation.',
+                    ],
+                ],
+                [
+                    'title' => 'Scientific collaboration',
+                    'paragraphs' => [
+                        'GenType collaborates with scientific and non-profit organizations on research into intelligence, language, and the regulation and adaptation of complex systems. This collaboration lets us combine approaches from different disciplines and build research programs for developing authentic intelligent systems.',
+                    ],
+                ],
+                [
+                    'title' => 'Autonomy and development',
+                    'paragraphs' => [
+                        'We see the diversity of models and approaches as a condition for freedom of choice. Significant decisions about AI knowledge, goals and acceptable behavior should remain open to discussion and oversight by the people they affect.',
+                        'Sovereignty includes control over data, the ability to manage a model and its operating environment, assess dependencies and replace components. It is ensured by technical, organizational and management decisions working together.',
+                    ],
+                ],
+                [
+                    'title' => 'Applied and research directions',
+                    'paragraphs' => [
+                        'Applied work: model behavior audits, industry data preparation, adaptation and fine-tuning, quality evaluation, designing interaction rules and integration into business systems.',
+                        'Research program: building specialized models from scratch, new methods of training and knowledge transfer, interaction with bionic systems and the study of biological principles of how intelligence is organized. The scope, readiness and resources of each such project are determined separately.',
+                        'Our guiding aim is the harmonious development of people, nature and the systems we create, reducing the risk of losing control and preserving human values.',
+                    ],
+                ],
+            ],
+            'audiences' => [
+                ['You get the opportunity to take part in adapting an intelligent tool to your professional field: its language, terminology, work standards and important constraints. An agreed project defines which traits the system should take into account and which examples will be used to test the quality of its work.'],
+                ['You get an approach to transferring your domain expertise, principles and product specifics into an intelligent service. We help define the necessary data, behavior rules and quality criteria. This lays the groundwork for developing your own model or adapting a suitable existing one while preserving the properties that matter to you.'],
+                ['You get research and engineering support in choosing a model, preparing data, fine-tuning and testing behavior. We define requirements for your product\'s distinctive properties and how to evaluate them. Building a model from scratch is considered separately, when the task and available resources justify it.'],
+                ['You get a development program for an intelligent core that reflects industry knowledge, professional standards and your organization\'s culture. We define the properties that must be preserved through updates, the evaluation criteria and the requirements for control over data and the model. Applied work and research tasks have separate deliverables and stages.'],
+            ],
+            'faq' => [
+                ['q' => 'What do you mean by a digital genotype?', 'a' => 'The combination of a system\'s knowledge, values, ways of working with information and stable behavioral traits. We use this concept to study and design its individuality.'],
+                ['q' => 'How do you preserve a model\'s traits when it is updated?', 'a' => 'First, we identify the significant knowledge, principles and behavioral traits. Then we define criteria and test examples to evaluate whether they are preserved in later versions of the system.'],
+                ['q' => 'Can you adapt an existing model?', 'a' => 'Yes. Applied work includes data preparation, adaptation, fine-tuning and behavior testing. Whether a model needs to be built from scratch is assessed separately.'],
+                ['q' => 'Why is GenType Genla\'s flagship lab?', 'a' => 'We consider an intelligent system\'s ability to keep its principles and do quality work to be the basis of its practical value. GenType develops this competence: from data preparation and model training to behavior evaluation, working with feedback and checking that significant properties are preserved through updates.'],
+            ],
+            'closing' => 'Tell us what knowledge, principles and traits your intelligent system should preserve. We will define an applied task or a research format.',
         ],
 
         'gensec' => [
             'name' => 'GenSec',
-            'short' => 'Next-generation cybersecurity',
-            'hero_title' => 'GenSec',
-            'hero_subtitle' => 'Next-generation cybersecurity systems. AI against AI',
-            'description' => 'In the era of pervasive AI integration, the threat landscape has changed: cybersecurity has turned into a technological confrontation between attacking and defending algorithms. The GenSec lab designs and deploys comprehensive, enterprise-level intelligent security ecosystems (Enterprise Security). We automate threat-detection processes, provide sovereign protection of AI models from destructive manipulation, prevent leaks of confidential information through external neural networks, and build a proactive, layered defence of the IT landscape that is ready for the challenges of the post-quantum era.',
-            'features' => [
-                ['title' => 'Automated MDR (Detection & Response)', 'text' => 'Intelligent analysis of network traffic and entity behaviour in real time. Autonomous detection and blocking of malicious activity at the early stages of an attack.'],
-                ['title' => 'Security of corporate AI models', 'text' => 'Protection of proprietary LLMs and ML algorithms from adversarial attacks, prompt-command injections and targeted training-data poisoning (Data Poisoning).'],
-                ['title' => 'Confidentiality control and flow isolation', 'text' => 'Preventing leaks of trade secrets and source code into external public chatbots. Designing protected LLM gateways in conjunction with GenBox and GenEtics.'],
-                ['title' => 'Predictive vulnerability management', 'text' => 'Automatic infrastructure scanning, forecasting of potential attack vectors and intelligent prioritisation of critical patches for the IT department.'],
-                ['title' => 'Countering hyper-adaptive threats', 'text' => 'Recognising and neutralising next-generation targeted phishing and the compromise of digital identities (deepfakes) generated by hostile AI.'],
-                ['title' => 'Adoption of post-quantum cryptography', 'text' => 'Integration of advanced encryption algorithms and protocols resistant to decryption by the computing power of future quantum computers.'],
+            'short' => 'Security for people, data and AI',
+            'subtitle' => 'GenSec AI — intelligent security for people, data and systems',
+            'seo_title' => 'GenSec AI — modular security system | Genla',
+            'seo_description' => 'An intelligent core and modules for data protection, AI system testing, event monitoring, content control, and document and request handling.',
+            'intro' => 'GenSec AI helps you control data, assess risks and use intelligent systems safely. Choose the modules your tasks require and build up protection step by step.',
+            'mission' => 'To protect people, their data, work and resources when using AI, and to create the conditions for responsible adoption of intelligent systems.',
+            'about' => [
+                'GenSec develops solutions for the practical security of employees, entrepreneurs and organizations. We help determine which data intelligent systems can access, which actions they are allowed to perform and how to detect errors, policy violations and signs of threats.',
+                'Our offering is built on GenSec AI and specialized modules. The client gets an agreed solution configuration, setup tailored to their processes and validation of the results on real work scenarios.',
             ],
-            'advantages' => [
-                ['title' => 'A proactive defence model', 'text' => 'A shift from reactive incident resolution to continuous predictive threat scanning based on an AI-powered SOC.'],
-                ['title' => 'Fewer false positives', 'text' => 'Filtering out parasitic IT noise and false alarms by an average of up to 90%*, which lets security officers focus on real incidents.'],
-                ['title' => 'Minimal response time', 'text' => 'Reduction of key metrics: the mean time to detect (MTTD) drops to seconds, and the mean time to respond and contain a threat (MTTR) — to minutes.'],
+            'sections' => [
+                [
+                    'title' => 'GenSec AI',
+                    'paragraphs' => [
+                        'GenSec AI is the intelligent model and core of the Genla security system. It is designed to analyze information, assess risks and support decisions within defined rules. Specialized modules handle specific data sources, checks and the application of agreed procedures.',
+                        'GenSec AI brings together the team\'s own work in AI behavior analysis, information control and security scenario management. The set of modules is determined by the client\'s tasks. You can start with a single process and then expand the solution based on pilot results.',
+                    ],
+                ],
+                [
+                    'title' => 'GenSec AI modules',
+                    'layout' => 'cards',
+                    'cols' => 2,
+                    'items' => [
+                        [
+                            'title' => 'Shield',
+                            'label' => 'GenSec AI Shield — Data Protection',
+                            'image' => '/images/heroes/gensec.png?v=10',
+                            'alt' => 'GenSec AI Shield',
+                            'paragraphs' => [
+                                'Control of the connected flow of AI requests and responses: analysis of transmitted information, detection of signs of sensitive data disclosure and preparation of material for incident review.',
+                                'The client gains visibility into how information is used in connected services and a basis for enforcing data handling rules. Sources, depth of analysis and actions taken on check results are defined by the project configuration.',
+                            ],
+                        ],
+                        [
+                            'title' => 'Sentinel',
+                            'label' => 'GenSec AI Sentinel — Security Monitoring',
+                            'paragraphs' => [
+                                'Security event monitoring: collection, normalization, storage and correlation of events from connected sources. The module helps specialists see related events and investigate suspicious activity.',
+                                'The client gets a unified context for analyzing AI infrastructure. Integration with existing monitoring tools, export formats and notifications are defined for each specific environment.',
+                            ],
+                        ],
+                        [
+                            'title' => 'Probe',
+                            'label' => 'GenSec AI Probe — AI Security Testing',
+                            'paragraphs' => [
+                                'Authorized testing of AI systems and assistants within an agreed scope. It includes running selected scenarios, recording findings and preparing a report with recommendations for fixing identified issues.',
+                                'The client gets material for planning fixes and re-assessment. Objectives, testing boundaries and result criteria are agreed before launch.',
+                            ],
+                        ],
+                        [
+                            'title' => 'Guardian',
+                            'label' => 'GenSec AI Guardian — Content & Policy Control',
+                            'paragraphs' => [
+                                'Checking requests and responses against the organization\'s rules: topic restrictions, requirements for acceptable content and categories of unwanted content. The result includes the grounds for each check and warnings for review.',
+                                'The client can apply an agreed policy at selected text processing points. Disputed cases are passed to a specialist for review, and the results are recorded for analysis.',
+                            ],
+                        ],
+                        [
+                            'title' => 'Counsel',
+                            'label' => 'GenSec AI Counsel — Document Intelligence',
+                            'paragraphs' => [
+                                'Assistance with documents: finding context, summarizing content and preparing draft materials for review by a specialist.',
+                                'The module can be used in legal work, records management and expert departments. The client gets prepared materials and an agreed process for working with them; significant conclusions and documents are reviewed by the responsible specialist.',
+                            ],
+                        ],
+                        [
+                            'title' => 'Dispatcher',
+                            'label' => 'GenSec AI Dispatcher — Request Classification',
+                            'paragraphs' => [
+                                'Classification of requests according to the organization\'s categories and recommendation of the next processing route. Categories and criteria are configured using the client\'s examples.',
+                                'The module helps support teams, contact centers and administrative offices organize incoming flows. Quality is evaluated on agreed data, and the way requests are handed over is defined by the organization\'s process.',
+                            ],
+                        ],
+                        [
+                            'title' => 'Endpoint',
+                            'label' => 'GenSec AI Endpoint — Endpoint Control',
+                            'paragraphs' => [
+                                'Inventory of assigned software agents on work devices and management of agreed policies. The module helps keep track of which agents are deployed and the settings assigned to them.',
+                                'This area is being developed in stages. Supported operating systems, protective actions and integrations with other endpoint security tools are defined and validated as part of a project rollout.',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'title' => 'How to choose a solution configuration',
+                    'paragraphs' => [
+                        'We start with your task: which data needs to be controlled, which systems need testing, which events need analysis, or which document or request handling process needs improvement.',
+                        'The proposal includes the required modules, data sources, integrations and support. The feature set and the readiness of a specific scenario are confirmed during the pilot. The cost depends on the solution configuration, the number of connections, the infrastructure and the scope of work.',
+                    ],
+                ],
+                [
+                    'title' => 'How implementation works',
+                    'layout' => 'steps',
+                    'items' => [
+                        ['title' => 'Define the task', 'paragraphs' => ['We select the process, data, systems and responsible people.']],
+                        ['title' => 'Select modules', 'paragraphs' => ['We agree on features, integrations and the scope of use.']],
+                        ['title' => 'Run a pilot', 'paragraphs' => ['We test the solution on approved data and agreed scenarios.']],
+                        ['title' => 'Evaluate the results', 'paragraphs' => ['We measure check quality, false positives and the impact on work.']],
+                        ['title' => 'Set up operations', 'paragraphs' => ['We document usage rules, support and the next stages of development.']],
+                    ],
+                ],
             ],
-            'products' => [],
-            'cases' => [
-                ['title' => 'Autonomous 24/7 SOC', 'text' => 'Round-the-clock infrastructure monitoring, incident orchestration, regular penetration testing and a comprehensive information-security audit. A fixed response SLA.'],
-                ['title' => 'A secure generative-AI loop', 'text' => 'Deployment of a regulated environment for staff to work with large language models without the risk of compromising intellectual property and personal data.'],
+            'audiences' => [
+                ['You get clear rules for working with AI, documents and work information, along with tools configured for the chosen process. You can focus on controlling transmitted data, checking content or preparing materials. Within the agreed scope, we define access rights, how results are reviewed and what to do when suspicious events occur.'],
+                ['You get a solution tailored to the specific risks and operations of your business: handling customer data, documents, requests and AI services. You can start with one module and a clear budget. The pilot delivers a validated scenario, usage instructions and agreed support terms.'],
+                ['You get the ability to test the security of your product\'s AI features, configure data and content processing rules and set up event analysis. For the selected modules, we define test scenarios and quality criteria. This helps identify issues, plan fixes and verify results before expanding product use.'],
+                ['You get a modular architecture that takes into account departmental requirements and existing security tools. You can combine AI system testing, data control, event monitoring, and document and request processing. The integrations, access rights, acceptance criteria and responsibilities of each party are set out in the project.'],
             ],
             'faq' => [
-                ['q' => 'What methodologies and standards are GenSec solutions based on?', 'a' => 'The systems’ architecture relies on international practices for countering AI threats: MITRE ATLAS, OWASP Top 10 for LLM, NIST AI Risk Management Framework, as well as the classic standards ISO/IEC 42001, SOC 2 Type II and the requirements of national legislation (152-FZ).'],
-                ['q' => 'How is the reduction in false positives achieved?', 'a' => 'GenSec’s behavioural AI models continuously analyse the context of the client’s infrastructure, adapting to the legitimate actions of users and administrators, which makes it possible to reduce the volume of false incidents by an average of up to 90%.'],
-                ['q' => 'How is readiness for post-quantum challenges achieved?', 'a' => 'We carry out mathematical modelling of the resilience of current cipher signals and proactively integrate certified next-generation cryptographic algorithms into the client’s data-transmission architecture.'],
+                ['q' => 'What is GenSec AI and how do the modules differ?', 'a' => 'GenSec AI is the intelligent model and core of the solution. The modules perform specialized functions: Shield works with data, Sentinel with security events, Probe with AI system testing, Guardian with content rules, Counsel with documents, Dispatcher with requests, and Endpoint with agents and policies on devices.'],
+                ['q' => 'Do we need to connect all the modules?', 'a' => 'No. The configuration depends on your task. You can start with one module and expand the solution after evaluating the results.'],
+                ['q' => 'Can we use our own servers?', 'a' => 'The hosting option is considered during design. Resource and compatibility requirements depend on the selected modules and integrations.'],
+                ['q' => 'Will the solution control all services and devices?', 'a' => 'The scope is determined by the connected sources, access rights and agreed scenarios. The list of devices and services is set out in the project.'],
+                ['q' => 'Can we connect our existing security monitoring system?', 'a' => 'The event format, connection method and data exchange capabilities are checked for the specific system and the selected set of modules.'],
+                ['q' => 'Does GenSec AI automatically fix all detected issues?', 'a' => 'Check results help determine further actions. Fixes and automated responses are performed only within separately configured and tested scenarios, with agreed permissions.'],
+                ['q' => 'How are implementation results confirmed?', 'a' => 'Before the pilot, we agree on test data and evaluation criteria. The report records the results, limitations and next steps.'],
             ],
-            'footnote' => '* Information disclaimer: all efficiency metrics shown, including the false-positive reduction figures of up to 90%, the MTTD/MTTR timing parameters and the SLA terms of the GenSec lab, are calculated individually following a pre-project information-security audit, depend on the current state of the client’s IT loop, do not constitute a public offer (Art. 437 of the Civil Code of the Russian Federation) and are fixed solely in bilateral agreements and service agreements.',
+            'closing' => 'Tell us which systems and data you use and which process you want to protect or improve. We will select a GenSec AI configuration and propose a first stage.',
+        ],
+
+        'genx' => [
+            'name' => 'GenX',
+            'short' => 'Data and research for robotics',
+            'subtitle' => 'Data and research for the robotics of the future',
+            'seo_title' => 'GenX — data and research for robotics | Genla',
+            'seo_description' => 'Collecting and preparing data for training robots and autonomous systems. Research collaboration with manufacturers, companies and scientific teams.',
+            'intro' => 'We work on data for training the robots of the future. We invite manufacturers, researchers and teams to join us in experiments.',
+            'status' => 'Status: research direction.',
+            'mission' => 'To build a high-quality foundation for training robots that can interact usefully and safely with people and the world around them.',
+            'about' => [
+                'GenX is Genla\'s research lab focused on collecting and preparing data for robotics and autonomous systems.',
+                'We work with manufacturers of robots and autonomous solutions in Russia and consider joint projects across different areas of life. We pay particular attention to data that helps train robotic systems in actions, environmental perception and interaction with people.',
+                'Our work covers collaborative systems that operate alongside people, as well as autonomous solutions. For each study, we define the scenarios, collection methods, data quality requirements, terms of use and evaluation criteria.',
+            ],
+            'sections' => [
+                [
+                    'title' => 'Collaboration formats',
+                    'paragraphs' => [
+                        'Jointly defining research objectives, organizing data collection, preparing and annotating materials, building training and validation datasets, and taking part in experimental programs run by manufacturers and research teams.',
+                        'At this stage, GenX conducts research activities. Information about projects and possible forms of participation is provided on request when discussing collaboration.',
+                    ],
+                ],
+            ],
+            'audiences' => [
+                ['If your work involves robotics, data or research into human-machine interaction, you can offer your expertise and take part in a joint project. The form of participation, the research objective and the expected outcome are defined in advance. This is an opportunity to work on applied questions of data collection and preparation.'],
+                ['You get the opportunity to discuss a task that robotics could help with in the future and define the subject of a research study. Together we clarify the use case, the data required and potential participants. The first stage can result in a research program or a rationale for a further experiment.'],
+                ['You get a partner for organizing data collection, preparing materials and developing test scenarios for a robotic system. We agree on requirements for data quality, annotation and use. This work can help test a hypothesis and lay the groundwork for subsequent model training and evaluation.'],
+                ['You get the opportunity to build a joint research program grounded in your organization\'s real processes. We define data preparation tasks, experimental conditions, participant roles and result criteria. Details about current projects are provided when discussing specific collaboration.'],
+            ],
+            'faq' => [
+                ['q' => 'Can we order turnkey robotization of our business from you?', 'a' => 'At this stage, GenX conducts research activities. Participation in an applied project is discussed individually.'],
+                ['q' => 'What systems do you work with?', 'a' => 'We research data preparation tasks for collaborative robots and autonomous systems together with manufacturers and specialized teams.'],
+                ['q' => 'How can we get details about your projects?', 'a' => 'Submit a research collaboration request and describe your task. We will provide information relevant to a possible joint project.'],
+            ],
+            'closing' => 'Tell us about your platform, research or applied task. We will discuss opportunities to work together and provide additional information on request.',
         ],
 
     ],

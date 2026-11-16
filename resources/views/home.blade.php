@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('title', __('genla.company.full_name').' — '.__('genla.company.tagline'))
-@section('description', 'Genla OS — операционная система экосистемы GEN-технологий.')
+@section('description', '')
 
 @section('content')
     <x-site-header variant="os" />
@@ -18,8 +18,13 @@
         <div class="container">
             {{-- Словесный логотип Genla над сеткой (бренд компании) --}}
             <div class="os__intro">
-                <img src="{{ asset('genla-icon-no-bg.png') }}?v=3"
-                     alt="Genla" class="os__logo os__logo--shimmer">
+                <h1 class="visually-hidden">{{ __('genla.company.name') }} — {{ __('genla.company.tagline') }}</h1>
+                <picture>
+                    <source srcset="{{ asset('genla-icon-no-bg.webp') }}?v=5" type="image/webp">
+                    <img src="{{ asset('genla-icon-no-bg.png') }}?v=5"
+                         alt="Genla" class="os__logo os__logo--shimmer"
+                         width="1200" height="800" fetchpriority="high" decoding="async">
+                </picture>
             </div>
 
             <div class="os__grid">
@@ -60,7 +65,11 @@
                             <span class="os-tile__border" aria-hidden="true"></span>
                             <span class="os-tile__art">
                                 @if (! empty($lab['tile_image']))
-                                    <img src="{{ asset($lab['tile_image']) }}" alt="{{ $lab['name'] }}" class="os-tile__img">
+                                    @php $tileWebp = preg_replace('/\.png(\?|$)/', '.webp$1', $lab['tile_image']); @endphp
+                                    <picture>
+                                        <source srcset="{{ asset($tileWebp) }}" type="image/webp">
+                                        <img src="{{ asset($lab['tile_image']) }}" alt="{{ $lab['name'] }}" class="os-tile__img" loading="lazy" decoding="async">
+                                    </picture>
                                 @endif
                             </span>
                             <span class="os-tile__body">

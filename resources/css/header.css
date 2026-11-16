@@ -37,6 +37,30 @@
     position: relative;
 }
 
+/* Кнопка слева */
+.os-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.os-header-left .btn--accent {
+    color: #fff;
+    background: linear-gradient(120deg, #ff4d9e 0%, #ff77b9 100%);
+    box-shadow: 0 8px 22px rgba(255, 77, 158, 0.32);
+    padding: 0.6rem 1.1rem;
+    font-weight: 600;
+    font-size: var(--fs-small);
+    border-radius: var(--r-pill);
+    transition: all var(--t-fast) var(--ease);
+}
+
+.os-header-left .btn--accent:hover {
+    color: #fff;
+    background: linear-gradient(120deg, #ff3d94 0%, #ff6cb2 100%);
+    filter: brightness(1.04);
+    transform: translateY(-1px);
+}
+
 /* os-nav раскрывается в поток flex-контейнера */
 .site-header__inner--os .os-nav {
     display: contents;
@@ -65,6 +89,11 @@
     display: flex;
     align-items: center;
     gap: 0.3rem;
+}
+
+/* Переключатель языка — в правой части шапки, отделён от кнопок */
+.os-header-cta .lang-switch {
+    margin-left: 0.5rem;
 }
 
 /* ── Переключатель языка ──────────────────────────────────── */
@@ -125,22 +154,6 @@ a.lang-switch__item:hover {
     transform: none;
     color: var(--c-purple);
     background: rgba(122, 92, 255, 0.07);
-}
-
-/* Розовая акцентная кнопка «Заказать звонок» */
-.os-header-cta .btn.btn--accent {
-    color: #fff;
-    background: linear-gradient(120deg, #ff4d9e 0%, #ff77b9 100%);
-    box-shadow: 0 8px 22px rgba(255, 77, 158, 0.32);
-    padding: 0.6rem 1.1rem;
-    font-weight: 600;
-}
-
-.os-header-cta .btn.btn--accent:hover {
-    color: #fff;
-    background: linear-gradient(120deg, #ff3d94 0%, #ff6cb2 100%);
-    filter: brightness(1.04);
-    transform: translateY(-1px);
 }
 
 .site-header__inner--os .header-toggle {
@@ -435,6 +448,12 @@ a.lang-switch__item:hover {
 
 .mobile-nav__footer a:hover {
     color: var(--c-purple);
+}
+
+.mobile-nav__address {
+    margin-top: 0.6rem;
+    color: var(--c-muted);
+    font-size: var(--fs-small);
 }
 
 /* Плавная прокрутка к разделам из шапки + отступ под фикс-шапку */

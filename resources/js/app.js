@@ -201,6 +201,76 @@ Alpine.data('leadModal', () => ({
     },
 }));
 
+/* ── заявка «Стать партнёром» (одна форма для четырёх ролей) ── */
+Alpine.data('partnerForm', (token = '') => ({
+    sending: false,
+    sent: false,
+    errors: {},
+    t: I18N.partner || {},
+    form: {
+        role: 'specialist',
+        last_name: '',
+        first_name: '',
+        middle_name: '',
+        city: '',
+        organization: '',
+        activity: '',
+        messenger: 'telegram',
+        messenger_other: '',
+        contact: '',
+        contact_time: '',
+        consent: false,
+        company_site: '',
+    },
+
+    init() {
+        // Выбор карточки роли подставляет роль; введённые данные сохраняются.
+        window.addEventListener('partner-role', (e) => {
+            if (e.detail) this.form.role = e.detail;
+        });
+    },
+
+    validate() {
+        const req = this.t.required || 'Заполните это поле';
+        const errors = {};
+        ['last_name', 'first_name', 'city', 'activity', 'contact', 'contact_time'].forEach((k) => {
+            if (!String(this.form[k] || '').trim()) errors[k] = req;
+        });
+        if (this.form.messenger === 'other' && !this.form.messenger_other.trim()) errors.messenger_other = req;
+        if (!this.form.consent) errors.consent = this.t.consent_required || req;
+        return errors;
+    },
+
+    async submit() {
+        if (this.sending) return;
+        this.errors = this.validate();
+        if (Object.keys(this.errors).length) return;
+
+        this.sending = true;
+        try {
+            const res = await postJson(localeUrl('/become-partner/apply'), {
+                ...this.form,
+                form_token: token,
+                source: (window.location.pathname + window.location.search).slice(0, 255),
+            });
+            if (res.status === 422) {
+                const data = await res.json();
+                const flat = {};
+                Object.keys(data.errors || {}).forEach((k) => (flat[k] = data.errors[k][0]));
+                this.errors = flat;
+                return;
+            }
+            const data = await res.json().catch(() => ({}));
+            if (!res.ok || !data.ok) throw new Error('request failed');
+            this.sent = true;
+        } catch (e) {
+            this.errors = { form: this.t.error || 'Не удалось отправить заявку. Ваши данные остались в форме. Попробуйте ещё раз.' };
+        } finally {
+            this.sending = false;
+        }
+    },
+}));
+
 /* ── диалог Genla ──────────────────────────────────────────── */
 Alpine.data('genlaChat', () => ({
     messages: [],

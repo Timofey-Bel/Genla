@@ -43,13 +43,16 @@ return [
         'call' => ['key' => 'call', 'type' => 'lead'],
         'contact' => ['key' => 'contact', 'type' => 'lead'],
         'chat' => ['key' => 'chat', 'type' => 'chat'],
+        // Заявка со страницы «Стать партнёром» (своя форма, в CTA не выводится).
+        'partner' => ['key' => 'partner', 'type' => 'lead'],
     ],
 
     'contacts' => [
         'telegram' => ['label' => 'Telegram', 'url' => '#'],
         'vk' => ['label' => 'VK', 'url' => '#'],
         'email' => ['label' => 'Email', 'value' => 'info@genla.tech', 'url' => 'mailto:info@genla.tech'],
-        // Город (city) — в lang/{locale}/genla.php (company.city).
+        'phone' => ['label' => '+7 (495) 045-65-55', 'url' => 'tel:+74950456555'],
+        // Город (city) и адрес (address) — в lang/{locale}/genla.php (company.city, company.address).
     ],
 
     'ai' => [
@@ -83,10 +86,23 @@ return [
         'webhook_url' => env('GENLA_CRM_WEBHOOK_URL', ''),
     ],
 
-    // Сетка главной 3×3 (порядок = приоритет услуг, читается слева-направо/сверху-вниз).
-    // Позиции: [1 2 3] верхний ряд, [4 _ 5] вокруг ИИ, [6 7 8] нижний ряд.
-    // Центр — ai (самый большой, пульсирует). GenClaw (роботы) — в нижнем углу.
-    'grid' => ['genup', 'genreview', 'genetics', 'genbox', 'ai', 'genblock', 'genx', 'gensec', 'genclaw'],
+    /*
+    | Сетка главной 3×3 — восемь направлений системной интеграции вокруг ядра AI.
+    | Читается слева-направо / сверху-вниз:
+    |   [GenReview  GenClaw   GenPromo ]  верхний ряд
+    |   [GenFleet     AI      GenCloud ]  средний ряд (центр — ядро, пульсирует)
+    |   [GenType    GenSec     GenX    ]  нижний ряд
+    |
+    | GenReview — точка входа (исследования, аудит и консалтинг)
+    | GenClaw — автономные цифровые сотрудники
+    | GenPromo — коммуникации и продвижение
+    | GenFleet — оборудование и готовые ИИ-комплексы
+    | GenCloud — облачные сервисы и рабочая среда (был GenSpace)
+    | GenType — цифровая генетика и развитие моделей (главная лаборатория, был GenEtics)
+    | GenSec — безопасность человека, данных и ИИ
+    | GenX — данные и исследования для робототехники
+    */
+    'grid' => ['genreview', 'genclaw', 'genpromo', 'genfleet', 'ai', 'gencloud', 'gentype', 'gensec', 'genx'],
 
     /*
     | Лаборатории — только структура. Текстовые поля (name, short, hero_title,
@@ -103,63 +119,14 @@ return [
             'actions' => ['consultation', 'presentation', 'call'],
         ],
 
-        'genx' => [
-            'slug' => 'genx',
-            'subdomain' => 'genx',
-            'is_ai' => false,
-            'glyph' => 1,
-            'tile_image' => 'images/tiles/genx.png?v=4',
-            'hero_image' => ['webp' => '/images/tiles/genx.webp?v=4', 'fallback' => '/images/tiles/genx.png?v=4'],
-            'actions' => ['consultation', 'call', 'chat'],
-        ],
-
+        // ── Верхний ряд сетки ──────────────────────────────────────────
         'genreview' => [
             'slug' => 'genreview',
             'subdomain' => 'genreview',
             'is_ai' => false,
             'glyph' => 2,
-            'tile_image' => 'images/tiles/genreview.png?v=4',
-            'hero_image' => ['webp' => '/images/tiles/genreview.webp?v=4', 'fallback' => '/images/tiles/genreview.png?v=4'],
-            'actions' => ['consultation', 'presentation', 'call', 'chat'],
-        ],
-
-        'genetics' => [
-            'slug' => 'genetics',
-            'subdomain' => 'genetics',
-            'is_ai' => false,
-            'glyph' => 3,
-            'tile_image' => 'images/tiles/genetics.png?v=4',
-            'hero_image' => ['webp' => '/images/tiles/genetics.webp?v=4', 'fallback' => '/images/tiles/genetics.png?v=4'],
-            'actions' => ['consultation', 'presentation', 'call', 'chat'],
-        ],
-
-        'genbox' => [
-            'slug' => 'genbox',
-            'subdomain' => 'genbox',
-            'is_ai' => false,
-            'glyph' => 5,
-            'tile_image' => 'images/tiles/genbox.png?v=4',
-            'hero_image' => ['webp' => '/images/tiles/genbox.webp?v=4', 'fallback' => '/images/tiles/genbox.png?v=4'],
-            'actions' => ['consultation', 'presentation', 'call', 'chat'],
-        ],
-
-        'genblock' => [
-            'slug' => 'genblock',
-            'subdomain' => 'genblock',
-            'is_ai' => false,
-            'glyph' => 6,
-            'tile_image' => 'images/tiles/genblock.png?v=4',
-            'hero_image' => ['webp' => '/images/tiles/genblock.webp?v=4', 'fallback' => '/images/tiles/genblock.png?v=4'],
-            'actions' => ['consultation', 'presentation', 'call', 'chat'],
-        ],
-
-        'genup' => [
-            'slug' => 'genup',
-            'subdomain' => 'genup',
-            'is_ai' => false,
-            'glyph' => 7,
-            'tile_image' => 'images/tiles/genup.png?v=4',
-            'hero_image' => ['webp' => '/images/tiles/genup.webp?v=4', 'fallback' => '/images/tiles/genup.png?v=4'],
+            'tile_image' => 'images/tiles/genreview.png?v=5',
+            'hero_image' => ['webp' => '/images/heroes/gendev.webp?v=10', 'fallback' => '/images/heroes/gendev.png?v=10'],
             'actions' => ['consultation', 'presentation', 'call', 'chat'],
         ],
 
@@ -167,9 +134,58 @@ return [
             'slug' => 'genclaw',
             'subdomain' => 'genclaw',
             'is_ai' => false,
-            'glyph' => 8,
-            'tile_image' => 'images/tiles/genclaw.png?v=4',
-            'hero_image' => ['webp' => '/images/tiles/genclaw.webp?v=4', 'fallback' => '/images/tiles/genclaw.png?v=4'],
+            'glyph' => 7,
+            // Плитка — тот же образ «цифрового сотрудника», что и на первом экране (ТЗ: genup.png).
+            'tile_image' => 'images/tiles/genup.png?v=10',
+            'hero_image' => ['webp' => '/images/heroes/genup.webp?v=10', 'fallback' => '/images/heroes/genup.png?v=10'],
+            'actions' => ['consultation', 'presentation', 'call', 'chat'],
+        ],
+
+        'genpromo' => [
+            'slug' => 'genpromo',
+            'subdomain' => 'genpromo',
+            'is_ai' => false,
+            'glyph' => 1,
+            // Плитка на главной временно — прежний арт GenClaw (нового под GenPromo не было).
+            'tile_image' => 'images/tiles/genpromo.png?v=8',
+            'hero_image' => ['webp' => '/images/heroes/genpromo.webp?v=11', 'fallback' => '/images/heroes/genpromo.png?v=11'],
+            'actions' => ['consultation', 'presentation', 'call', 'chat'],
+        ],
+
+        // ── Средний ряд: GenFleet · AI · GenSpace ──────────────────────
+        'genfleet' => [
+            'slug' => 'genfleet',
+            'subdomain' => 'genfleet',
+            'is_ai' => false,
+            'glyph' => 5,
+            // Плитка на главной временно — прежний арт GenBox (нового под GenFleet не было).
+            'tile_image' => 'images/tiles/genfleet.png?v=8',
+            'hero_image' => ['webp' => '/images/heroes/genfleet.webp?v=10', 'fallback' => '/images/heroes/genfleet.png?v=10'],
+            'actions' => ['consultation', 'presentation', 'call', 'chat'],
+        ],
+
+        // GenCloud — облачная лаборатория (GenSpace переименован в GenCloud).
+        'gencloud' => [
+            'slug' => 'gencloud',
+            'subdomain' => 'gencloud',
+            'is_ai' => false,
+            'glyph' => 6,
+            // Плитка и hero — иконка-облако GenSpace (GenSpace-icon.jpg из корня).
+            'tile_image' => 'images/tiles/genspace.png?v=2',
+            'hero_image' => ['webp' => '/images/heroes/genspace.webp?v=2', 'fallback' => '/images/heroes/genspace.png?v=2'],
+            'actions' => ['consultation', 'presentation', 'call', 'chat'],
+        ],
+
+        // ── Нижний ряд сетки ───────────────────────────────────────────
+        // GenType — главная лаборатория, цифровая генетика (GenEtics переименован).
+        'gentype' => [
+            'slug' => 'gentype',
+            'subdomain' => 'gentype',
+            'is_ai' => false,
+            'glyph' => 3,
+            // Плитка на главной — старая иконка GenEtics (папка "Иконки" в корне сайта).
+            'tile_image' => 'images/tiles/genetics.png?v=9',
+            'hero_image' => ['webp' => '/images/heroes/genetics.webp?v=10', 'fallback' => '/images/heroes/genetics.png?v=10'],
             'actions' => ['consultation', 'presentation', 'call', 'chat'],
         ],
 
@@ -177,12 +193,46 @@ return [
             'slug' => 'gensec',
             'subdomain' => 'gensec',
             'is_ai' => false,
-            'glyph' => 9,
-            'tile_image' => 'images/tiles/gensec.png?v=4',
-            'hero_image' => ['webp' => '/images/tiles/gensec.webp?v=4', 'fallback' => '/images/tiles/gensec.png?v=4'],
+            'glyph' => 4,
+            // Плитка на главной — старая иконка GenSec (папка "Иконки" в корне сайта).
+            'tile_image' => 'images/tiles/gensec.png?v=9',
+            'hero_image' => ['webp' => '/images/heroes/gensec.webp?v=10', 'fallback' => '/images/heroes/gensec.png?v=10'],
             'actions' => ['consultation', 'presentation', 'call', 'chat'],
         ],
 
+        'genx' => [
+            'slug' => 'genx',
+            'subdomain' => 'genx',
+            'is_ai' => false,
+            'glyph' => 8,
+            // Плитка на главной — старая иконка GenX (папка "Иконки" в корне сайта).
+            'tile_image' => 'images/tiles/genx.png?v=9',
+            'hero_image' => ['webp' => '/images/heroes/genx.webp?v=10', 'fallback' => '/images/heroes/genx.png?v=10'],
+            'actions' => ['consultation', 'presentation', 'call', 'chat'],
+        ],
+
+    ],
+
+    /*
+    | Переехавшие направления. Состав экосистемы пересобран:
+    | GenSpace → GenCloud (облачные сервисы)
+    | GenEtics → GenType (цифровая генетика)
+    | GenUp/GenDev → убраны из сетки (контент переработан)
+    | GenBox/GenCube/GenBook/GenView/GenBlock → все внутри GenFleet
+    | GenClaw → продукт, но остаётся в сетке как направление
+    |
+    | Держим 301 со старых адресов, чтобы не терять внешние ссылки.
+    */
+    'moved_labs' => [
+        'genbox' => 'genfleet',
+        'gencube' => 'genfleet',
+        'genbook' => 'genfleet',
+        'genview' => 'genfleet',
+        'genblock' => 'genfleet',
+        'genspace' => 'gencloud',
+        'genetics' => 'gentype',
+        'genup' => 'genreview',
+        'gendev' => 'genreview',
     ],
 
 ];

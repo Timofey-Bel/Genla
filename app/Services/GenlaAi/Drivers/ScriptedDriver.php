@@ -14,16 +14,19 @@ use App\Support\Genla;
  */
 class ScriptedDriver implements AssistantDriver
 {
-    /** Ключевые слова (RU+EN) → лаборатория. */
+    /**
+     * Ключевые слова (RU+EN) → направление.
+     * Порядок важен только при равном числе совпадений (побеждает первое).
+     */
     private const LAB_KEYWORDS = [
-        'genbox' => ['сервер', 'gpu', 'видеокарт', 'оборудован', 'станци', 'суперкомпьютер', 'железо', 'dgx', 'nvidia', 'dell', 'asus', 'мощност', 'server', 'graphics', 'hardware', 'workstation', 'supercomputer', 'compute power'],
-        'genblock' => ['кластер', 'инфраструктур', 'вычислит', 'платформ', 'дата-центр', 'цод', 'cluster', 'infrastructure', 'compute', 'platform', 'data center', 'datacenter'],
-        'genetics' => ['обучени', 'llm', 'дообуч', 'fine', 'нейросет', 'своя модель', 'корпоративн', 'training', 'fine-tun', 'neural', 'own model', 'corporate'],
-        'genup' => ['ассистент', 'копилот', 'crm', 'мессенджер', 'чат-бот', 'база знаний', 'поддержк клиент', 'assistant', 'copilot', 'messenger', 'chatbot', 'knowledge base', 'customer support'],
-        'genclaw' => ['агент', 'автономн', 'автоматиз', 'цифров сотрудник', 'рутин', 'agent', 'autonomous', 'automat', 'digital employee', 'routine'],
-        'gensec' => ['разработ', 'приложен', 'сайт', 'erp', 'код', 'веб-серв', 'софт', 'программ', 'mvp', 'develop', 'application', 'app', 'website', 'web service', 'software'],
-        'genreview' => ['аудит', 'стратеги', 'дорожн', 'эффект', 'окупаем', 'анализ процесс', 'roi', 'оценк', 'audit', 'strateg', 'roadmap', 'payback', 'assessment'],
-        'genx' => ['с чего начать', 'начать', 'старт', 'познаком', 'бесплатн', 'с нуля', 'не знаю', 'where to start', 'getting started', 'start', 'free', 'from scratch'],
+        'genfleet' => ['сервер', 'gpu', 'видеокарт', 'оборудован', 'станци', 'суперкомпьютер', 'железо', 'ноутбук', 'мощност', 'локальн модел', 'машинн зрен', 'видеонаблюден', 'камер', 'стойк', 'colocation', 'колокейшн', 'genbox', 'gencube', 'genbook', 'genview', 'genblock', 'unicorn', 'server', 'graphics', 'hardware', 'workstation', 'supercomputer', 'laptop', 'rack', 'compute power', 'local model', 'machine vision'],
+        'gencloud' => ['облак', 'vps', 'vds', 'виртуальн', 'хранилищ', 'бэкап', 'резервное копир', 'гибридн', 'рабочее место', 'genspace', 'genrouter', 'gencloud', 'cloud', 'virtual server', 'storage', 'backup', 'hybrid', 'workspace'],
+        'genclaw' => ['агент', 'автономн', 'цифров сотрудник', 'ассистент', 'копилот', 'чат-бот', 'помощник', 'рутин', 'автоматиз', 'genclaw', 'agent', 'autonomous', 'digital employee', 'assistant', 'copilot', 'chatbot', 'automat'],
+        'gentype' => ['llm', 'дообуч', 'нейросет', 'своя модель', 'языков модел', 'база знаний', 'цифров генетик', 'gentype', 'fine-tun', 'neural', 'own model', 'language model', 'knowledge base'],
+        'genpromo' => ['маркетинг', 'продвижен', 'реклам', 'позиционирован', 'бренд', 'seo', 'geo', 'контент', 'лид', 'продаж', 'вывод на рынок', 'сайт', 'marketing', 'promotion', 'advertis', 'positioning', 'brand', 'content', 'lead', 'sales', 'go-to-market', 'website'],
+        'genx' => ['робот', 'роботиз', 'манипулятор', 'кобот', 'автономн систем', 'robot', 'cobot', 'robotics'],
+        'gensec' => ['безопасн', 'кибербез', 'защит', 'уязвим', 'пентест', 'фишинг', 'дипфейк', 'утечк', 'gensec', 'security', 'cyber', 'protect', 'vulnerab', 'pentest', 'phishing', 'deepfake', 'leak'],
+        'genreview' => ['аудит', 'диагностик', 'стратеги', 'консалт', 'консультац', 'разработ', 'обучени', 'окупаем', 'с чего начать', 'не знаю', 'audit', 'diagnost', 'strateg', 'consult', 'develop', 'training', 'where to start', 'getting started'],
     ];
 
     /** Ключевые слова (RU+EN) → действие. */
@@ -35,7 +38,7 @@ class ScriptedDriver implements AssistantDriver
 
     private const GREETINGS = ['привет', 'здравств', 'добрый день', 'добрый вечер', 'доброе утро', 'hello', 'хай', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening'];
 
-    private const OVERVIEW = ['лаборатор', 'направлен', 'что умеет', 'что вы дела', 'чем занима', 'genla os', 'экосистем', 'весь список', 'lab', 'direction', 'what can you', 'what do you do', 'ecosystem', 'full list'];
+    private const OVERVIEW = ['лаборатор', 'направлен', 'что умеет', 'что вы дела', 'чем занима', 'genla', 'экосистем', 'весь список', 'lab', 'direction', 'what can you', 'what do you do', 'ecosystem', 'full list'];
 
     public function reply(string $message, array $history = [], ?string $parentMessageId = null): AssistantReply
     {
@@ -65,7 +68,7 @@ class ScriptedDriver implements AssistantDriver
             return new AssistantReply(
                 __('genla.scripted.lab_match', [
                     'name' => $labData['name'] ?? $lab,
-                    'sub' => $labData['hero_subtitle'] ?? '',
+                    'sub' => mb_strtolower(mb_substr($labData['short'] ?? '', 0, 1)).mb_substr($labData['short'] ?? '', 1),
                 ]),
                 (array) __('genla.scripted.lab_match_suggestions'),
                 $action,

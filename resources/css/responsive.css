@@ -15,6 +15,7 @@
    уже на средних экранах, чтобы строка шапки не переполнялась и не «съезжала». */
 @media (max-width: 1120px) {
     .site-header__inner--os .os-nav,
+    .site-header__inner--os .os-header-left,
     .site-header__inner--os .os-header-cta,
     .site-header__inner--os .lang-switch {
         display: none;
@@ -37,6 +38,10 @@
 @media (max-width: 900px) {
     /* OS-шапка на мобильных */
     .site-header__inner--os .os-nav {
+        display: none;
+    }
+
+    .site-header__inner--os .os-header-left {
         display: none;
     }
 

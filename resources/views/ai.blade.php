@@ -1377,7 +1377,7 @@
         <div class="chat-container">
             <div class="chat-header">
                 <div class="chat-header-left">
-                    <img src="{{ asset('genla-icon-no-bg.png') }}?v=4" alt="Genla" class="chat-brand-logo">
+                    <img src="{{ asset('genla-icon-no-bg.png') }}?v=5" alt="Genla" class="chat-brand-logo">
                 </div>
                 <div class="chat-header-right">
                     <a href="https://genla.tech" class="home-btn">
@@ -1434,13 +1434,9 @@
         </div>
     </div>
 
-    <script src="/js/pdf.min.js"></script>
-    <script src="/js/mammoth.browser.min.js"></script>
     <script>
-        // Настройка воркера pdf.js (используется для извлечения текста из PDF)
-        if (window.pdfjsLib) {
-            window.pdfjsLib.GlobalWorkerOptions.workerSrc = '/js/pdf.worker.min.js';
-        }
+        // pdf.js и mammoth.js подгружаются лениво (ensurePdf/ensureMammoth) —
+        // только при прикреплении PDF/DOCX. Это убирает ~940 КБ из стартовой загрузки.
 
         const messagesEl = document.getElementById('messages');
         const form = document.getElementById('chatForm');
@@ -1590,7 +1586,7 @@
         }
 
         async function extractPdfText(file) {
-            if (!window.pdfjsLib) throw new Error('pdfjs not loaded');
+            await ensurePdf();
             const buf = await file.arrayBuffer();
             const pdf = await window.pdfjsLib.getDocument({ data: buf }).promise;
             const pages = Math.min(pdf.numPages, 30);
@@ -1686,6 +1682,18 @@
                 }
             }
             throw new Error('mammoth not loaded');
+        }
+
+        // Гарантирует, что pdf.js загружен (локально) и настроен его воркер.
+        // Версия воркера всегда совпадает с pdf.min.js, т.к. источник один.
+        async function ensurePdf() {
+            if (!window.pdfjsLib) {
+                await loadScript('/js/pdf.min.js');
+                if (!window.pdfjsLib) throw new Error('pdfjs not loaded');
+            }
+            if (!window.pdfjsLib.GlobalWorkerOptions.workerSrc) {
+                window.pdfjsLib.GlobalWorkerOptions.workerSrc = '/js/pdf.worker.min.js';
+            }
         }
 
         attachBtn.addEventListener('click', () => fileInput.click());
@@ -1965,16 +1973,16 @@
 
             actions.appendChild(btn);
 
-            // Кнопка «Прослушать» (синтез речи) — только если браузер умеет
-            if ('speechSynthesis' in window) {
-                const listenBtn = document.createElement('button');
-                listenBtn.type = 'button';
-                listenBtn.className = 'copy-btn listen-btn';
-                listenBtn.title = t.listen;
-                listenBtn.innerHTML = speakIconSvg + '<span>' + t.listen + '</span>';
-                listenBtn.addEventListener('click', () => toggleSpeak(rawContent, listenBtn));
-                actions.appendChild(listenBtn);
-            }
+            // // Кнопка «Прослушать» (синтез речи) — только если браузер умеет
+            // if ('speechSynthesis' in window) {
+            //     const listenBtn = document.createElement('button');
+            //     listenBtn.type = 'button';
+            //     listenBtn.className = 'copy-btn listen-btn';
+            //     listenBtn.title = t.listen;
+            //     listenBtn.innerHTML = speakIconSvg + '<span>' + t.listen + '</span>';
+            //     listenBtn.addEventListener('click', () => toggleSpeak(rawContent, listenBtn));
+            //     actions.appendChild(listenBtn);
+            // }
 
             contentDiv.appendChild(actions);
         }

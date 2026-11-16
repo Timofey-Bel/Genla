@@ -1,47 +1,74 @@
 @extends('layouts.base')
 
-@section('title', __('genla.cases_page.title').' — '.__('genla.company.full_name'))
-@section('description', __('genla.cases_page.lead'))
+@php
+    $data = (array) __('genla.cases');
+    $l = $data['labels'] ?? [];
+    $md = fn ($t) => \App\Support\Genla::md($t);
+@endphp
+
+@section('title', $data['seo_title'] ?? '')
+@section('description', $data['seo_description'] ?? '')
 
 @section('content')
     <x-site-header variant="page" />
 
     <main class="page">
-        <section class="section">
+        <x-page-hero :hero="$data['hero'] ?? []" />
+
+        {{-- 18 кейсов: компактная карточка + полное описание в раскрывающемся блоке --}}
+        <section class="section section--tint">
             <div class="container">
-                <div class="section__head section__head--center reveal">
-                    <span class="eyebrow">{{ __('genla.cases_page.eyebrow') }}</span>
-                    <h1 class="section__title">{{ __('genla.cases_page.title') }}</h1>
-                    <p class="section__lead">{{ __('genla.cases_page.lead') }}</p>
-                </div>
+                <div class="grid grid--2 cases-grid">
+                    @foreach ((array) ($data['items'] ?? []) as $idx => $c)
+                        <article class="case-card case-card--full reveal" style="--reveal-delay: {{ ($idx % 2) * 0.05 }}s;">
+                            <span class="case-card__lab">{{ $c['num'] }} · {{ $c['industry'] }}</span>
+                            <h2 class="case-card__title">{{ $c['title'] }}</h2>
+                            <p class="case-card__scale"><strong>{{ $l['labs'] ?? '' }}:</strong> {{ $c['labs'] }}</p>
 
-                <div class="grid grid--2">
-                    @foreach ((array) __('genla.cases_page.items') as $idx => $c)
-                        <article class="case-card case-card--full reveal" style="--reveal-delay: {{ $idx * 0.05 }}s;">
-                            <span class="case-card__lab">{{ $c['industry'] }}</span>
-                            <h3 class="case-card__title">{{ $c['title'] }}</h3>
-                            <p class="case-card__scale"><strong>{{ __('genla.cases_page.l_scale') }}:</strong> {{ $c['scale'] }}</p>
+                            <ul class="case-result case-metrics">
+                                @foreach ((array) $c['metrics'] as $m)
+                                    <li>{{ $md($m) }}</li>
+                                @endforeach
+                            </ul>
 
-                            <div class="case-block">
-                                <h4 class="case-block__head">{{ __('genla.cases_page.l_before') }}</h4>
-                                <p>{{ $c['before'] }}</p>
-                            </div>
-                            <div class="case-block">
-                                <h4 class="case-block__head">{{ __('genla.cases_page.l_solution') }}</h4>
-                                <p>{{ $c['solution'] }}</p>
-                            </div>
-                            <div class="case-block">
-                                <h4 class="case-block__head">{{ __('genla.cases_page.l_result') }}</h4>
-                                <ul class="case-result">
+                            <details class="case-details">
+                                <summary>
+                                    <span class="case-details__more">{{ $l['more'] ?? '' }}</span>
+                                    <span class="case-details__less">{{ $l['less'] ?? '' }}</span>
+                                </summary>
+
+                                <p class="case-card__scale"><strong>{{ $l['industry'] ?? '' }}:</strong> {{ $c['industry'] }}</p>
+                                @if (! empty($c['role']))
+                                    <p class="case-card__scale"><strong>{{ $l['role'] ?? '' }}:</strong> {{ $c['role'] }}</p>
+                                @endif
+
+                                <div class="case-block">
+                                    <h3 class="case-block__head">{{ $l['task'] ?? '' }}</h3>
+                                    <p>{{ $md($c['task']) }}</p>
+                                </div>
+                                <div class="case-block">
+                                    <h3 class="case-block__head">{{ $l['solution'] ?? '' }}</h3>
+                                    <p>{{ $md($c['solution']) }}</p>
+                                </div>
+                                <div class="case-block">
+                                    <h3 class="case-block__head">{{ $l['result'] ?? '' }}</h3>
                                     @foreach ((array) $c['result'] as $r)
-                                        <li>{!! preg_replace('/\*\*(.+?)\*\*/', '<strong>$1</strong>', e($r)) !!}</li>
+                                        <p>{{ $md($r) }}</p>
                                     @endforeach
-                                </ul>
-                            </div>
+                                </div>
+
+                                {{-- Расчётный пример — отдельно от достигнутых результатов --}}
+                                @if (! empty($c['estimate']))
+                                    <div class="case-block case-estimate">
+                                        <h3 class="case-block__head">{{ $l['estimate'] ?? '' }}</h3>
+                                        <p>{{ $md($c['estimate']) }}</p>
+                                    </div>
+                                @endif
+                            </details>
 
                             <button type="button" class="case-card__cta"
                                 @click="$store.ui.openModal('consultation', null, null)">
-                                {{ __('genla.cases_page.cta') }}
+                                {{ $l['cta'] ?? '' }}
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="M5 12h14M13 6l6 6-6 6" />
@@ -50,12 +77,11 @@
                         </article>
                     @endforeach
                 </div>
-
-                <p class="fineprint" style="margin-top: 1.75rem;">{{ __('genla.cases_page.footnote') }}</p>
             </div>
         </section>
 
-        {{-- Единый CTA-подвал (3 кнопки) --}}
-        <x-footer-cta />
+        <x-blocks :sections="$data['sections'] ?? []" :offset="1" />
+
+        <x-footer-cta :title="$data['closing']['title'] ?? null" :lead="$data['closing']['text'] ?? null" />
     </main>
 @endsection

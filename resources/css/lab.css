@@ -72,7 +72,7 @@
 
 /* Продуктовые фото — целиком, без обрезки (как на плитке главной).
    contain вместо cover: ничего не «откусывается» (палец у GenClaw,
-   контейнер у GenBlock), фото вписывается в квадрат на мягком фоне. */
+   контейнер у GenSpace), фото вписывается в квадрат на мягком фоне. */
 .media-frame--photo {
     aspect-ratio: 1 / 1;
     background:
@@ -186,7 +186,6 @@
 }
 
 .product-card__image {
-    aspect-ratio: 4 / 3;
     border-radius: var(--r-sm);
     overflow: hidden;
     margin-bottom: 0.75rem;
@@ -195,8 +194,18 @@
 
 .product-card__image img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    display: block;
     object-fit: contain;
+}
+
+.product-card__image:not(.product-card__image--contain) {
+    aspect-ratio: 4 / 3;
+}
+
+.product-card__image:not(.product-card__image--contain) img {
+    height: 100%;
+    object-fit: cover;
 }
 
 .product-card__name {
@@ -546,6 +555,16 @@
     height: 8px;
     border-radius: 50%;
     background: var(--grad-accent);
+}
+
+/* Оговорка к цифрам кейса — как fineprint, но внутри карточки */
+.case-card__note {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--c-muted);
+    font-style: italic;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--c-line-strong);
 }
 
 .case-card__cta {

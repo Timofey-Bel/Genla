@@ -25,20 +25,22 @@
                 </a>
             @endif
 
-            <x-lang-switcher />
+            <div class="os-header-left">
+                <a class="btn btn--accent" href="{{ \App\Support\Genla::aiUrl() }}">{{ __('genla.ui.cta_ai') }}</a>
+            </div>
 
             <nav class="os-nav">
                 <a class="os-nav__link" href="{{ url($p.'/about') }}">{{ __('genla.ui.nav_about') }}</a>
                 <a class="os-nav__link" href="{{ url($p.'/mission') }}">{{ __('genla.ui.nav_mission') }}</a>
+                <a class="os-nav__link" href="{{ url($p.'/capabilities') }}">{{ __('genla.ui.nav_capabilities') }}</a>
                 <a class="os-nav__link" href="{{ url($p.'/cases') }}">{{ __('genla.ui.nav_cases') }}</a>
-                <a class="os-nav__link" href="{{ url($p.'/expertise') }}">{{ __('genla.ui.nav_blog') }}</a>
-                <a class="os-nav__link" href="{{ url($p.'/partners') }}">{{ __('genla.ui.nav_partners') }}</a>
+                <a class="os-nav__link" href="{{ url($p.'/become-partner') }}">{{ __('genla.ui.nav_partners') }}</a>
             </nav>
 
             <div class="os-header-cta">
                 <button type="button" class="btn"
                     @click="$store.ui.openModal('consultation', null, null)">{{ __('genla.ui.cta_consultation') }}</button>
-                <a class="btn btn--accent" href="{{ \App\Support\Genla::aiUrl() }}">{{ __('genla.ui.cta_ai') }}</a>
+                <x-lang-switcher />
             </div>
 
             <button class="header-toggle" @click="$store.ui.openNav()" aria-label="{{ __('genla.ui.open_menu') }}">
