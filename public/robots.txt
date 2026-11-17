@@ -1,2 +1,11 @@
 User-agent: *
-Disallow:
+Allow: /
+
+Disallow: /api/
+Disallow: /leads
+Disallow: /ai/chat
+Disallow: /become-partner/apply
+Disallow: /storage/
+Disallow: /vendor/
+
+Sitemap: https://genla.tech/sitemap.xml
