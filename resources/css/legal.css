@@ -251,18 +251,37 @@
     font-size: 1.15rem;
 }
 
+/* Карточка с изображением продукта */
+.card:has(.product-card__image) {
+    overflow: hidden;
+    padding: 0;
+}
+
 .blocks__grid .product-card__image {
-    margin: -0.25rem -0.25rem 1rem;
-    height: auto;
-    max-height: none;
-    overflow: visible;
+    overflow: hidden;
+    border-radius: var(--r-lg) var(--r-lg) 0 0;
+    background: var(--c-tint);
 }
 
 .blocks__grid .product-card__image img {
-    object-fit: contain;
-    max-height: none;
-    height: auto;
+    display: block;
     width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.card:has(.product-card__image) .card__title,
+.card:has(.product-card__image) .card__text,
+.card:has(.product-card__image) .card__label {
+    padding: 0 1.4rem;
+}
+
+.card:has(.product-card__image) .card__title {
+    padding-top: 1rem;
+}
+
+.card:has(.product-card__image) .card__text:last-child {
+    padding-bottom: 1.4rem;
 }
 
 /* Таблица (условия амбассадора) */
@@ -559,14 +578,4 @@ select.field__input {
 
 .section--block .hook-quote {
     margin-top: 2rem;
-}
-.blocks__grid .product-card__image {
-    aspect-ratio: auto;
-    height: clamp(140px, 16vw, 190px);
-    background: var(--c-tint);
-}
-
-.blocks__grid .card__text {
-    font-size: 0.95rem;
-    line-height: 1.6;
 }
