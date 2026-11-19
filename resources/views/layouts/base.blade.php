@@ -33,7 +33,7 @@
     <meta property="og:title" content="@yield('title', __('genla.company.full_name'))">
     <meta property="og:description" content="@yield('description', __('genla.company.mission'))">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:image" content="@yield('og_image', asset('og-cover.png').'?v=4')">
+    <meta property="og:image" content="@yield('og_image', asset('og-cover.png').'?v=5')">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="{{ __('genla.company.full_name') }}">
