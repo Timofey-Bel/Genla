@@ -18,7 +18,7 @@
       powershell -File tools/selfcheck.ps1 -BaseUrl https://genla.ru
 #>
 param(
-    [string]$BaseUrl = 'https://genla.ru'
+    [string]$BaseUrl = 'https://genla.tech'
 )
 
 $ProgressPreference = 'SilentlyContinue'
@@ -117,7 +117,7 @@ foreach ($route in $routes) {
     if ($ctaRoutes -contains $route) {
         Test-Case ($html -match 'lab-cta__title') 'footer CTA block present (.lab-cta)'
         Test-Case ($html -match 'class="btn btn--chat btn--lg"') 'footer CTA has "discuss now" link to AI'
-        Test-Case ($html -match '/ai"') 'footer CTA links to AI interface'
+        Test-Case ($html -match '/ai"' -or $html -match 'ai\.genla\.tech') 'footer CTA links to AI interface'
     }
 
     # Mobile tab-bar: central AI orb labelled AI (skipped for the standalone AI app).
